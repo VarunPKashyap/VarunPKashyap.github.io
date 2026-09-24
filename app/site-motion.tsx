@@ -14,7 +14,7 @@ export function SiteMotion() {
       link,
       section: document.querySelector<HTMLElement>(link.getAttribute("href")!),
     }));
-    const elements = document.querySelectorAll<HTMLElement>(".section-top,.work-heading,.publication,.services-heading,.service-card,.about-grid,.thinking-intro,.thought-list>button,.articulation-intro,.bangalore-break,.digest-intro,.digest-item,.position-section,.contact-big");
+    const elements = document.querySelectorAll<HTMLElement>(".section-top,.work-heading,.publication,.signal-desk,.services-heading,.service-card,.about-grid,.thinking-intro,.thought-list>button,.articulation-intro,.bangalore-break,.digest-intro,.digest-item,.position-section,.contact-big");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -67,7 +67,7 @@ export function SiteMotion() {
     window.addEventListener("resize", schedule);
     preference.addEventListener("change", revealAll);
     document.addEventListener("visibilitychange", finishEntrances);
-    const coverCleanups = Array.from(document.querySelectorAll<HTMLElement>(".publication-image"))
+    const coverCleanups = Array.from(document.querySelectorAll<HTMLElement>(".publication-image,.editorial-media"))
       .map(cover => attachCoverMotion(cover, preference, finePointer));
     return () => {
       observer.disconnect();

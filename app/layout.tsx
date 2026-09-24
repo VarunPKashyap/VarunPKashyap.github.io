@@ -9,10 +9,11 @@ import "./motion.css";
 import "./game.css";
 import "./interactions.css";
 import "./craft.css";
+import "./finish.css";
 export const metadata: Metadata = {
  metadataBase: new URL("https://varunpkashyap.github.io"),
  alternates: { canonical: "/" },
- title: "Varun Kashyap — Cultural Insights & Brand Strategy",
+ title: "Varun fights content pollution",
  description: "Varun Kashyap studies how people choose, connect and spend their time, then turns cultural context into brand positioning, creative briefs and editorial direction.",
  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };

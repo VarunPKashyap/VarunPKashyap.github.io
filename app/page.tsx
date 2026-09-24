@@ -49,6 +49,7 @@ export default function Home(){
     <div className="section-top"><span className="meta">05 / Articulation</span><span className="meta">A hypothesis I believe in</span></div>
     <div className="articulation-intro articulation-hypothesis">
       <h2 id="articulation-title">Articulation is<br/><em>the skill I’d bet on.</em></h2>
+      <figure className="articulation-object editorial-media"><div className="work-visual dimensional-object"><img src="/assets/editorial-throughline.webp" alt="A burgundy ribbon threading through three layered paper folios" width="1254" height="1254" loading="lazy"/></div><figcaption>A thought has to travel.</figcaption></figure>
       <div className="articulation-prose">
         <p className="articulation-belief">I believe articulation could become the most valuable skill as AI makes creation and execution easier.</p>
         <p className="articulation-elaboration">When more people can make an idea happen, clarity about what it means carries more weight. What are you trying to say? Why does it matter? Can someone else understand it well enough to question it or build on it? I like finding the words that make a half-formed thought useful.</p>
