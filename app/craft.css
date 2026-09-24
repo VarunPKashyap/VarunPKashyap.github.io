@@ -51,16 +51,16 @@
 }
 .work-section .publication-grid { margin-top: 44px; }
 .publication-grass .publication-image {
-  box-shadow: 14px 14px 0 #642c4430, inset 0 0 0 1px #40232c0c;
+  box-shadow: 14px 14px 0 #6b263d30, inset 0 0 0 1px #2c15200c;
   transition: box-shadow 420ms var(--motion-settle);
 }
 .publication-grass:is(:hover, :focus-visible) .publication-image {
-  box-shadow: 19px 19px 0 #642c4445, inset 0 0 0 1px #40232c24;
+  box-shadow: 19px 19px 0 #6b263d45, inset 0 0 0 1px #2c152024;
 }
 .publication-grass .publication-cue { bottom: 24px; right: 24px; }
 .publication:not(.publication-grass) .publication-image { transition: box-shadow 300ms var(--motion-settle); }
 .publication:not(.publication-grass):is(:hover, :focus-visible) .publication-image {
-  box-shadow: 0 16px 35px -23px #31151d8a, inset 0 0 0 1px #40232c24;
+  box-shadow: 0 16px 35px -23px #24131a8a, inset 0 0 0 1px #2c152024;
 }
 
 .thought-list button {
@@ -79,7 +79,7 @@
 .articulation-section {
   position: relative;
   padding-block: clamp(90px, 10vw, 150px) clamp(86px, 9vw, 134px);
-  background: #e9e1d7;
+  background: var(--surface-soft);
 }
 .articulation-section::before {
   content: "";
@@ -136,16 +136,16 @@
   gap: 28px;
   align-items: start;
 }
-.articulation-points > div { border-top: 1px solid #5426325c; padding-top: 13px; }
+.articulation-points > div { border-top: 1px solid #6b263d5c; padding-top: 13px; }
 .articulation-points .meta { display: block; font-size: 12px; color: var(--wine); }
 .articulation-points p { margin-top: 18px; font-size: 17px; line-height: 1.65; text-wrap: pretty; }
 
-.digest-item .digest-thumbnail { outline: 1px solid #54263225; outline-offset: -1px; }
+.digest-item .digest-thumbnail { outline: 1px solid #6b263d25; outline-offset: -1px; }
 .digest-item .digest-thumbnail img { transition: transform 600ms var(--motion-settle), filter 600ms; }
 .digest-item:has(h3 a:is(:hover, :focus-visible)) .digest-thumbnail img,
 .digest-thumbnail:is(:hover, :focus-visible) img { transform: scale(1.045); filter: saturate(1.13); }
 .digest-archive-list li>a { transition: background-color 200ms ease; }
-.digest-archive-list li>a:is(:hover, :focus-visible) { background-color: #642c4409; }
+.digest-archive-list li>a:is(:hover, :focus-visible) { background-color: #6b263d09; }
 .contact-methods a svg { transition: transform 300ms var(--motion-settle); }
 .contact-methods a:is(:hover, :focus-visible) svg { transform: translate(3px, -3px); }
 
@@ -179,8 +179,8 @@
   .capability-item[data-slot="accordion-item"]::before { left: -5px; width: 2px; }
   .work-heading::after { bottom: -18px; width: 72px; }
   .work-section .publication-grid { margin-top: 34px; }
-  .publication-grass .publication-image { box-shadow: 7px 7px 0 #642c4430; }
-  .publication-grass:is(:hover, :focus-visible) .publication-image { box-shadow: 9px 9px 0 #642c4445; }
+  .publication-grass .publication-image { box-shadow: 7px 7px 0 #6b263d30; }
+  .publication-grass:is(:hover, :focus-visible) .publication-image { box-shadow: 9px 9px 0 #6b263d45; }
   .publication-grass .publication-cue { bottom: 12px; right: 12px; }
   .articulation-section { padding-block: 72px 80px; }
   .articulation-section .section-top { margin-bottom: 42px; }
@@ -225,7 +225,7 @@
 }
 .site-header.is-scrolled {
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 10px 30px #40232c0b;
+  box-shadow: 0 10px 30px #2c15200b;
 }
 
 /* A shared hairline gives chapter metadata a precise place in the grid. */
@@ -298,7 +298,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid #40232c1f;
+  border: 1px solid #2c15201f;
   pointer-events: none;
 }
 .digest-item h3 a:focus-visible,
@@ -378,4 +378,95 @@ html { scroll-padding-top: 104px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .articulation-hypothesis .articulation-elaboration { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* Palette: paper carries the narrative, stone holds working material, wine and
+   deep mark the two editorial chapters. Brass appears only against dark ink. */
+.intro-section, .work-section, .about-section, .personal-section, .contact-section { background: var(--surface-main); }
+.articulation-section, .detour-section { background: var(--surface-soft); }
+.thinking-section { background: var(--surface-dark); }
+.thinking-section .thought-list button,
+.thinking-section .thought-list button:is(:hover, :focus-visible) { color: var(--paper); }
+.thinking-section .thought-list p,
+.thinking-section .notes-postscript > p { color: var(--text-on-dark); }
+.thinking-section .thought-list button,
+.thinking-section .notes-postscript,
+.thinking-section > .section-top { border-color: var(--line-on-dark); }
+.thinking-section .thought-list button:focus-visible,
+.services-section :is(button, a):focus-visible { outline: 2px solid var(--focus-dark); outline-offset: 5px; }
+.detour-section :is(button, a, summary):focus-visible,
+.work-section :is(button, a):focus-visible { outline-color: var(--focus-light); }
+.publication-image, .publication-hannah .publication-image,
+.publication-podcast .publication-image { background: var(--surface-soft); }
+.publication-grass .publication-image { background: var(--surface-soft); }
+
+/* Two reports lead the work. The interview and show follow as lighter proof. */
+.publication-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 36px; }
+.publication-grass, .publication-consumed { grid-column: 1 / -1; }
+.publication-consumed {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: clamp(38px, 6vw, 96px);
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0 54px;
+}
+.publication-consumed .publication-image {
+  grid-column: 2;
+  grid-row: 1;
+  height: auto;
+  aspect-ratio: 1.45;
+  padding: clamp(24px, 4vw, 65px);
+  background: var(--wine);
+}
+.publication-consumed .publication-copy { grid-column: 1; grid-row: 1; padding: 0; }
+.publication-consumed h3 { font-size: clamp(38px, 3.7vw, 54px); }
+.publication-consumed .publication-subtitle { font-size: 21px; }
+.publication-consumed .publication-summary { font-size: 18px; }
+.publication-hannah, .publication-podcast { grid-column: auto; }
+
+/* Show the complete reasoning. Switching examples changes the evidence, not
+   how many extra controls a visitor has to discover. */
+.signal-desk { background: var(--surface-soft); border-color: var(--line); }
+.signal-panel { align-items: start; gap: clamp(30px, 5vw, 74px); }
+.signal-source { position: sticky; top: 112px; }
+.signal-chain { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.signal-chain li {
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1fr);
+  gap: 18px;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--line);
+}
+.signal-step-label { font: 12px/1.4 var(--pixel); color: var(--wine); white-space: nowrap; padding-top: 4px; }
+.signal-chain h4 { font: 450 clamp(19px, 1.75vw, 24px)/1.15 var(--sans); letter-spacing: -.035em; }
+.signal-chain li:first-child h4 { color: var(--wine); font-size: clamp(23px, 2.25vw, 31px); }
+.signal-chain p { font-size: 17px; line-height: 1.55; margin-top: 9px; max-width: 47ch; text-wrap: pretty; }
+.signal-chain .signal-decision { background: var(--paper); margin: 0 -18px; padding: 24px 18px; border-left: 3px solid var(--wine); }
+.signal-decision p { font-weight: 500; color: var(--wine); }
+.signal-footnote { margin-top: 18px; max-width: 85ch; }
+@media (prefers-reduced-motion: no-preference) {
+  .signal-chain li { animation: ink-arrive 380ms var(--motion-settle) both; }
+  .signal-chain li:nth-child(2) { animation-delay: 65ms; }
+  .signal-chain li:nth-child(3) { animation-delay: 130ms; }
+}
+@media (max-width: 1100px) {
+  .publication-consumed { gap: 34px; }
+  .signal-chain li { grid-template-columns: 1fr; gap: 6px; }
+}
+@media (max-width: 760px) {
+  .publication-grid { grid-template-columns: 1fr; gap: 29px; }
+  .publication-consumed { display: block; padding: 0 0 32px; }
+  .publication-consumed .publication-image { aspect-ratio: 1.42; padding: 22px; }
+  .publication-consumed .publication-copy { padding-top: 21px; }
+  .publication-consumed h3 { font-size: 34px; }
+  .publication-consumed .publication-subtitle { font-size: 19px; }
+  .publication-hannah, .publication-podcast { grid-column: auto; }
+  .signal-source { position: static; }
+  .signal-chain { margin-top: 8px; }
+  .signal-chain li { padding: 18px 0; }
+  .signal-chain .signal-decision { margin-inline: -10px; padding: 21px 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signal-chain li { animation: none !important; }
 }

@@ -12,8 +12,8 @@ import "./craft.css";
 export const metadata: Metadata = {
  metadataBase: new URL("https://varunpkashyap.github.io"),
  alternates: { canonical: "/" },
- title: "Varun — Brand & Cultural Strategist",
- description: "Varun turns cultural insight into brand positioning, creative direction and content strategy. Explore selected work, experience and ways to work together. Currently at district.",
+ title: "Varun Kashyap — Cultural Insights & Brand Strategy",
+ description: "Varun Kashyap studies how people choose, connect and spend their time, then turns cultural context into brand positioning, creative briefs and editorial direction.",
  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 export default function RootLayout({children}: Readonly<{children:React.ReactNode}>){return <html lang="en"><body>{children}</body></html>}

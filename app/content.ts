@@ -1,24 +1,24 @@
 export const projects = [
   {
     id: "grass", number: "01", title: "Touching Grass", subtitle: "How India will go out in 2026", organisation: "district", year: "2026", format: "Cultural report", role: "Writer · Cultural insights", image: "/assets/touching-grass.webp",
-    summary: "Identity, belonging and the changing social life of going out. A cultural reading of emerging behaviours in urban India.",
+    summary: "Four shifts in how urban India goes out: stories, belonging, new social hours and the value of being there.",
     question: "What are people really seeking when they make a plan?",
-    context: "Touching Grass maps four connected shifts in how urban India goes out: the pursuit of stories, low-pressure belonging, changing social schedules, and a renewed appetite for physical experience. Together, they raise specific questions about programming, participation and what an experience leaves behind.",
-    contribution: "I wrote Touching Grass for district, bringing emerging formats and cultural examples into a framework for how urban India spends its time outside the home.",
-    perspective: "An experience can feel complete alone and still make room for connection. Its value can also continue through an object, ritual or shared reference long after the event ends. The detail matters: making interaction possible asks something different of a space than making it compulsory.",
-    implication: "How can an experience feel complete for someone arriving alone? Who can make a weekday or morning plan, and who might struggle to join? What stays with people afterwards?",
+    context: "A night out is too narrow a frame for the ways people use a city. The report groups cultural examples into four shifts: Plot-First Culture, Ambient Belonging, Dual Prime Times and Revolt Against the Rot. Each asks a different question about what makes an experience worth leaving home for.",
+    contribution: "I wrote the report for district, shaping its editorial frame and bringing together examples of how identity, company, time and physical experience affect going out.",
+    perspective: "The choice is rarely as simple as online or offline, together or alone. A physical experience can live on in something people make or share. A person arriving solo may want connection, or may simply want the freedom to choose.",
+    implication: "Make room for someone to arrive alone without forcing a social script. Offer something to choose, make or keep. Treat mornings and weekdays as real social occasions, while checking whose schedules allow them.",
     qualification: "The report offers interpretation rather than prediction. Its cultural signals are starting points for further inquiry, not a representative measure of every Indian consumer.",
     related: "Four connected shifts: Plot-First Culture · Ambient Belonging · Dual Prime Times · Revolt Against the Rot",
     link: "/assets/touching-grass-2026.pdf", linkLabel: "Download Touching Grass (PDF)"
   },
   {
     id: "consumed", number: "02", title: "Consumed", subtitle: "A deep dive into consumer culture in India", organisation: "Stumble × Kommune", year: "2024", format: "Co-authored report", role: "Co-author, with Ria Chopra", image: "/assets/consumed-cover.jpg",
-    summary: "A cultural mapping of Indian consumption, informed by more than 100 expert perspectives across 17 sectors.",
+    summary: "More than 100 expert perspectives across 17 sectors on convenience, identity and the meanings behind consumption.",
     question: "What can consumption tell us about the lives people are trying to build?",
-    context: "The same purchase can carry different meanings: pleasure, practicality, belonging, aspiration. Looking only at the transaction can miss the social context that makes a choice make sense.",
+    context: "The report starts with a wider question than what people buy: what do their choices say about convenience, identity and belonging? Its five chapters examine digital habits, India and Bharat, convenience and conscience, individual worlds and changing relationships.",
     contribution: "Co-written with Ria Chopra for Stumble and Kommune, Consumed draws on more than 100 experts across 17 sectors. The report brings together interviews, surveys, discussions, workshops and secondary research to map the cultural context of Indian consumption.",
-    perspective: "The report observes that experiences can be accumulated and displayed much like possessions, even while screen fatigue draws people towards physical gatherings. It also considers how convenience encourages impulse, and how wider access coexists with the desire for niche recognition. Going offline, buying faster or entering a community does not resolve those tensions by itself.",
-    implication: "When should an experience make a choice easier, and when should it leave room to pause? What kinds of recognition does it offer?",
+    perspective: "Speed can solve a real problem, but it can also shorten the pause in which someone decides whether they want to buy at all. The report holds that tension alongside the ways people seek both wider access and smaller communities of recognition.",
+    implication: "Which friction helps a person decide? Where does a choice need explanation or room to pause? What kind of recognition does the experience offer?",
     qualification: "The report brings together industry perspectives. Those voices should be read alongside the particular people, places and category a brand is trying to understand.",
     related: "Published October 2024 · Co-authored with Ria Chopra",
     link: "/assets/consumed-2024.pdf", linkLabel: "Download Consumed (PDF)"

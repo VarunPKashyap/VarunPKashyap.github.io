@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const entries = [
   { id: "curiosity", title: "Curiosity", outcome: "Ask the question the brief missed.", body: "I look closely at everyday choices and question the explanations we take for granted.", example: "", link: "Read the working notes", href: "#thinking" },
   { id: "articulation", title: "Articulation", outcome: "Give an idea its clearest form.", body: "I believe the ability to say what an idea means will matter even more as AI makes it easier to execute.", example: "", link: "Read my articulation hypothesis", href: "#articulation" },
-  { id: "culture", title: "Cultural insights", outcome: "Give brand decisions cultural context.", body: "I connect what people do with the circumstances, codes and tensions around them.", example: "", link: "Explore the cultural reports", href: "#work" },
+  { id: "culture", title: "Cultural insights", outcome: "Root decisions in cultural context.", body: "I connect what people do with the circumstances, codes and tensions around them.", example: "", link: "Explore the cultural reports", href: "#work" },
 ];
 
 export function HeroIndex() {

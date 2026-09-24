@@ -8,7 +8,7 @@
 .site-header nav a:is([aria-current="location"], :focus-visible)::after {
   transform: scaleX(1);
 }
-.site-header.is-scrolled { box-shadow: 0 5px 18px #40232c06; }
+.site-header.is-scrolled { box-shadow: 0 5px 18px #2c152006; }
 .opening-intro, .publication-summary, .service-card > p,
 .about-copy > p, .thought-list p, .digest-item p { text-wrap: pretty; }
 .opening-grid { padding-bottom: 46px; }
@@ -20,7 +20,7 @@
   transition: background-color .22s ease, color .22s ease;
 }
 .capability-item[data-slot="accordion-item"]:not([data-state="open"]):has(.capability-trigger:hover) {
-  background: #54263208;
+  background: #6b263d08;
 }
 .capability-item[data-slot="accordion-item"][data-state="open"] {
   background: var(--wine);
@@ -54,7 +54,7 @@
 .capability-accordion [data-slot="accordion-content"] { animation-duration: .24s; }
 
 /* Consistent cues on covers, notes, and links. */
-.publication-image { box-shadow: inset 0 0 0 1px #40232c0c; }
+.publication-image { box-shadow: inset 0 0 0 1px #2c15200c; }
 .publication-cue {
   position: absolute;
   bottom: 14px;
@@ -66,7 +66,7 @@
   height: 40px;
   background: var(--paper);
   color: var(--wine);
-  border: 1px solid #40232c26;
+  border: 1px solid #2c152026;
   transition: color .2s, background .2s;
 }
 .publication-cue svg { width: 21px; height: 21px; transition: transform .3s var(--ease-out); }
@@ -76,10 +76,10 @@
 }
 .publication:is(:hover, :focus-visible) .publication-cue svg { transform: translateX(3px); }
 .publication:focus-visible { outline-offset: 8px; }
-.publication-action { border-color: #54263252; }
+.publication-action { border-color: #6b263d52; }
 .publication:is(:hover, :focus-visible) .publication-action { border-color: var(--wine); }
 .publication:is(:hover, :focus-visible) .publication-action svg { transform: translateX(3px); }
-.thought-list button::before { background: #54263208; }
+.thought-list button::before { background: #6b263d08; }
 .thought-list button { transition: border-color .25s; }
 .thought-list button:is(:hover, :focus-visible) { border-top-color: var(--wine); }
 .thought-list button > svg { width: 24px; height: 24px; }
@@ -108,7 +108,7 @@
 .reader-footer button:first-child:is(:hover, :focus-visible) svg { transform: translateX(-3px); }
 .reader-footer button:last-child:is(:hover, :focus-visible) svg { transform: translateX(3px); }
 .brief-action { transition: background .2s, box-shadow .2s; }
-.brief-action:is(:hover, :focus-visible) { background: var(--deep); box-shadow: 3px 3px 0 #54263222; }
+.brief-action:is(:hover, :focus-visible) { background: var(--deep); box-shadow: 3px 3px 0 #6b263d22; }
 .brief-options button { transition: background .2s, color .2s; }
 .brief-options button[aria-pressed="true"]:hover { background: var(--wine); }
 .brief-decisions:not([hidden]) { animation-duration: .24s; }
@@ -180,7 +180,7 @@
 .publication-podcast .publication-image { padding: 28px; }
 .publication-consumed .work-visual img,
 .publication-hannah .work-visual img,
-.publication-podcast .work-visual img { box-shadow: 0 12px 21px -13px #3520295c; }
+.publication-podcast .work-visual img { box-shadow: 0 12px 21px -13px #24131a5c; }
 
 /* Notes keep their categories, reading time and action in consistent positions. */
 .thought-list { gap: 30px 36px; }

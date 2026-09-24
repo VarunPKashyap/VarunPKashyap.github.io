@@ -93,7 +93,7 @@
 }
 .publication-image[data-cover-active="true"]::after { opacity: .12; }
 .publication-image[data-cover-moving="true"] .work-visual { transition: none; }
-.publication:is(:hover, :focus-visible) .publication-image { box-shadow: inset 0 0 0 1px #40232c24; }
+.publication:is(:hover, :focus-visible) .publication-image { box-shadow: inset 0 0 0 1px #2c152024; }
 .capability-trigger > .capability-plus { transition: transform 240ms var(--motion-settle), border-color 180ms; }
 .capability-item[data-slot="accordion-item"] { transition: background-color 200ms, color 200ms; }
 .digest-thumbnail img { transition-duration: 440ms; transition-timing-function: var(--motion-settle); }

@@ -140,7 +140,7 @@
 @media(prefers-reduced-motion:reduce){.publication:is(:hover,:focus-visible) .work-visual,.publication:nth-child(even):is(:hover,:focus-visible) .work-visual{transform:none}}
 
 /* One editorial grid; distinct rhythms for evidence, services and notes. */
-:root{--ink:#2c1520;--wine:#6b263d;--deep:#24131a;--page-gutter:clamp(20px,4vw,72px);--content-width:1280px;--page-inset:max(var(--page-gutter),calc((100% - var(--content-width))/2));--section-space:clamp(56px,5.5vw,88px)}
+:root{--page-gutter:clamp(20px,4vw,72px);--content-width:1280px;--page-inset:max(var(--page-gutter),calc((100% - var(--content-width))/2));--section-space:clamp(56px,5.5vw,88px)}
 .site-header,.intro-section,.work-section,.services-section,.about-section,.thinking-section,.articulation-section,.personal-section,.detour-section,.position-section,.contact-section{max-width:none;width:100%;margin-inline:auto;padding-inline:var(--page-inset)}
 .site-header{min-height:104px;padding-block:24px}
 .site-header nav a:last-child{background:transparent;color:var(--ink);padding:10px 0;gap:12px}
