@@ -1,0 +1,12 @@
+"use client";
+import { ScrambleText } from "./scramble-text";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+const lenses=[
+ {id:'curiosity',name:'Curiosity.',number:'01',kicker:'The starting point',title:'That doesn’t quite explain it.',body:'Someone goes out alone and still wants to be around people. Independence and belonging can occupy the same table. I’m interested in the detail that makes the easy explanation less comfortable.',action:'Read the note on going out alone',note:0},
+ {id:'articulation',name:'Articulation.',number:'02',kicker:'Where thinking becomes a decision',title:'“Build a community.” Fine. For whom?',body:'An audience, a customer base and a friendship ask different things of people. Finding the words means choosing what we mean — and giving a team something precise enough to act on.',action:'Read my articulation hypothesis',href:'#articulation'},
+ {id:'culture',name:'Cultural insights.',number:'03',kicker:'Context before conclusions',title:'The purchase is only part of the story.',body:'What was available? Who else was involved? What did the choice allow someone to express? I look at the circumstances around a behaviour to understand what it might mean for a brand.',action:'View selected work',href:'#work'}
+];
+export function PracticeIntro({onRead}:{onRead:(index:number,trigger:HTMLButtonElement)=>void}){
+ return <Tabs defaultValue="curiosity" className="practice-intro"><div className="practice-title"><TabsList aria-label="Explore the practice" className="practice-tabs">{lenses.map(l=><TabsTrigger className="practice-tab" key={l.id} value={l.id} aria-label={l.name}><span className="practice-number">{l.number}</span><ScrambleText text={l.name} delay={100+Number(l.number)*100}/><span className="practice-plus" aria-hidden="true">↗</span></TabsTrigger>)}</TabsList><p className="practice-hint">Select a topic to explore how I work. <ArrowUpRight size={15}/></p></div><div className="practice-reading">{lenses.map(l=><TabsContent key={l.id} value={l.id} className="lens-content"><span className="meta">{l.kicker}</span><h2>{l.title}</h2><p>{l.body}</p>{l.note!==undefined?<button className="text-link" onClick={e=>onRead(l.note!,e.currentTarget)}>{l.action}<ArrowUpRight size={18}/></button>:<a className="text-link" href={l.href}>{l.action}<ArrowDown size={18}/></a>}<span className="lens-page" aria-hidden="true">{l.number} / 03</span></TabsContent>)}</div></Tabs>
+}

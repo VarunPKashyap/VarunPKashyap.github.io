@@ -1,0 +1,166 @@
+/* Short, material motion. The unenhanced page is fully visible and usable. */
+:root {
+  --motion-settle: cubic-bezier(.22, 1, .36, 1);
+  --motion-exit: cubic-bezier(.4, 0, .8, .4);
+}
+.opening-statement h1 > .hero-title-line { display: block; color: var(--ink); }
+.opening-statement h1 > .hero-title-accent { color: var(--wine); }
+.wordmark-pixel img { animation: none; }
+.wordmark-pixel:hover img { transform: translateY(-50%); }
+.reveal-visible .display-heading,
+.thinking-intro.reveal-visible h2,
+.articulation-intro.reveal-visible h2,
+.contact-big.reveal-visible span,
+.publication.reveal-visible .publication-image,
+.service-card.reveal-visible::after { animation: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-site-motion="ready"] .wordmark-pixel img {
+    animation: signature-develop 420ms steps(12, end) both;
+  }
+  [data-site-motion="ready"] .hero-title-line {
+    animation: title-settle 480ms var(--motion-settle) both;
+  }
+  [data-site-motion="ready"] .hero-title-line:nth-child(2) { animation-delay: 55ms; }
+  [data-site-motion="ready"] .opening-intro,
+  [data-site-motion="ready"] .opening-work-link {
+    animation: ink-arrive 440ms 110ms var(--motion-settle) both;
+  }
+  [data-site-motion="ready"] .capability-table {
+    animation: ink-arrive 440ms 165ms var(--motion-settle) both;
+  }
+  .section-top.reveal-ready.reveal-visible > .meta {
+    animation: ink-arrive 380ms var(--motion-settle) both;
+  }
+  .reveal-ready.reveal-visible :is(.display-heading),
+  :is(.services-heading, .thinking-intro, .articulation-intro, .digest-intro).reveal-ready.reveal-visible h2,
+  .contact-big.reveal-ready.reveal-visible span {
+    animation: title-settle 560ms var(--motion-settle) both;
+  }
+  .publication.reveal-ready.reveal-visible .publication-image {
+    animation: cover-settle 580ms var(--reveal-delay, 0ms) var(--motion-settle) both;
+  }
+  .publication.reveal-ready.reveal-visible .publication-copy {
+    animation: ink-arrive 440ms calc(var(--reveal-delay, 0ms) + 70ms) var(--motion-settle) both;
+  }
+  .thought-list > button.reveal-ready.reveal-visible > :is(.meta, .thought-copy, svg) {
+    animation: ink-arrive 440ms var(--reveal-delay, 0ms) var(--motion-settle) both;
+  }
+  .service-card.reveal-ready.reveal-visible::after {
+    animation: rule-settle 580ms var(--reveal-delay, 0ms) var(--motion-settle) both;
+  }
+  .capability-accordion [data-slot="accordion-content"][data-state="open"] {
+    animation: strength-open 260ms var(--motion-settle);
+  }
+  .capability-accordion [data-slot="accordion-content"][data-state="closed"] {
+    animation: strength-close 200ms var(--motion-exit);
+  }
+  .capability-accordion [data-state="open"] > .capability-content > * {
+    animation: ink-arrive 280ms 45ms var(--motion-settle) both;
+  }
+  .capability-accordion [data-state="open"] > .capability-content > :nth-child(2) { animation-delay: 75ms; }
+  .capability-accordion [data-state="open"] > .capability-content > :nth-child(3) { animation-delay: 105ms; }
+  .project-dialog[data-slot="dialog-content"][data-state="open"],
+  .note-dialog[data-slot="dialog-content"][data-state="open"] {
+    animation: reading-enter 320ms var(--motion-settle) both;
+  }
+  .project-dialog[data-slot="dialog-content"][data-state="closed"],
+  .note-dialog[data-slot="dialog-content"][data-state="closed"] {
+    animation: reading-leave 180ms var(--motion-exit) both;
+  }
+  .reader-article, .note-article { animation: reading-cut 180ms ease both; }
+  .brief-paper { animation: ink-arrive 360ms var(--motion-settle); }
+  .brief-decisions:not([hidden]) { animation: none; }
+  .brief-decisions:not([hidden]) .brief-questions > div {
+    animation: ink-arrive 360ms var(--motion-settle) both;
+  }
+  .brief-decisions:not([hidden]) .brief-questions > div:nth-child(2) { animation-delay: 55ms !important; }
+  .brief-decisions:not([hidden]) .brief-questions > div:nth-child(3) { animation-delay: 110ms !important; }
+}
+
+/* Light sits over the supplied artwork; the pointer target never moves. */
+.publication-image { isolation: isolate; perspective: 1100px; }
+.publication-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at var(--cover-light-x, 50%) var(--cover-light-y, 50%), #fff6e6 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+  mix-blend-mode: soft-light;
+}
+.publication-image[data-cover-active="true"]::after { opacity: .12; }
+.publication-image[data-cover-moving="true"] .work-visual { transition: none; }
+.publication:is(:hover, :focus-visible) .publication-image { box-shadow: inset 0 0 0 1px #40232c24; }
+.capability-trigger > .capability-plus { transition: transform 240ms var(--motion-settle), border-color 180ms; }
+.capability-item[data-slot="accordion-item"] { transition: background-color 200ms, color 200ms; }
+.digest-thumbnail img { transition-duration: 440ms; transition-timing-function: var(--motion-settle); }
+
+@keyframes signature-develop {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0); }
+}
+@keyframes title-settle {
+  from { opacity: .2; transform: translateY(10px); clip-path: inset(0 0 8% 0); }
+  to { opacity: 1; transform: none; clip-path: inset(0); }
+}
+@keyframes ink-arrive {
+  from { opacity: .25; transform: translateY(7px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes cover-settle {
+  from { opacity: .7; transform: translateY(12px); clip-path: inset(0 0 3% 0); }
+  to { opacity: 1; transform: none; clip-path: inset(0); }
+}
+@keyframes rule-settle {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes strength-open {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes strength-close {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+@keyframes reading-enter {
+  from { opacity: .3; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes reading-leave {
+  to { opacity: 0; transform: translateY(6px); }
+}
+@keyframes reading-cut { from { opacity: .55; } to { opacity: 1; } }
+
+@media (hover: none), (pointer: coarse) {
+  .publication-image::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-line, .opening-intro, .opening-work-link, .capability-table,
+  .wordmark-pixel img, .reveal-ready, .reveal-visible, .reveal-visible *,
+  .reader-article, .note-article, .brief-paper, .brief-decisions *,
+  [data-slot="dialog-overlay"], [data-slot="dialog-content"],
+  .capability-accordion [data-slot="accordion-content"], .capability-content > * {
+    animation: none !important;
+  }
+  .publication-image::after { display: none; }
+  .publication .work-visual { transform: none !important; transition: none; }
+  .hero-title-line, .opening-intro, .opening-work-link, .capability-table,
+  .publication-image { opacity: 1; clip-path: none; transform: none; }
+}
+
+/* Reading and disclosure transitions follow the action, never delay it. */
+@media(prefers-reduced-motion:no-preference) {
+  .detour-tabs > [data-slot="tabs-content"][data-state="active"] { animation:reading-cut 180ms ease both; }
+  :is(.digest-item, .digest-method, .about-history, .note-evidence, .articulation-essay) details[open] > :not(summary),
+  :is(.digest-method, .about-history, .note-evidence, .articulation-essay)[open] > :not(summary) { animation:ink-arrive 220ms var(--motion-settle) both; }
+  .work-heading.reveal-ready.reveal-visible > p,
+  .thinking-intro.reveal-ready.reveal-visible > div,
+  .services-heading.reveal-ready.reveal-visible > p { animation:ink-arrive 440ms 70ms var(--motion-settle) both; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .detour-tabs > [data-slot="tabs-content"], details[open] > :not(summary) { animation:none!important; }
+}

@@ -1,0 +1,290 @@
+{
+  "editions": [
+    {
+      "updatedAt": "2026-09-23",
+      "edition": "004",
+      "headline": "Familiar films. Contested taste. The rituals that keep people coming back.",
+      "items": [
+        {
+          "id": "girish-relatable-cinema",
+          "category": "READ / CINEMA & CULTURE",
+          "title": "Girish AD and the return of relatable cinema in Malayalam",
+          "source": "The Indian Express · Nidheesh MK",
+          "dateLabel": "17 Sep 2026 · Reported profile · Free read",
+          "url": "https://indianexpress.com/article/entertainment/malayalam/girish-ad-and-the-return-of-relatable-cinema-in-malayalam-10881868/",
+          "summary": "In this on-location profile, Girish AD explains why his films keep the songs, awkwardness and mixed-up geography of the Kerala he knows. Local references give viewers another conversation to have after the screening—and another reason to watch again.",
+          "angle": "The telling detail is the village he went looking for and could not find: the pastoral film cliché had missed the mall down the road. A sharp account of cultural specificity, and the pleasure of recognising your own world."
+        },
+        {
+          "id": "production-of-ease",
+          "category": "READ / TASTE & HOSPITALITY",
+          "title": "The Production of Ease",
+          "source": "Thirst Behavior on Substack · Bodhi Landa",
+          "dateLabel": "19 Aug 2026 · Essay · Free read",
+          "url": "https://thirstbehavior.substack.com/p/the-production-of-ease",
+          "summary": "Landa and a New York Times critic ate at Bistrot Ha on the same night. Her table endured disastrous service; his felt wonderfully looked after. He uses the gap to examine how diners turn someone else’s labour into atmosphere, authenticity and taste.",
+          "angle": "Two honest accounts of one room can disagree. Landa makes that tension productive: visible effort can feel intimate, yet hard work cannot excuse a bad experience. Worth reading for how carefully he keeps both perspectives in view."
+        },
+        {
+          "id": "hyderabad-dargahs",
+          "category": "READ / INDIA & EVERYDAY RITUAL",
+          "title": "Inside five dargahs in Hyderabad and the beautiful traditions that sustain them",
+          "source": "Vogue India · Mallik Thatipalli",
+          "dateLabel": "19 Sep 2026 · Reported essay · Free read",
+          "url": "https://www.vogue.in/content/inside-five-dargahs-in-hyderabad-and-the-unique-lore-that-pulls-people-to-them",
+          "summary": "Thatipalli visits five Hyderabad dargahs and talks to people who return for comfort. Handprints, money wrapped in yellow cloth and photocopied legal papers make their worries tangible. The story follows the objects and gestures through which devotees express hope.",
+          "angle": "A close look at how a place accumulates meaning through repeated, personal acts. The details reward attention, and the voices of regular visitors keep faith and belonging grounded in lived experience. Rahul Cheguri’s photographs are part of the pleasure."
+        },
+        {
+          "id": "post-avant-garde",
+          "category": "READ / ART & CULTURAL SCENES",
+          "title": "After the Post-Avant-Garde",
+          "source": "The Point · Sean Tatol",
+          "dateLabel": "2 Aug 2026 · Criticism · Long read",
+          "url": "https://thepointmag.com/criticism/after-the-post-avant-garde/",
+          "summary": "Tatol argues that the pursuit of online visibility weakens the small art scenes that develop their own standards. Moving through artists, galleries and exhibitions, he asks what remains when novelty loses its authority—and proposes a more expansive relationship with art history.",
+          "angle": "The demanding read of this selection. Its useful distinction is between being new and speaking to the present. Read it alongside Girish AD’s profile: both complicate the assumption that cultural relevance requires an unfamiliar surface."
+        },
+        {
+          "id": "ocean-between-us",
+          "category": "GO / BANGALORE",
+          "title": "The Ocean Between Us",
+          "source": "Bangalore International Centre · Diya Naidu & Nadia Milford",
+          "dateLabel": "30 Sep 2026 · 7–8:15pm IST · Ages 16+ · Free with RSVP, subject to availability",
+          "url": "https://bangaloreinternationalcentre.org/event/the-ocean-between-us/",
+          "summary": "This movement theatre collaboration began as an Instagram residency and developed through work in India and Australia. Naidu and Milford use dance and writing to explore listening, identity and care. BIC hosts the performance in its gallery in Domlur.",
+          "angle": "A chance to encounter ideas through bodies sharing a room. The project’s origin—two artists responding to difficult personal questions—makes it an intriguing extension of this edition’s interest in how people understand one another. RSVP through BIC; entry depends on availability."
+        }
+      ],
+      "sources": [
+        {
+          "name": "The Indian Express · Nidheesh MK",
+          "url": "https://indianexpress.com/"
+        },
+        {
+          "name": "Thirst Behavior · Bodhi Landa",
+          "url": "https://thirstbehavior.substack.com/"
+        },
+        {
+          "name": "Vogue India · Mallik Thatipalli",
+          "url": "https://www.vogue.in/"
+        },
+        {
+          "name": "The Point · Sean Tatol",
+          "url": "https://thepointmag.com/"
+        },
+        {
+          "name": "Bangalore International Centre",
+          "url": "https://bangaloreinternationalcentre.org/"
+        }
+      ],
+      "cadence": "weekly"
+    },
+    {
+      "updatedAt": "2026-09-21",
+      "edition": "003",
+      "headline": "Taste, access, and the work inside the words. Three reads from Substack.",
+      "items": [
+        {
+          "id": "swatch-dream-equation",
+          "category": "READ / TASTE",
+          "title": "Swatch, Audemars Piguet and The Dream Equation",
+          "source": "SatPost on Substack · Trung Phan",
+          "dateLabel": "15 May 2026 · From the archive · Free read",
+          "url": "https://www.readtrung.com/p/swatch-audemars-piguet-and-the-dream",
+          "summary": "Trung Phan reads the watch collaboration through two tensions: desire versus access, and novelty versus familiarity. His essay examines how an accessible object can invite new people into a luxury brand while borrowing the meaning built around its less accessible products.",
+          "angle": "Making a brand easier to enter can change what people believe they are entering. Which part of the meaning needs protecting, and which part benefits from being shared?"
+        },
+        {
+          "id": "goldmines-india",
+          "category": "READ / INDIA",
+          "title": "India's lesser known Goldmines!",
+          "source": "The India Notes on Substack · Dharmesh Ba",
+          "dateLabel": "20 Jan 2026 · From the archive · Free read",
+          "url": "https://newsletter.theindianotes.com/p/indias-lesser-known-goldmines",
+          "summary": "Ba traces Goldmines’ growth through Hindi dubbing, television and YouTube. His argument is that adaptation and repeated exposure helped South Indian stars find northern audiences, with distribution shaping familiarity long before a film’s theatrical launch.",
+          "angle": "For anyone thinking about cinema audiences, this shifts the question from launch-day persuasion to accumulated familiarity. It also invites a harder distinction: which parts of a story need translation, and which changes erase something worth keeping?"
+        },
+        {
+          "id": "writing-as-process",
+          "category": "READ / ARTICULATION",
+          "title": "Our Culture Doesn't Want Writers",
+          "source": "ZINE on Substack · Matt Klein",
+          "dateLabel": "1 Jun 2026 · From the archive · Free read",
+          "url": "https://zine.kleinkleinklein.com/p/culture-doesnt-want-writers",
+          "summary": "Klein argues that the demand for frictionless output undervalues writing as a way to think. He contrasts the pressure to produce engaging material quickly with the slower work of confronting uncertainty, developing an argument and understanding oneself.",
+          "angle": "Worth reading before polishing a brief: is the sentence making an idea clearer, or just making an unresolved idea sound finished? That distinction matters even when the final copy needs to be very short."
+        }
+      ],
+      "sources": [
+        {
+          "name": "SatPost · Trung Phan",
+          "url": "https://www.readtrung.com/"
+        },
+        {
+          "name": "The India Notes · Dharmesh Ba",
+          "url": "https://newsletter.theindianotes.com/"
+        },
+        {
+          "name": "ZINE · Matt Klein",
+          "url": "https://zine.kleinkleinklein.com/"
+        }
+      ],
+      "cadence": "weekly"
+    },
+    {
+      "updatedAt": "2026-09-21",
+      "edition": "002",
+      "headline": "How stories travel. What a room can say. Somewhere to play.",
+      "items": [
+        {
+          "id": "jcrew-liquor-store",
+          "category": "READ / CULTURE",
+          "title": "The J.Crew Liquor Store Edition",
+          "source": "Why is this interesting? · Colin Nagy",
+          "dateLabel": "8 Sep 2026 · Free read",
+          "url": "https://whyisthisinteresting.substack.com/p/the-jcrew-liquor-store-edition",
+          "summary": "Nagy revisits J.Crew’s former Tribeca shop, where a narrow selection, knowledgeable staff and an almost unbranded setting expressed a large company’s taste. The store operated from 2008 to 2019; this is a recent reflection, not a new opening.",
+          "angle": "A useful positioning exercise: if the logo disappeared, what would still make the experience recognisable? The interesting detail here is how selection and service made the brand tangible without needing a manifesto on the wall."
+        },
+        {
+          "id": "goldmines-india",
+          "category": "READ / INDIA",
+          "title": "India's lesser known Goldmines!",
+          "source": "The India Notes · Dharmesh Ba",
+          "dateLabel": "20 Jan 2026 · From the archive · Free read",
+          "url": "https://newsletter.theindianotes.com/p/indias-lesser-known-goldmines",
+          "summary": "Ba traces Goldmines’ growth through Hindi dubbing, television and YouTube. His argument is that adaptation and repeated exposure helped South Indian stars find northern audiences, with distribution shaping familiarity long before a film’s theatrical launch.",
+          "angle": "For anyone thinking about cinema audiences, this shifts the question from launch-day persuasion to accumulated familiarity. It also invites a harder distinction: which parts of a story need translation, and which changes erase something worth keeping?"
+        },
+        {
+          "id": "writing-as-process",
+          "category": "READ / ARTICULATION",
+          "title": "Our Culture Doesn't Want Writers",
+          "source": "ZINE · Matt Klein",
+          "dateLabel": "1 Jun 2026 · From the archive · Free read",
+          "url": "https://zine.kleinkleinklein.com/p/culture-doesnt-want-writers",
+          "summary": "Klein argues that the demand for frictionless output undervalues writing as a way to think. He contrasts the pressure to produce engaging material quickly with the slower work of confronting uncertainty, developing an argument and understanding oneself.",
+          "angle": "Worth reading before polishing a brief: is the sentence making an idea clearer, or just making an unresolved idea sound finished? That distinction matters even when the final copy needs to be very short."
+        },
+        {
+          "id": "a-moving-line",
+          "category": "GO / BANGALORE",
+          "title": "A Moving Line: 1500 Years of Indian Visual Storytelling",
+          "source": "Museum of Art & Photography · Curated by Amruta Patil",
+          "dateLabel": "25 Jul–15 Nov 2026 · Exhibition · Closed Mondays",
+          "url": "https://map-india.org/exhibition/a-moving-line-1500-years-of-indian-visual-storytelling/",
+          "summary": "More than 250 works connect Indian narrative traditions with comics, graphic novels and web comics. Patil’s exhibition places scrolls alongside familiar newsstand characters, with tactile and audio responses and an invitation to build a comic. MAP is closed on Mondays.",
+          "angle": "A local way to examine sequencing beyond the carousel: how does one image persuade you to follow the next? Plan for another day this week; MAP lists free exhibition entry on Tuesdays, including 22 September."
+        },
+        {
+          "id": "cursor-camp",
+          "category": "PLAY / INTERNET",
+          "title": "Cursor Camp",
+          "source": "Neal.fun · Neal Agarwal",
+          "dateLabel": "Launched 29 Apr 2026 · From the archive · Free browser experience",
+          "url": "https://neal.fun/cursor-camp/",
+          "summary": "Agarwal’s browser campground makes your cursor the visitor. Its producer describes a shared space for drifting down a lazy river or moving together on a dance floor. It is also on the 2026 Tiny Awards shortlist.",
+          "angle": "A small experiment in what online company can feel like without a stream of posts to consume. Try it with a mouse and notice how little explanation a shared gesture needs to become an interaction."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Why is this interesting?",
+          "url": "https://whyisthisinteresting.substack.com/"
+        },
+        {
+          "name": "The India Notes",
+          "url": "https://newsletter.theindianotes.com/"
+        },
+        {
+          "name": "ZINE",
+          "url": "https://zine.kleinkleinklein.com/"
+        },
+        {
+          "name": "MAP Bengaluru",
+          "url": "https://map-india.org/"
+        },
+        {
+          "name": "Tiny Awards",
+          "url": "https://tinyawards.net/"
+        },
+        {
+          "name": "Neal.fun",
+          "url": "https://neal.fun/"
+        }
+      ],
+      "cadence": "daily"
+    },
+    {
+      "updatedAt": "2026-09-20",
+      "edition": "001",
+      "headline": "An attention budget. A better brief. A reason to leave the house.",
+      "items": [
+        {
+          "id": "attention-war",
+          "category": "READ / MEDIA",
+          "title": "The Art of (Attention) War",
+          "source": "ZINE · Matt Klein & Nick Susi",
+          "dateLabel": "29 Dec 2025 · From the archive",
+          "url": "https://zine.kleinkleinklein.com/p/the-art-of-attention-war",
+          "summary": "A case for protecting finite attention by separating what we can act on from the material demanding a reaction.",
+          "angle": "Being culturally fluent needn’t mean being permanently available to the feed. Discernment also involves deciding what to leave alone."
+        },
+        {
+          "id": "action-economy",
+          "category": "READ / INDIA",
+          "title": "The Action Economy",
+          "source": "The India Notes · Dharmesh Ba",
+          "dateLabel": "7 Jul 2026",
+          "url": "https://newsletter.theindianotes.com/p/the-action-economy-a-thesis-for-building",
+          "summary": "A thesis for AI in India that starts with recurring household and small-business tasks, including work that has never been formally digitised.",
+          "angle": "A useful test of any innovation brief: how well does it understand the ways people already get things done?"
+        },
+        {
+          "id": "grip-hold-pin",
+          "category": "GO / BANGALORE",
+          "title": "Grip, Hold, Pin",
+          "source": "Museum of Art & Photography, Bengaluru",
+          "dateLabel": "15 Aug–1 Nov 2026 · Exhibition",
+          "url": "https://map-india.org/exhibition/grip-hold-pin/",
+          "summary": "Historical objects and photography examine Indian wrestling through strength, discipline, spectacle, bodies and community.",
+          "angle": "A physical practice carries meaning through rituals, images and the people around it. An opportunity to follow that thought off-screen."
+        },
+        {
+          "id": "tiny-awards",
+          "category": "PLAY / INTERNET",
+          "title": "The 2026 Tiny Awards shortlist",
+          "source": "Tiny Awards",
+          "dateLabel": "Voting closes 25 Sep 2026",
+          "url": "https://tinyawards.net/vote/",
+          "summary": "Eleven small web projects, including Cursor Camp, Train Jazz and Alive Internet Theory, invite a different kind of attention.",
+          "angle": "A reminder that a website can be something to do, rather than another surface asking you to look at it."
+        }
+      ],
+      "sources": [
+        {
+          "name": "ZINE",
+          "url": "https://zine.kleinkleinklein.com/"
+        },
+        {
+          "name": "The India Notes",
+          "url": "https://newsletter.theindianotes.com/"
+        },
+        {
+          "name": "Why is this interesting?",
+          "url": "https://whyisthisinteresting.substack.com/"
+        },
+        {
+          "name": "MAP Bengaluru",
+          "url": "https://map-india.org/"
+        },
+        {
+          "name": "Tiny Awards",
+          "url": "https://tinyawards.net/"
+        }
+      ],
+      "cadence": "daily"
+    }
+  ]
+}

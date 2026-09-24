@@ -1,0 +1,79 @@
+{
+  "updatedAt": "2026-09-23",
+  "edition": "004",
+  "headline": "Familiar films. Contested taste. The rituals that keep people coming back.",
+  "items": [
+    {
+      "id": "girish-relatable-cinema",
+      "category": "READ / CINEMA & CULTURE",
+      "title": "Girish AD and the return of relatable cinema in Malayalam",
+      "source": "The Indian Express · Nidheesh MK",
+      "dateLabel": "17 Sep 2026 · Reported profile · Free read",
+      "url": "https://indianexpress.com/article/entertainment/malayalam/girish-ad-and-the-return-of-relatable-cinema-in-malayalam-10881868/",
+      "summary": "In this on-location profile, Girish AD explains why his films keep the songs, awkwardness and mixed-up geography of the Kerala he knows. Local references give viewers another conversation to have after the screening—and another reason to watch again.",
+      "angle": "The telling detail is the village he went looking for and could not find: the pastoral film cliché had missed the mall down the road. A sharp account of cultural specificity, and the pleasure of recognising your own world."
+    },
+    {
+      "id": "production-of-ease",
+      "category": "READ / TASTE & HOSPITALITY",
+      "title": "The Production of Ease",
+      "source": "Thirst Behavior on Substack · Bodhi Landa",
+      "dateLabel": "19 Aug 2026 · Essay · Free read",
+      "url": "https://thirstbehavior.substack.com/p/the-production-of-ease",
+      "summary": "Landa and a New York Times critic ate at Bistrot Ha on the same night. Her table endured disastrous service; his felt wonderfully looked after. He uses the gap to examine how diners turn someone else’s labour into atmosphere, authenticity and taste.",
+      "angle": "Two honest accounts of one room can disagree. Landa makes that tension productive: visible effort can feel intimate, yet hard work cannot excuse a bad experience. Worth reading for how carefully he keeps both perspectives in view."
+    },
+    {
+      "id": "hyderabad-dargahs",
+      "category": "READ / INDIA & EVERYDAY RITUAL",
+      "title": "Inside five dargahs in Hyderabad and the beautiful traditions that sustain them",
+      "source": "Vogue India · Mallik Thatipalli",
+      "dateLabel": "19 Sep 2026 · Reported essay · Free read",
+      "url": "https://www.vogue.in/content/inside-five-dargahs-in-hyderabad-and-the-unique-lore-that-pulls-people-to-them",
+      "summary": "Thatipalli visits five Hyderabad dargahs and talks to people who return for comfort. Handprints, money wrapped in yellow cloth and photocopied legal papers make their worries tangible. The story follows the objects and gestures through which devotees express hope.",
+      "angle": "A close look at how a place accumulates meaning through repeated, personal acts. The details reward attention, and the voices of regular visitors keep faith and belonging grounded in lived experience. Rahul Cheguri’s photographs are part of the pleasure."
+    },
+    {
+      "id": "post-avant-garde",
+      "category": "READ / ART & CULTURAL SCENES",
+      "title": "After the Post-Avant-Garde",
+      "source": "The Point · Sean Tatol",
+      "dateLabel": "2 Aug 2026 · Criticism · Long read",
+      "url": "https://thepointmag.com/criticism/after-the-post-avant-garde/",
+      "summary": "Tatol argues that the pursuit of online visibility weakens the small art scenes that develop their own standards. Moving through artists, galleries and exhibitions, he asks what remains when novelty loses its authority—and proposes a more expansive relationship with art history.",
+      "angle": "The demanding read of this selection. Its useful distinction is between being new and speaking to the present. Read it alongside Girish AD’s profile: both complicate the assumption that cultural relevance requires an unfamiliar surface."
+    },
+    {
+      "id": "ocean-between-us",
+      "category": "GO / BANGALORE",
+      "title": "The Ocean Between Us",
+      "source": "Bangalore International Centre · Diya Naidu & Nadia Milford",
+      "dateLabel": "30 Sep 2026 · 7–8:15pm IST · Ages 16+ · Free with RSVP, subject to availability",
+      "url": "https://bangaloreinternationalcentre.org/event/the-ocean-between-us/",
+      "summary": "This movement theatre collaboration began as an Instagram residency and developed through work in India and Australia. Naidu and Milford use dance and writing to explore listening, identity and care. BIC hosts the performance in its gallery in Domlur.",
+      "angle": "A chance to encounter ideas through bodies sharing a room. The project’s origin—two artists responding to difficult personal questions—makes it an intriguing extension of this edition’s interest in how people understand one another. RSVP through BIC; entry depends on availability."
+    }
+  ],
+  "sources": [
+    {
+      "name": "The Indian Express · Nidheesh MK",
+      "url": "https://indianexpress.com/"
+    },
+    {
+      "name": "Thirst Behavior · Bodhi Landa",
+      "url": "https://thirstbehavior.substack.com/"
+    },
+    {
+      "name": "Vogue India · Mallik Thatipalli",
+      "url": "https://www.vogue.in/"
+    },
+    {
+      "name": "The Point · Sean Tatol",
+      "url": "https://thepointmag.com/"
+    },
+    {
+      "name": "Bangalore International Centre",
+      "url": "https://bangaloreinternationalcentre.org/"
+    }
+  ]
+}

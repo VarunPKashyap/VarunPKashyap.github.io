@@ -1,0 +1,381 @@
+/* One editorial rhythm, with motion reserved for entrances and actions. */
+.site-header nav a:not(:last-child) {
+  position: relative;
+}
+.site-header nav a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--wine);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms var(--motion-settle);
+}
+.site-header nav a:not(:last-child):is(:hover, :focus-visible, [aria-current="location"])::after {
+  transform: scaleX(1);
+}
+
+.capability-item[data-slot="accordion-item"] {
+  position: relative;
+}
+.capability-item[data-slot="accordion-item"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -16px;
+  width: 3px;
+  background: var(--wine);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 360ms var(--motion-settle);
+}
+.capability-item[data-slot="accordion-item"]:is(:hover, :focus-within)::before,
+.capability-item[data-state="open"]::before { transform: scaleY(1); }
+.capability-trigger .capability-outcome { transition: color 200ms ease; }
+.capability-trigger:is(:hover, :focus-visible) .capability-outcome { color: var(--ink); }
+
+.work-heading { position: relative; }
+.work-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -26px;
+  left: 0;
+  width: min(10vw, 120px);
+  height: 2px;
+  background: var(--wine);
+  transform-origin: left;
+}
+.work-section .publication-grid { margin-top: 44px; }
+.publication-grass .publication-image {
+  box-shadow: 14px 14px 0 #642c4430, inset 0 0 0 1px #40232c0c;
+  transition: box-shadow 420ms var(--motion-settle);
+}
+.publication-grass:is(:hover, :focus-visible) .publication-image {
+  box-shadow: 19px 19px 0 #642c4445, inset 0 0 0 1px #40232c24;
+}
+.publication-grass .publication-cue { bottom: 24px; right: 24px; }
+.publication:not(.publication-grass) .publication-image { transition: box-shadow 300ms var(--motion-settle); }
+.publication:not(.publication-grass):is(:hover, :focus-visible) .publication-image {
+  box-shadow: 0 16px 35px -23px #31151d8a, inset 0 0 0 1px #40232c24;
+}
+
+.thought-list button {
+  background-image: linear-gradient(#f1e8e4, #f1e8e4);
+  background-position: left bottom;
+  background-size: 100% 0;
+  background-repeat: no-repeat;
+  transition: background-size 310ms var(--motion-settle), border-color 230ms ease;
+}
+.thought-list button:is(:hover, :focus-visible) { background-size: 100% 100%; }
+.thought-list button > svg { transition: transform 320ms var(--motion-settle); }
+.thought-list button:is(:hover, :focus-visible) > svg { transform: translate(4px, -3px); }
+.notes-postscript { border-top-color: var(--wine); }
+
+/* A typographic pause for Varun's articulation hypothesis. */
+.articulation-section {
+  position: relative;
+  padding-block: clamp(90px, 10vw, 150px) clamp(86px, 9vw, 134px);
+  background: #e9e1d7;
+}
+.articulation-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--page-inset);
+  right: var(--page-inset);
+  height: 2px;
+  background: var(--wine);
+  transform-origin: left;
+}
+.articulation-section .section-top { margin-bottom: clamp(44px, 7.5vw, 102px); }
+.articulation-intro.articulation-hypothesis { display: block; margin: 0; }
+.articulation-hypothesis h2 {
+  max-width: 16ch;
+  font-size: clamp(60px, 7.4vw, 116px);
+  line-height: .99;
+  font-weight: 450;
+  letter-spacing: -.068em;
+  text-wrap: balance;
+}
+.articulation-hypothesis h2 em { position: relative; white-space: normal; }
+.articulation-hypothesis h2 em::after {
+  content: "";
+  position: absolute;
+  bottom: -.09em;
+  left: .04em;
+  right: .03em;
+  height: 3px;
+  background: currentColor;
+  transform: scaleX(.12);
+  transform-origin: left;
+}
+.articulation-hypothesis .articulation-prose {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(42px, 6.3vw, 90px);
+  max-width: none;
+  margin-top: clamp(48px, 6vw, 80px);
+  padding-top: 26px;
+  border-top: 1px solid var(--wine);
+}
+.articulation-prose .articulation-belief {
+  max-width: 25ch;
+  font-size: clamp(27px, 3vw, 42px);
+  line-height: 1.23;
+  font-weight: 450;
+  letter-spacing: -.045em;
+  color: var(--wine);
+}
+.articulation-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+.articulation-points > div { border-top: 1px solid #5426325c; padding-top: 13px; }
+.articulation-points .meta { display: block; font-size: 12px; color: var(--wine); }
+.articulation-points p { margin-top: 18px; font-size: 17px; line-height: 1.65; text-wrap: pretty; }
+
+.digest-item .digest-thumbnail { outline: 1px solid #54263225; outline-offset: -1px; }
+.digest-item .digest-thumbnail img { transition: transform 600ms var(--motion-settle), filter 600ms; }
+.digest-item:has(h3 a:is(:hover, :focus-visible)) .digest-thumbnail img,
+.digest-thumbnail:is(:hover, :focus-visible) img { transform: scale(1.045); filter: saturate(1.13); }
+.digest-archive-list li>a { transition: background-color 200ms ease; }
+.digest-archive-list li>a:is(:hover, :focus-visible) { background-color: #642c4409; }
+.contact-methods a svg { transition: transform 300ms var(--motion-settle); }
+.contact-methods a:is(:hover, :focus-visible) svg { transform: translate(3px, -3px); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .work-heading.reveal-visible::after,
+  .articulation-section:has(.articulation-hypothesis.reveal-visible)::before {
+    animation: craft-rule 670ms var(--motion-settle) both;
+  }
+  .articulation-hypothesis.reveal-visible h2 em::after {
+    animation: craft-rule 720ms 300ms var(--motion-settle) both;
+  }
+  .articulation-hypothesis.reveal-visible .articulation-belief {
+    animation: ink-arrive 520ms 130ms var(--motion-settle) both;
+  }
+  .articulation-hypothesis.reveal-visible .articulation-points > div {
+    animation: ink-arrive 480ms 240ms var(--motion-settle) both;
+  }
+  .articulation-hypothesis.reveal-visible .articulation-points > div:last-child { animation-delay: 320ms; }
+  .digest-item.reveal-ready.reveal-visible .digest-thumbnail {
+    animation: cover-settle 560ms var(--reveal-delay, 0ms) var(--motion-settle) both;
+  }
+}
+@keyframes craft-rule { from { transform: scaleX(.1); } to { transform: scaleX(1); } }
+
+@media (max-width: 1000px) {
+  .articulation-hypothesis .articulation-prose { grid-template-columns: 1fr; gap: 36px; }
+  .articulation-prose .articulation-belief { max-width: 34ch; }
+}
+@media (max-width: 760px) {
+  .site-header nav a:not(:last-child)::after { bottom: 8px; }
+  .capability-item[data-slot="accordion-item"]::before { left: -5px; width: 2px; }
+  .work-heading::after { bottom: -18px; width: 72px; }
+  .work-section .publication-grid { margin-top: 34px; }
+  .publication-grass .publication-image { box-shadow: 7px 7px 0 #642c4430; }
+  .publication-grass:is(:hover, :focus-visible) .publication-image { box-shadow: 9px 9px 0 #642c4445; }
+  .publication-grass .publication-cue { bottom: 12px; right: 12px; }
+  .articulation-section { padding-block: 72px 80px; }
+  .articulation-section .section-top { margin-bottom: 42px; }
+  .articulation-hypothesis h2 { font-size: clamp(41px, 10.2vw, 67px); line-height: 1.02; letter-spacing: -.06em; }
+  .articulation-hypothesis .articulation-prose { margin-top: 46px; padding-top: 22px; gap: 37px; }
+  .articulation-prose .articulation-belief { font-size: clamp(25px, 7vw, 34px); line-height: 1.31; }
+  .articulation-points { gap: 18px; }
+  .articulation-points p { font-size: 16px; margin-top: 12px; }
+}
+@media (max-width: 470px) {
+  .articulation-points { grid-template-columns: 1fr; gap: 24px; }
+  .articulation-hypothesis h2 { font-size: clamp(38px, 10vw, 48px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header nav a::after,
+  .capability-item::before,
+  .publication-grass .publication-image,
+  .publication:not(.publication-grass) .publication-image,
+  .thought-list button,
+  .thought-list button > svg,
+  .digest-item .digest-thumbnail img,
+  .contact-methods a svg { transition: none !important; }
+  .articulation-section::before,
+  .articulation-hypothesis h2 em::after,
+  .articulation-hypothesis .articulation-belief,
+  .articulation-hypothesis .articulation-points > div,
+  .digest-item.reveal-ready.reveal-visible .digest-thumbnail {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+/* Proposed additions for the final CSS layer of Varun's site.
+   This file lives outside the Site checkout for the Site owner to integrate.
+   Visual thesis: a printed editorial index, with a dark reading room for notes.
+   The existing Nilaya palette, pixel wordmark, and interactive features remain. */
+
+.site-header {
+  background: color-mix(in srgb, var(--paper) 96%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.site-header.is-scrolled {
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 10px 30px #40232c0b;
+}
+
+/* A shared hairline gives chapter metadata a precise place in the grid. */
+.work-section > .section-top,
+.services-section > .section-top,
+.about-section > .section-top,
+.thinking-section > .section-top,
+.personal-section .section-top,
+.detour-section > .section-top {
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+}
+.services-section > .section-top,
+.thinking-section > .section-top {
+  border-color: #997782;
+}
+.section-top > .meta:last-child { text-align: right; }
+
+/* Let the reports read like actual work: a deliberate lead, quiet supporting cards. */
+.publication-image::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--wine);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 520ms var(--motion-settle);
+  pointer-events: none;
+}
+.publication-consumed .publication-image::before { background: var(--brass); }
+.publication:is(:hover, :focus-visible) .publication-image::before { transform: scaleX(1); }
+.publication:focus-visible { outline: 2px solid var(--wine); outline-offset: 7px; }
+.publication-copy { display: flex; flex-direction: column; align-items: flex-start; }
+.publication-copy .publication-action { margin-top: 22px; }
+.publication-grass .publication-copy { justify-content: center; }
+.publication-grass .publication-image { overflow: hidden; }
+.publication-grass .work-visual img { transition: scale 760ms var(--motion-settle); }
+.publication-grass:is(:hover, :focus-visible) .work-visual img { scale: 1.025; }
+
+/* Working Notes is the dramatic pause between portfolio and thesis. */
+.thinking-section { background: var(--deep); color: var(--paper); }
+.thinking-section .thinking-intro > div > p { color: var(--paper); }
+.thinking-section .thinking-intro > div > .thinking-caption,
+.thinking-section .section-top > .meta:last-child { color: #d8c7cc; }
+.thinking-intro h2 em { color: var(--brass); }
+.thought-list button { color: var(--paper); border-top-color: #8f717b; }
+.thought-list button::before { background: #f2eee510; }
+.thought-list button > .meta { color: var(--brass); }
+.thought-list .note-duration,
+.thought-list p { color: #e2d4d8; }
+.thought-list .note-topic,
+.thought-list .note-read,
+.thought-list button > svg { color: var(--brass); }
+.thought-list .note-read { border-color: #a28890; }
+.thought-list button:is(:hover, :focus-visible) { border-top-color: var(--brass); }
+.thought-list button:is(:hover, :focus-visible) h3 { color: var(--brass); }
+.thought-list button:is(:hover, :focus-visible) .note-read { border-color: var(--brass); }
+.thought-list button:focus-visible { outline: 2px solid var(--brass); outline-offset: 5px; }
+.notes-postscript { border-top-color: #997782; }
+.notes-postscript .meta { color: var(--brass); }
+.notes-postscript > p { color: #e2d4d8; }
+
+/* The digest feels curated: one lead story and a measured gallery underneath. */
+.digest-item:first-child { border-top-width: 2px; }
+.digest-item:not(:first-child) { padding-top: 25px; }
+.digest-item .digest-thumbnail { isolation: isolate; }
+.digest-item .digest-thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #40232c1f;
+  pointer-events: none;
+}
+.digest-item h3 a:focus-visible,
+.digest-thumbnail:focus-visible { outline: 2px solid var(--wine); outline-offset: 5px; }
+
+/* Different content gets different motion: leading work, short rules, then text. */
+@media (prefers-reduced-motion: no-preference) {
+  .work-heading.reveal-ready.reveal-visible h2 {
+    animation: craft-title 640ms var(--motion-settle) both;
+  }
+  .thinking-intro.reveal-ready.reveal-visible h2 {
+    animation: craft-title 740ms var(--motion-settle) both;
+  }
+  .thinking-section .thought-list button:is(:hover, :focus-visible) .note-read {
+    transform: translateX(4px);
+  }
+  .thinking-section .note-read { transition: transform 260ms var(--motion-settle), border-color 260ms; }
+  .digest-item:is(:hover, :focus-within) .digest-thumbnail img {
+    transform: scale(1.035);
+  }
+}
+@keyframes craft-title {
+  from { opacity: .5; clip-path: inset(0 0 14% 0); transform: translateY(12px); }
+  to { opacity: 1; clip-path: inset(0); transform: none; }
+}
+
+@media (max-width: 760px) {
+  .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .section-top > .meta:last-child { max-width: 55%; }
+  .publication-copy .publication-action { margin-top: 15px; }
+  .thinking-section { padding-block: 58px 64px; }
+  .thinking-section .thought-list { gap: 13px; }
+  .thinking-section .thought-list button { padding-block: 24px; }
+  .notes-postscript { display: block; }
+  .notes-postscript > p { margin-top: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .publication-image::before,
+  .publication-grass .work-visual img,
+  .digest-thumbnail img,
+  .thinking-section .note-read { animation: none !important; transition: none !important; }
+  .publication-image::before { display: none; }
+  .publication-grass .work-visual img { scale: 1 !important; }
+}
+
+/* The chapter marker stays with the reader; the progress line remains above it. */
+html { scroll-padding-top: 104px; }
+.site-header { position: sticky; top: 0; }
+.thinking-section .thought-list button {
+  background-image: none;
+  transition: background-color 260ms var(--motion-settle), border-color 230ms ease;
+}
+.thinking-section .thought-list button:is(:hover, :focus-visible) { background-color: #f2eee50c; }
+.thinking-section .thought-list button::before { background: #f2eee50b; }
+
+/* Keep the thesis as a single readable argument, without process cards. */
+.articulation-hypothesis .articulation-prose { align-items: start; }
+.articulation-prose .articulation-elaboration {
+  max-width: 44ch;
+  margin-top: 0;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.58;
+  letter-spacing: -.018em;
+  text-wrap: pretty;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .articulation-hypothesis.reveal-visible .articulation-elaboration {
+    animation: ink-arrive 520ms 270ms var(--motion-settle) both;
+  }
+}
+@media (max-width: 1000px) {
+  .articulation-prose .articulation-elaboration { max-width: 39ch; }
+}
+@media (max-width: 760px) {
+  html { scroll-padding-top: 96px; }
+  .articulation-prose .articulation-elaboration { font-size: 18px; line-height: 1.6; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .articulation-hypothesis .articulation-elaboration { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
