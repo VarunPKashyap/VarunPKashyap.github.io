@@ -1,266 +1,202 @@
-/* A paper studio: three type voices, one restrained palette, and room for glyphs. */
-@font-face {
-  font-family: P052;
-  src: url('/assets/p052-roman.otf') format('opentype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: P052;
-  src: url('/assets/p052-italic.otf') format('opentype');
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-:root { --display: P052, 'Palatino Linotype', Palatino, Georgia, serif; }
-main { overflow: visible; }
-h1, h2, h3, h4 { overflow-wrap: normal; }
+/* The site uses paper, stone, ink, wine and brass; published work keeps its own colours. */
+@font-face{font-family:P052;src:url('/assets/p052-roman.otf') format('opentype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:P052;src:url('/assets/p052-italic.otf') format('opentype');font-style:italic;font-weight:400;font-display:swap}
+:root{--display:P052,'Palatino Linotype',Palatino,Georgia,serif;--header-height:84px}
+html{scroll-padding-top:calc(var(--header-height) + 16px);scroll-behavior:auto}
+section[id],footer[id]{scroll-margin-top:calc(var(--header-height) + 16px)}
+main{overflow:clip}
+h1,h2,h3,h4{overflow-wrap:break-word}
+.site-header{min-height:var(--header-height)}
+.site-header nav{gap:clamp(20px,2.4vw,36px)}
+.site-header nav a{white-space:nowrap}
+.site-header nav a:last-child{color:var(--paper);background:var(--wine)}
+.site-header nav a:last-child:hover{background:var(--deep)}
+.wordmark-pixel img{animation:none!important}
 
-/* The first thought sits in the quiet half of a dimensional paper study. */
-.opening-grid {
-  display: block;
-  position: relative;
-  isolation: isolate;
-  min-height: clamp(650px, 48vw, 800px);
-  padding: clamp(48px, 5.5vw, 84px) clamp(34px, 5.5vw, 84px);
-  margin-top: 28px;
-  border: 1px solid var(--line);
-  background: #eee7db;
-}
-.opening-statement {
-  position: relative;
-  z-index: 2;
-  width: min(53%, 720px);
-  min-width: 0;
-}
-.opening-statement h1 {
-  font-family: var(--display);
-  font-size: clamp(64px, 5.8vw, 104px);
-  font-weight: 400;
-  line-height: 1.09;
-  letter-spacing: -.045em;
-  text-wrap: balance;
-}
-.opening-statement h1 > .hero-title-line { color: var(--ink); }
-.opening-statement h1 > .hero-title-accent {
-  color: var(--wine);
-  font-style: italic;
-  font-size: .94em;
-  letter-spacing: -.047em;
-}
-.opening-name { font: 400 15px/1.5 var(--pixel); color: var(--wine); margin-bottom: 24px; }
-.opening-intro { color: var(--ink); max-width: 35ch; line-height: 1.55; }
-.opening-work-link { color: var(--wine); }
-.hero-object {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  margin: 0;
-  perspective: 1400px;
-}
-.hero-object .dimensional-object,
-.hero-object img { width: 100%; height: 100%; }
-.hero-object .dimensional-object {
-  transform: rotateX(var(--cover-rx, 0deg)) rotateY(var(--cover-ry, 0deg)) translate3d(0, var(--cover-y, 0px), 0) scale(1.035);
-  transition: transform 500ms var(--motion-settle);
-  backface-visibility: hidden;
-}
-.hero-object img { display: block; object-fit: cover; object-position: center; }
-.hero-object figcaption,
-.articulation-object figcaption {
-  font: 400 12px/1.5 var(--pixel);
-  letter-spacing: .015em;
-  color: var(--wine);
-}
-.hero-object figcaption {
-  position: absolute;
-  bottom: 22px;
-  right: 28px;
-  z-index: 1;
-  padding: 8px 11px;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-}
-.editorial-media[data-cover-moving="true"] .dimensional-object { transition: none; }
+/* A first page in Varun's voice, with an actual report as the visual proof. */
+.opening-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.82fr);align-items:center;gap:clamp(40px,6vw,100px);min-height:0;margin:0;padding:clamp(46px,6vw,94px) 0 clamp(46px,5vw,78px);border:0;background:var(--paper)}
+.opening-statement{width:100%;min-width:0}
+.opening-name{font:400 15px/1.45 var(--pixel);letter-spacing:-.025em;color:var(--wine);margin-bottom:26px}
+.opening-statement h1{font:400 clamp(55px,5.7vw,92px)/1.12 var(--display);letter-spacing:-.045em;max-width:12ch;text-wrap:balance;overflow-wrap:normal}
+.opening-statement h1>.hero-title-line{display:block;color:var(--ink)}
+.opening-statement h1>.hero-title-accent{color:var(--wine);font-style:italic;font-size:.96em}
+.opening-intro{font-size:clamp(19px,1.55vw,23px);line-height:1.5;max-width:36ch;color:var(--ink);margin-top:29px;text-wrap:pretty}
+.opening-work-link{margin-top:24px;color:var(--wine)}
+.hero-proof{min-width:0;display:block;align-self:center;transform:rotate(1.2deg);transition:transform .4s var(--motion-settle),box-shadow .4s var(--motion-settle);box-shadow:15px 15px 0 var(--stone)}
+.hero-proof img{width:100%;height:auto;aspect-ratio:1.53;object-fit:cover;border:1px solid var(--line)}
+.hero-proof>span{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:13px 5px 1px;font:12px/1.45 var(--pixel);color:var(--wine)}
+.hero-proof>span>span{display:flex;align-items:center;gap:8px;text-align:right}
+.hero-proof:is(:hover,:focus-visible){transform:rotate(0) translateY(-4px);box-shadow:17px 19px 0 var(--stone)}
 
-/* The capability index stays useful while reading as part of the same print system. */
-.capability-table {
-  padding: 42px 0 52px;
-  border-top: 0;
-}
-.capability-caption { margin-bottom: 20px; color: var(--wine); }
-.capability-accordion { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
-.capability-item[data-slot="accordion-item"] {
-  min-width: 0;
-  border-bottom: 1px solid var(--line);
-}
-.capability-item[data-slot="accordion-item"] + .capability-item {
-  padding-left: clamp(18px, 2.8vw, 44px);
-  margin-left: clamp(18px, 2.8vw, 44px);
-  border-left: 1px solid var(--line);
-}
-.capability-trigger[data-slot="accordion-trigger"] { min-height: 92px; }
-.capability-name { line-height: 1.18; }
-.capability-content { padding-right: 12px; }
+/* The method is visible before the case studies. */
+.capability-table{padding:20px 0 35px;border-top:1px solid var(--line)}
+.capability-caption{display:block;margin:0 0 18px;color:var(--wine)}
+.capability-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,50px)}
+.capability-entry{position:relative;display:grid;grid-template-columns:26px minmax(0,1fr) 19px;gap:9px 13px;align-content:start;min-width:0;padding:20px 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:border-color .25s,color .25s}
+.capability-number{font:11px/1.5 var(--pixel);color:var(--wine);padding-top:5px}
+.capability-name{font:400 clamp(23px,2.2vw,33px)/1.2 var(--display);letter-spacing:-.03em;color:var(--ink)}
+.capability-outcome{grid-column:2;grid-row:2;font:16px/1.45 var(--sans);color:var(--muted-copy)}
+.capability-entry>svg{grid-column:3;grid-row:1;color:var(--wine);transition:transform .25s}
+.capability-entry:is(:hover,:focus-visible){border-color:var(--wine)}
+.capability-entry:is(:hover,:focus-visible)>svg{transform:translate(3px,-3px)}
+.career-strip{border-top:0;padding-top:10px}
 
-/* A considered contrast: sturdy sans for proof, generous serif for propositions. */
-.work-heading h2,
-.services-heading h2,
-.about-grid h2,
-.digest-intro h2 { line-height: 1.15; letter-spacing: -.04em; }
-.work-heading h2 em {
-  font: 400 italic 1.1em/1.08 var(--display);
-  letter-spacing: -.045em;
-}
-.thinking-intro h2 {
-  font: 400 clamp(55px, 5.5vw, 94px)/1.12 var(--display);
-  letter-spacing: -.038em;
-}
-.thinking-intro h2 em { font-style: italic; color: var(--brass); }
-.articulation-intro.articulation-hypothesis {
-  display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
-  gap: clamp(34px, 5vw, 84px);
-  align-items: center;
-}
-.articulation-hypothesis h2 {
-  max-width: 13ch;
-  min-width: 0;
-  font: 400 clamp(64px, 6.4vw, 108px)/1.14 var(--display);
-  letter-spacing: -.04em;
-  text-wrap: balance;
-}
-.articulation-hypothesis h2 em { font-style: italic; color: var(--wine); }
-.articulation-hypothesis h2 em::after { bottom: -.04em; height: 2px; }
-.articulation-object {
-  justify-self: end;
-  width: min(100%, 510px);
-  margin: 0;
-  perspective: 1200px;
-}
-.articulation-object .dimensional-object {
-  width: 100%;
-  aspect-ratio: 1;
-  border: 1px solid var(--line);
-  box-shadow: 18px 18px 0 #6b263d18;
-  transform: rotateX(var(--cover-rx, 0deg)) rotateY(var(--cover-ry, 0deg)) translate3d(0, var(--cover-y, 0px), 0);
-  transition: transform 500ms var(--motion-settle), box-shadow 500ms var(--motion-settle);
-  backface-visibility: hidden;
-}
-.articulation-object img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.articulation-object figcaption {
-  margin-top: 14px;
-  padding-top: 10px;
-  border-top: 1px solid var(--wine);
-  text-align: right;
-}
-.articulation-hypothesis .articulation-prose {
-  grid-column: 1 / -1;
-  margin-top: 0;
-  grid-template-columns: 1fr 1fr;
-}
-.articulation-prose .articulation-belief { line-height: 1.3; letter-spacing: -.03em; }
-.articulation-prose .articulation-elaboration { line-height: 1.65; }
-.contact-big {
-  max-width: 100%;
-  font: 400 clamp(72px, 12vw, 166px)/1.13 var(--display);
-  letter-spacing: -.052em;
-  overflow-wrap: anywhere;
-}
-.contact-big span { display: inline; }
-.reader-title[data-slot="dialog-title"],
-.note-title[data-slot="dialog-title"] {
-  font-family: var(--display);
-  font-weight: 400;
-  line-height: 1.14;
-  letter-spacing: -.035em;
-}
-.signal-heading h3 { line-height: 1.14; }
+/* A visible hierarchy: serif ideas, sans proof, pixel labels. */
+.work-heading h2,.services-heading h2,.about-grid h2,.digest-intro h2{line-height:1.13;letter-spacing:-.04em}
+.work-heading h2 em,.services-heading h2 em{font:400 italic 1.08em/1.1 var(--display);color:var(--wine)}
+.work-heading h2{font-size:clamp(48px,4.8vw,76px)}
+.publication-grass .publication-image{box-shadow:10px 10px 0 color-mix(in srgb,var(--wine) 18%,transparent)}
+.publication .work-visual,.publication:is(:hover,:focus-visible) .work-visual{transform:none!important}
+.publication:is(:hover,:focus-visible) .publication-image{box-shadow:10px 12px 0 color-mix(in srgb,var(--wine) 25%,transparent)}
+.publication-image{transition:box-shadow .3s var(--motion-settle)}
+.publication-cue{transition:opacity .2s}
+.signal-page{transform:none;box-shadow:7px 7px 0 color-mix(in srgb,var(--wine) 16%,transparent)}
+.signal-page:is(:hover,:focus-visible){transform:translateY(-3px)}
+.signal-underlay{transform:rotate(-2deg)}
+.signal-chain{position:relative;padding-left:27px}
+.signal-chain::before{content:"";position:absolute;left:5px;top:30px;bottom:37px;width:1px;background:var(--wine)}
+.signal-chain li{position:relative}
+.signal-chain li::before{content:"";position:absolute;left:-27px;top:28px;width:11px;height:11px;border:2px solid var(--wine);border-radius:50%;background:var(--stone)}
+.signal-chain li:last-child::before{background:var(--wine)}
 
-/* A small drawn thread animates the three real stages of the source desk. */
-.signal-chain { position: relative; padding-left: 29px; }
-.signal-chain::before {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 30px;
-  bottom: 37px;
-  width: 1px;
-  background: var(--wine);
-  transform-origin: top;
-}
-.signal-chain li { position: relative; }
-.signal-chain li::before {
-  content: "";
-  position: absolute;
-  left: -29px;
-  top: 28px;
-  width: 11px;
-  height: 11px;
-  border: 2px solid var(--wine);
-  border-radius: 50%;
-  background: var(--surface-soft);
-}
-.signal-chain li:last-child::before { background: var(--wine); }
-@media (prefers-reduced-motion: no-preference) {
-  .signal-desk.reveal-visible .signal-chain::before { animation: thread-draw 950ms 140ms var(--motion-settle) both; }
-  .hero-object img { animation: folio-breathe 9s ease-in-out infinite alternate; }
-  .articulation-object img { animation: folio-breathe 10s 1s ease-in-out infinite alternate; }
-}
-@keyframes thread-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-@keyframes folio-breathe { from { scale: 1; } to { scale: 1.016; } }
+/* One quiet pause for a belief; its words do the work. */
+.articulation-section{background:var(--stone);padding-block:clamp(60px,7vw,110px)}
+.articulation-section::before{height:1px;background:var(--line)}
+.articulation-section .section-top{margin-bottom:clamp(35px,5vw,70px)}
+.articulation-intro.articulation-hypothesis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:clamp(42px,7vw,110px);margin:0}
+.articulation-hypothesis h2{font:400 clamp(52px,5.1vw,82px)/1.13 var(--display);letter-spacing:-.04em;max-width:13ch;text-wrap:balance}
+.articulation-hypothesis h2 em{font-style:italic;color:var(--wine)}
+.articulation-hypothesis h2 em::after{display:none}
+.articulation-hypothesis .articulation-prose{display:flex;flex-direction:column;gap:24px;grid-column:auto;max-width:53ch;margin:0;padding:9px 0 0;border:0}
+.articulation-prose .articulation-belief{font:400 clamp(23px,2.4vw,36px)/1.32 var(--display);letter-spacing:-.025em;color:var(--wine);max-width:25ch}
+.articulation-prose .articulation-elaboration{font-size:18px;line-height:1.68;color:var(--ink);max-width:52ch;margin:0}
 
-@media (max-width: 1100px) {
-  .opening-grid {
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    margin-top: 38px;
-  }
-  .opening-statement { width: min(100%, 720px); }
-  .opening-statement h1 { font-size: clamp(60px, 8vw, 92px); }
-  .hero-object { position: relative; width: 100%; aspect-ratio: 2.33; margin-top: 36px; border: 1px solid var(--line); }
-  .hero-object .dimensional-object { transform: none; }
-  .capability-accordion { display: block; }
-  .capability-item[data-slot="accordion-item"] + .capability-item { padding-left: 0; margin-left: 0; border-left: 0; }
-  .capability-table { padding-top: 34px; }
-  .articulation-intro.articulation-hypothesis { gap: 36px; }
-  .articulation-hypothesis h2 { font-size: clamp(55px, 6.5vw, 76px); }
+/* Services are readable at a glance, without a tab switch. */
+.services-section{background:var(--paper);color:var(--ink);padding-block:clamp(65px,7vw,105px);border-top:1px solid var(--line)}
+.services-section>.section-top{border-color:var(--line)}
+.services-heading{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,95px);align-items:end;margin-bottom:45px}
+.services-heading h2{font:400 clamp(48px,4.8vw,75px)/1.13 var(--display)}
+.services-heading>p{font-size:20px;line-height:1.5;color:var(--muted-copy);max-width:34ch}
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,50px)}
+.service-card{display:flex;flex-direction:column;align-items:start;gap:0;min-width:0;padding:19px 0 27px;border-top:1px solid var(--wine);color:var(--ink)}
+.service-card::after{display:none}
+.service-number{font:12px/1.5 var(--pixel);color:var(--wine);margin:0 0 25px}
+.service-card h3{font:400 clamp(27px,2.5vw,36px)/1.16 var(--display);letter-spacing:-.025em;min-height:0;margin:0}
+.service-card>.service-question{font:500 19px/1.4 var(--sans);color:var(--ink);margin:24px 0 0;max-width:27ch}
+.service-card>.service-output{font:17px/1.58 var(--sans);color:var(--muted-copy);margin:17px 0 0;max-width:36ch}
+.services-footer{border-top:1px solid var(--line);margin-top:20px;color:var(--ink)}
+.services-footer p{color:var(--muted-copy)}
+.services-footer a{background:var(--wine);color:var(--paper)}
+.services-footer a:hover{background:var(--deep);color:var(--paper)}
+.services-section :is(a,button):focus-visible{outline-color:var(--wine)}
+
+/* A human aside and original source material carry the imagery. */
+.personal-section{background:var(--paper);padding-block:0 clamp(60px,6vw,90px)}
+.personal-section .bangalore-break{border-top:1px solid var(--line)}
+.about-section{background:var(--paper);padding-bottom:clamp(45px,5vw,65px)}
+.thinking-section{background:var(--deep);color:var(--paper)}
+.contact-section{background:var(--deep);color:var(--paper)}
+.thinking-intro h2{font:400 clamp(48px,5vw,82px)/1.13 var(--display);letter-spacing:-.035em}
+.thinking-intro h2 em{font-style:italic;color:var(--brass)}
+.thought-list button,.thinking-section .thought-list button{background-image:none;color:var(--paper)}
+.thought-list button:is(:hover,:focus-visible),.thinking-section .thought-list button:is(:hover,:focus-visible){background:color-mix(in srgb,var(--paper) 9%,var(--deep));background-image:none;color:var(--paper)}
+.thinking-section .thought-list button:is(:hover,:focus-visible) h3{color:var(--brass)}
+.thinking-section .thought-list button:is(:hover,:focus-visible) p{color:var(--text-on-dark)}
+.notes-postscript{border-top-color:var(--line-on-dark)}
+.contact-big{font:400 clamp(70px,12vw,165px)/1.13 var(--display);letter-spacing:-.05em;max-width:100%;overflow-wrap:anywhere}
+.reader-title[data-slot=dialog-title],.note-title[data-slot=dialog-title]{font-family:var(--display);font-weight:400;line-height:1.14;letter-spacing:-.03em}
+.reader-jumps{flex-wrap:wrap;justify-content:flex-start}
+.reader-jumps button{min-height:44px}
+
+/* Desktop motion belongs to entry and response; reading never depends on it. */
+@media(min-width:761px) and (prefers-reduced-motion:no-preference){
+ [data-site-motion=ready] .hero-title-line{animation:ink-arrive 500ms var(--motion-settle) both}
+ [data-site-motion=ready] .hero-title-line:nth-child(2){animation-delay:80ms}
+ [data-site-motion=ready] .hero-proof{animation:ink-arrive 520ms 120ms var(--motion-settle) both}
 }
-@media (max-width: 760px) {
-  .opening-grid { margin-top: 27px; }
-  .opening-statement h1 { font-size: clamp(45px, 11vw, 76px); line-height: 1.13; letter-spacing: -.04em; }
-  .opening-statement h1 > .hero-title-accent { font-size: .96em; }
-  .opening-name { margin-bottom: 17px; }
-  .opening-intro { margin-top: 24px; font-size: 18px; }
-  .hero-object { aspect-ratio: 1.48; margin-top: 31px; }
-  .hero-object img { object-position: 67% center; }
-  .hero-object figcaption { right: 12px; bottom: 12px; }
-  .capability-table { padding: 31px 0 35px; }
-  .work-heading h2, .about-grid h2, .services-heading h2, .digest-intro h2 { line-height: 1.16; }
-  .thinking-intro h2 { font-size: clamp(48px, 12vw, 68px); line-height: 1.14; }
-  .articulation-intro.articulation-hypothesis { display: flex; flex-direction: column; align-items: stretch; gap: 29px; }
-  .articulation-hypothesis h2 { max-width: none; font-size: clamp(46px, 10.4vw, 66px); line-height: 1.17; }
-  .articulation-object { align-self: center; width: min(100%, 460px); }
-  .articulation-object .dimensional-object { box-shadow: 9px 9px 0 #6b263d18; }
-  .articulation-hypothesis .articulation-prose { display: block; margin-top: 15px; }
-  .articulation-prose .articulation-elaboration { margin-top: 24px; }
-  .contact-big { font-size: clamp(48px, 12vw, 94px); line-height: 1.16; margin-block: 24px 30px; }
-  .reader-title[data-slot="dialog-title"], .note-title[data-slot="dialog-title"] { line-height: 1.17; }
+@media(max-width:1100px){
+ .opening-grid{grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:35px}
+ .opening-statement h1{font-size:clamp(51px,5.8vw,70px)}
+ .services-heading{gap:35px}
+ .service-card>.service-question{font-size:17px}
 }
-@media (max-width: 370px) {
-  .opening-statement h1 { font-size: clamp(42px, 10.8vw, 48px); }
-  .articulation-hypothesis h2 { font-size: 44px; }
-  .hero-object { aspect-ratio: 1.32; }
-  .contact-big { font-size: 15vw; }
+@media(max-width:760px){
+ :root{--header-height:76px}
+ html{scroll-padding-top:92px}
+ .site-header{min-height:var(--header-height);padding-block:12px}
+ .site-header nav{top:100%;gap:5px;padding:16px var(--page-inset) 20px}
+ .site-header nav a{font:400 19px/1.3 var(--pixel);min-height:47px}
+ .site-header nav a:last-child{background:var(--wine);color:var(--paper);padding:10px 14px;margin-top:5px}
+ .site-header nav a:last-child:hover{background:var(--wine)}
+ .intro-section,.work-section,.about-section,.thinking-section,.articulation-section,.services-section,.personal-section,.detour-section,.contact-section{padding-inline:var(--page-inset)}
+ .hero-context-line{padding-top:13px}
+ .opening-grid{display:flex;flex-direction:column;align-items:stretch;gap:30px;padding:36px 0 37px}
+ .opening-statement{width:100%}
+ .opening-name{font-size:13px;margin-bottom:19px}
+ .opening-statement h1{font-size:clamp(45px,10vw,68px);line-height:1.13;letter-spacing:-.04em;max-width:12ch}
+ .opening-intro{font-size:18px;line-height:1.56;margin-top:22px;max-width:36ch}
+ .opening-work-link{margin-top:16px;min-height:48px}
+ .hero-proof{width:calc(100% - 9px);align-self:start;transform:rotate(.6deg);box-shadow:9px 9px 0 var(--stone)}
+ .hero-proof img{aspect-ratio:1.53}
+ .hero-proof>span{font-size:10px;gap:8px;padding-top:10px}
+ .capability-table{padding:12px 0 26px}
+ .capability-index{display:block}
+ .capability-caption{margin-bottom:10px;font-size:11px}
+ .capability-entry{grid-template-columns:24px minmax(0,1fr) 18px;gap:3px 10px;padding:15px 0 13px;border-bottom:0}
+ .capability-entry:last-child{border-bottom:1px solid var(--line)}
+ .capability-name{font-size:25px;line-height:1.2}
+ .capability-outcome{font-size:15px;line-height:1.4}
+ .career-strip{display:grid;grid-template-columns:1fr;gap:16px;padding:18px 0}
+ .work-heading h2{font-size:clamp(42px,10vw,58px);line-height:1.14}
+ .work-heading h2 em{line-height:1.1}
+ .publication-grass .publication-image{box-shadow:7px 7px 0 color-mix(in srgb,var(--wine) 18%,transparent)}
+ .signal-desk{padding:20px 15px;margin-top:48px}
+ .signal-panel{display:block;padding-top:23px}
+ .signal-source{position:static}
+ .signal-select[data-slot=tabs-list]{display:grid;grid-template-columns:1fr}
+ .signal-select [data-slot=tabs-trigger]{min-height:47px;padding:10px 12px}
+ .signal-select [data-slot=tabs-trigger]+[data-slot=tabs-trigger]{border-left:1px solid var(--line);border-top:0}
+ .signal-chain{margin-top:25px}
+ .articulation-section{padding-block:55px 65px}
+ .articulation-section .section-top{margin-bottom:33px}
+ .articulation-intro.articulation-hypothesis{display:block}
+ .articulation-hypothesis h2{font-size:clamp(45px,10vw,66px);line-height:1.14}
+ .articulation-hypothesis .articulation-prose{margin-top:30px;padding-top:22px;border-top:1px solid var(--wine);gap:19px}
+ .articulation-prose .articulation-belief{font-size:clamp(25px,6.4vw,32px);line-height:1.34}
+ .articulation-prose .articulation-elaboration{font-size:17px;line-height:1.65;margin:0}
+ .services-section{padding-block:58px 65px}
+ .services-heading{display:block;margin-bottom:26px}
+ .services-heading h2{font-size:clamp(45px,10vw,62px);line-height:1.14}
+ .services-heading>p{font-size:18px;line-height:1.5;margin-top:20px}
+ .services-grid{display:block}
+ .service-card{display:block;padding:19px 0 22px}
+ .service-number{display:block;margin-bottom:10px}
+ .service-card h3{font-size:30px}
+ .service-card>.service-question{font-size:18px;margin-top:13px;max-width:none}
+ .service-card>.service-output{font-size:16px;margin-top:12px;max-width:none}
+ .services-footer{display:block;padding-top:20px}
+ .services-footer a{display:inline-flex;margin-top:17px;min-height:48px}
+ .about-section{padding-bottom:44px}
+ .personal-section{padding-top:0;padding-bottom:60px}
+ .thinking-intro h2{font-size:clamp(45px,10vw,64px);line-height:1.15}
+ .thought-list button{background-image:none!important}
+ .contact-big{font-size:clamp(56px,15vw,92px);line-height:1.15;margin-block:25px 31px}
+ .reader-jumps{padding:6px 12px;gap:2px 5px}
+ .reader-jumps button{font-size:12px;min-height:42px;padding:7px 8px}
+ .race-hud{top:var(--header-height)}
+ .race-browser{scroll-margin-top:calc(var(--header-height) + 10px)}
+ .hero-title-line,.opening-intro,.opening-work-link,.capability-table,.hero-proof,.section-top>.meta,.work-heading h2,.publication-image,.publication-copy,.thinking-intro h2,.articulation-intro h2,.contact-big span{animation:none!important}
+ .publication-image,.hero-proof,.signal-page{transition:box-shadow .25s,transform .25s}
+ .publication .work-visual,.publication:is(:hover,:focus-visible) .work-visual{transform:none!important}
 }
-@media (prefers-reduced-motion: reduce) {
-  .hero-object .dimensional-object,
-  .articulation-object .dimensional-object { transform: none !important; transition: none !important; }
-  .hero-object img, .articulation-object img,
-  .signal-chain::before { animation: none !important; transform: none !important; scale: 1 !important; }
+@media(max-width:370px){
+ .opening-statement h1{font-size:clamp(42px,10.4vw,48px)}
+ .hero-proof>span{display:block}
+ .hero-proof>span>span{margin-top:4px}
+ .contact-big{font-size:15vw}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .hero-proof,.hero-proof:is(:hover,:focus-visible),.signal-page,.signal-page:is(:hover,:focus-visible){transform:none!important;transition:none!important}
+ .hero-title-line,.opening-intro,.opening-work-link,.capability-table,.hero-proof,.signal-chain::before{animation:none!important}
 }

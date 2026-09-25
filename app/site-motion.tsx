@@ -1,36 +1,20 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { attachCoverMotion } from "./cover-motion";
 
 export function SiteMotion() {
   const progress = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const preference = matchMedia("(prefers-reduced-motion: reduce)");
-    const finePointer = matchMedia("(hover: hover) and (pointer: fine)");
     const root = document.documentElement;
-    if (!preference.matches && !document.hidden) root.setAttribute("data-site-motion", "ready");
+    const preference = matchMedia("(prefers-reduced-motion: reduce)");
+    const desktop = matchMedia("(min-width: 761px)");
+    const motion = () => {
+      if (desktop.matches && !preference.matches) root.setAttribute("data-site-motion", "ready");
+      else root.removeAttribute("data-site-motion");
+    };
     const header = document.querySelector<HTMLElement>(".site-header");
     const navigation = Array.from(document.querySelectorAll<HTMLAnchorElement>(".site-header nav a[href^='#']")).map(link => ({
-      link,
-      section: document.querySelector<HTMLElement>(link.getAttribute("href")!),
+      link, section: document.querySelector<HTMLElement>(link.getAttribute("href")!),
     }));
-    const elements = document.querySelectorAll<HTMLElement>(".section-top,.work-heading,.publication,.signal-desk,.services-heading,.service-card,.about-grid,.thinking-intro,.thought-list>button,.articulation-intro,.bangalore-break,.digest-intro,.digest-item,.position-section,.contact-big");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.06, rootMargin: "0px 0px -18px 0px" });
-    elements.forEach(element => {
-      const siblings = element.parentElement ? Array.from(element.parentElement.children) : [];
-      const stagger = element.matches(".service-card,.publication,.thought-list>button,.digest-item") ? (siblings.indexOf(element) % 3) * 65 : 0;
-      element.style.setProperty("--reveal-delay", `${stagger}ms`);
-      if (!preference.matches) element.classList.add("reveal-ready");
-      if (element.getBoundingClientRect().top < innerHeight - 18) element.classList.add("reveal-visible");
-      else observer.observe(element);
-    });
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -45,44 +29,19 @@ export function SiteMotion() {
       if (progress.current) progress.current.style.transform = `scaleX(${extent > 0 ? Math.min(1, Math.max(0, scrollY / extent)) : 0})`;
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
-    const revealAll = () => {
-      if (preference.matches) {
-        root.removeAttribute("data-site-motion");
-        observer.disconnect();
-        elements.forEach(element => {
-          element.classList.remove("reveal-ready");
-          element.classList.add("reveal-visible");
-        });
-      }
-    };
-    const finishEntrances = () => {
-      if (!document.hidden) return;
-      root.removeAttribute("data-site-motion");
-      elements.forEach(element => {
-        if (element.classList.contains("reveal-visible")) element.classList.remove("reveal-ready");
-      });
-    };
-    update();
-    window.addEventListener("scroll", schedule, { passive: true });
+    motion(); update();
+    window.addEventListener("scroll", schedule, {passive:true});
     window.addEventListener("resize", schedule);
-    preference.addEventListener("change", revealAll);
-    document.addEventListener("visibilitychange", finishEntrances);
-    const coverCleanups = Array.from(document.querySelectorAll<HTMLElement>(".publication-image,.editorial-media"))
-      .map(cover => attachCoverMotion(cover, preference, finePointer));
+    preference.addEventListener("change", motion);
+    desktop.addEventListener("change", motion);
     return () => {
-      observer.disconnect();
-      coverCleanups.forEach(cleanup => cleanup());
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
-      preference.removeEventListener("change", revealAll);
-      document.removeEventListener("visibilitychange", finishEntrances);
+      preference.removeEventListener("change", motion);
+      desktop.removeEventListener("change", motion);
       root.removeAttribute("data-site-motion");
       navigation.forEach(({link}) => link.removeAttribute("aria-current"));
-      elements.forEach(element => {
-        element.classList.remove("reveal-ready", "reveal-visible");
-        element.style.removeProperty("--reveal-delay");
-      });
     };
   }, []);
   return <div ref={progress} className="reading-progress" aria-hidden="true"/>;

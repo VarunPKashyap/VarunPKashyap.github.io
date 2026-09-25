@@ -1,10 +1,10 @@
 export const projects = [
   {
-    id: "grass", number: "01", title: "Touching Grass", subtitle: "How India will go out in 2026", organisation: "district", year: "2026", format: "Cultural report", role: "Writer · Cultural insights", image: "/assets/touching-grass.webp",
+    id: "grass", number: "01", title: "Touching Grass", subtitle: "How India will go out in 2026", organisation: "District", year: "2026", format: "Cultural report", role: "Writer · Cultural insights", image: "/assets/touching-grass.webp",
     summary: "Four shifts in how urban India goes out: stories, belonging, new social hours and the value of being there.",
     question: "What are people really seeking when they make a plan?",
     context: "A night out is too narrow a frame for the ways people use a city. The report groups cultural examples into four shifts: Plot-First Culture, Ambient Belonging, Dual Prime Times and Revolt Against the Rot. Each asks a different question about what makes an experience worth leaving home for.",
-    contribution: "I wrote the report for district, shaping its editorial frame and bringing together examples of how identity, company, time and physical experience affect going out.",
+    contribution: "I wrote the report for District, shaping its editorial frame and bringing together examples of how identity, company, time and physical experience affect going out.",
     perspective: "The choice is rarely as simple as online or offline, together or alone. A physical experience can live on in something people make or share. A person arriving solo may want connection, or may simply want the freedom to choose.",
     implication: "Make room for someone to arrive alone without forcing a social script. Offer something to choose, make or keep. Treat mornings and weekdays as real social occasions, while checking whose schedules allow them.",
     qualification: "The report offers interpretation rather than prediction. Its cultural signals are starting points for further inquiry, not a representative measure of every Indian consumer.",
