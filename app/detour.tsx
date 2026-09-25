@@ -46,7 +46,7 @@ export function Detour(){
  const historical=!!selected&&selected.edition!==digest.edition;
  return <section className="detour-section" id="digest">
   {['game','detour','digest-archive',...editions.map(e=>`digest-edition-${e.edition}`)].map(id=><span key={id} id={id} className="detour-anchor" aria-hidden="true"/>)}
-  <div className="section-top"><span className="meta">06 / Read something. Close something.</span><a className="meta" href="https://substack.com/@hopper1206" target="_blank" rel="noopener noreferrer">Varun on Substack ↗</a></div>
+  <div className="section-top"><span className="meta">Read something. Close something.</span><a className="meta" href="https://substack.com/@hopper1206" target="_blank" rel="noopener noreferrer">Varun on Substack ↗</a></div>
   <Tabs value={tab} onValueChange={chooseTab} className="detour-tabs">
    <TabsList className="detour-tab-list" data-active={tab} aria-label="Choose the weekly digest or game"><TabsTrigger value="digest">Weekly digest<span>01</span></TabsTrigger><TabsTrigger value="game">Close the tabs<span>02</span></TabsTrigger></TabsList>
    <TabsContent value="digest">
