@@ -3,7 +3,7 @@ import {resolve,join,extname} from 'node:path';
 import assert from 'node:assert/strict';
 const root=resolve('out');
 const html=readFileSync(join(root,'index.html'),'utf8');
-for(const text of ['Find the thought','Root decisions in cultural context.','Thinking, out','Touching Grass','Consumed','Working together','Articulation is','Tab bankruptcy.'])assert.ok(html.includes(text),`Missing page content: ${text}`);
+for(const text of ['Hello, I’m Varun Kashyap.','the brief leaves out.','rooting decisions in cultural context.','Thinking, out','Touching Grass','Consumed','Working together','Articulation is','Tab bankruptcy.'])assert.ok(html.includes(text),`Missing page content: ${text}`);
 assert.ok(html.includes('https://varunpkashyap.github.io'), 'Expected canonical domain');
 assert.ok(existsSync(join(root,'.nojekyll')), 'Missing .nojekyll');
 const local=new Set([...html.matchAll(/(?:src|href)="(\/[^"?#]*)/g)].map(match=>match[1]));

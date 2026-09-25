@@ -1,7 +1,7 @@
 /* The site uses paper, stone, ink, wine and brass; published work keeps its own colours. */
-@font-face{font-family:P052;src:url('/assets/p052-roman.otf') format('opentype');font-style:normal;font-weight:400;font-display:swap}
-@font-face{font-family:P052;src:url('/assets/p052-italic.otf') format('opentype');font-style:italic;font-weight:400;font-display:swap}
-:root{--display:P052,'Palatino Linotype',Palatino,Georgia,serif;--header-height:84px}
+@font-face{font-family:BluuNext;src:url('/assets/bluu-next-bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:BluuNext;src:url('/assets/bluu-next-bolditalic.woff2') format('woff2');font-style:italic;font-weight:700;font-display:swap}
+:root{--display:BluuNext,Georgia,serif;--header-height:84px}
 html{scroll-padding-top:0;scroll-behavior:auto}
 section[id],footer[id]{scroll-margin-top:calc(var(--header-height) + 16px)}
 main{overflow:visible}
@@ -59,9 +59,9 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .publication-grass .publication-role,.publication-consumed .publication-role{font-size:14px;margin-top:15px}
 .publication-grass .publication-summary,.publication-consumed .publication-summary{font-size:17px;line-height:1.6;margin-top:13px}
 .publication-grass .publication-action,.publication-consumed .publication-action{margin-top:17px}
-.publication-grass .publication-image{box-shadow:10px 10px 0 color-mix(in srgb,var(--wine) 18%,transparent)}
+.publication-grass .publication-image{box-shadow:none}
 .publication .work-visual,.publication:is(:hover,:focus-visible) .work-visual{transform:none!important}
-.publication:is(:hover,:focus-visible) .publication-image{box-shadow:10px 12px 0 color-mix(in srgb,var(--wine) 25%,transparent)}
+.publication:is(:hover,:focus-visible) .publication-image{box-shadow:none}
 .publication-image{transition:box-shadow .3s var(--motion-settle)}
 .publication-cue{transition:opacity .2s}
 /* One quiet pause for a belief; its words do the work. */
@@ -112,6 +112,25 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .reader-title[data-slot=dialog-title],.note-title[data-slot=dialog-title]{font-family:var(--display);font-weight:400;line-height:1.14;letter-spacing:-.03em}
 .reader-jumps{flex-wrap:wrap;justify-content:flex-start}
 .reader-jumps button{min-height:44px}
+
+/* A compact typographic cast: a sharp editorial face, a calm reading face, and folio numerals. */
+.district-wordmark{font:650 29px/1.1 var(--sans);letter-spacing:-.055em}
+.opening-statement h1{font:550 clamp(60px,6.6vw,105px)/1.13 var(--sans);letter-spacing:-.065em;max-width:21ch}
+.opening-statement h1>.hero-title-accent{font:700 italic .86em/1.25 var(--display);letter-spacing:-.025em}
+.work-heading h2{font-weight:550;letter-spacing:-.06em}
+.work-heading h2 em,.services-heading h2 em{font:700 italic 1em/1.15 var(--display);letter-spacing:-.025em}
+.publication-consumed h3,.publication-grass h3{font:700 clamp(36px,3.2vw,49px)/1.14 var(--display);letter-spacing:-.015em}
+.articulation-hypothesis h2{font:550 clamp(48px,4.7vw,75px)/1.18 var(--sans);letter-spacing:-.06em}
+.articulation-hypothesis h2 em{font:700 italic .92em/1.2 var(--display);letter-spacing:-.025em}
+.articulation-prose .articulation-belief{font:700 clamp(23px,2.2vw,33px)/1.37 var(--display);letter-spacing:-.015em;max-width:29ch}
+.services-heading h2{font:550 clamp(48px,4.7vw,73px)/1.18 var(--sans);letter-spacing:-.055em}
+.service-card h3{font:650 clamp(27px,2.5vw,36px)/1.22 var(--sans);letter-spacing:-.05em}
+.thinking-intro h2{font:550 clamp(48px,4.8vw,78px)/1.17 var(--sans);letter-spacing:-.06em}
+.thinking-intro h2 em{font:700 italic .95em/1.18 var(--display);letter-spacing:-.02em}
+.contact-big{font:550 clamp(70px,11vw,150px)/1.15 var(--sans);letter-spacing:-.065em}
+.reader-title[data-slot=dialog-title]{font-family:var(--sans);font-weight:600;letter-spacing:-.05em;line-height:1.18}
+.note-title[data-slot=dialog-title]{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.articulation-intro.reveal-visible h2,.articulation-hypothesis.reveal-visible .articulation-belief,.articulation-hypothesis.reveal-visible .articulation-elaboration{animation:none!important;clip-path:none!important;opacity:1!important;transform:none!important}
 
 /* Desktop motion belongs to entry and response; reading never depends on it. */
 @media(min-width:761px) and (prefers-reduced-motion:no-preference){
@@ -233,3 +252,15 @@ h1,h2,h3,h4{overflow-wrap:break-word}
  html{scroll-behavior:auto}
  .hero-title-line,.opening-intro,.opening-work-link,.capability-table{animation:none!important}
 }
+@media(max-width:760px){
+ .opening-statement h1{font-size:clamp(42px,10.2vw,65px);line-height:1.17;letter-spacing:-.052em;max-width:100%;overflow-wrap:anywhere}
+ .opening-statement h1>.hero-title-accent{font-size:.86em;line-height:1.28}
+ .publication-consumed h3,.publication-grass h3{font-size:35px;line-height:1.2}
+ .articulation-hypothesis h2{font-size:clamp(41px,9.6vw,61px);line-height:1.2;max-width:none;overflow-wrap:break-word}
+ .articulation-prose .articulation-belief{font-size:clamp(23px,6vw,30px);line-height:1.4}
+ .services-heading h2,.thinking-intro h2{font-size:clamp(42px,9.7vw,60px);line-height:1.2}
+ .service-card h3{font-size:30px;line-height:1.22}
+ .contact-big{font-size:clamp(49px,13vw,83px);line-height:1.18}
+ .reader-title[data-slot=dialog-title],.note-title[data-slot=dialog-title]{line-height:1.22;overflow-wrap:break-word}
+}
+@media(max-width:370px){.opening-statement h1{font-size:clamp(39px,10vw,45px)}}

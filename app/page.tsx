@@ -47,7 +47,7 @@ export default function Home(){
       <h2 id="articulation-title">Articulation is<br/><em>the skill I’d bet on.</em></h2>
       <div className="articulation-prose">
         <p className="articulation-belief">I believe articulation could become the most valuable skill as AI makes creation and execution easier.</p>
-        <p className="articulation-elaboration">When more people can make an idea happen, clarity about what it means carries more weight. What are you trying to say? Why does it matter? Can someone else understand it well enough to question it or build on it? I like finding the words that make a half-formed thought useful.</p>
+        <p className="articulation-elaboration">Take “build a community.” Do we mean an audience, customers who talk to each other, or people who might actually become friends? Each answer asks us to make something different. I like stopping at a word like that before it becomes a brief, and finding language a team can test, question and act on.</p>
       </div>
     </div>
   </section>
