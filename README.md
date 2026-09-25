@@ -1,6 +1,6 @@
 # Varun — GitHub Pages
 
-Portfolio at https://varunpkashyap.github.io, synced with portfolio version 35.
+Portfolio at https://varunpkashyap.github.io, built from the latest portfolio source.
 The site includes the design, animation, interactive tools, project downloads,
 weekly digest and all four archived editions.
 
