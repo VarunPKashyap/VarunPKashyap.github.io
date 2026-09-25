@@ -12,6 +12,8 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .site-header nav a:last-child{color:var(--paper);background:var(--wine)}
 .site-header nav a:last-child:hover{background:var(--deep)}
 .wordmark-pixel img{animation:none!important}
+.district-wordmark{display:inline-block;font:500 29px/1 var(--display);letter-spacing:-.035em;color:var(--wine)}
+.district-name .district-wordmark{font-size:clamp(35px,3.4vw,50px)}
 
 /* A first page in Varun's voice, with an actual report as the visual proof. */
 .opening-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.82fr);align-items:center;gap:clamp(40px,6vw,100px);min-height:0;margin:0;padding:clamp(46px,6vw,94px) 0 clamp(46px,5vw,78px);border:0;background:var(--paper)}
