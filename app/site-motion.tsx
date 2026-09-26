@@ -15,6 +15,16 @@ export function SiteMotion() {
     const navigation = Array.from(document.querySelectorAll<HTMLAnchorElement>(".site-header nav a[href^='#']")).map(link => ({
       link, section: document.querySelector<HTMLElement>(link.getAttribute("href")!),
     }));
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const observer = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).setAttribute("data-visible", "");
+          observer?.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: .08 }) : null;
+    revealItems.forEach(item => observer ? observer.observe(item) : item.setAttribute("data-visible", ""));
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -40,6 +50,7 @@ export function SiteMotion() {
       window.removeEventListener("resize", schedule);
       preference.removeEventListener("change", motion);
       desktop.removeEventListener("change", motion);
+      observer?.disconnect();
       root.removeAttribute("data-site-motion");
       navigation.forEach(({link}) => link.removeAttribute("aria-current"));
     };

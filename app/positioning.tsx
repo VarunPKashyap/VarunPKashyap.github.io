@@ -1,14 +1,22 @@
 import { ArrowDown, ArrowUpRight, Plus } from "lucide-react";
 
 export function PositioningHero() {
-  return <section id="top" className="intro-section positioning-hero">
+  return <section id="top" className="intro-section positioning-hero folio-hero">
     <div className="hero-context-line"><span className="meta">Cultural insights &amp; brand strategy</span><span className="meta">Bangalore, India</span></div>
-    <div className="opening-grid">
-      <div className="opening-statement">
-        <p className="opening-name">Hello, I’m Varun Kashyap.</p>
-        <h1><span className="hero-title-line">There’s enough</span><span className="hero-title-line hero-title-accent">content already.</span></h1>
-        <div className="opening-lower"><p className="opening-intro">I work in cultural insight and brand strategy. I use what I learn about people and place to decide what a brand should say, make or leave alone.</p><div className="opening-links"><a href="#work" className="opening-work-link">Start with the work<ArrowDown size={19}/></a><a href="#services" className="opening-services-link">What I do<ArrowUpRight size={17}/></a></div></div>
+    <div className="folio-hero__grid">
+      <div className="folio-hero__copy">
+        <p className="folio-hero__name">Hello, I’m Varun Kashyap.</p>
+        <h1><span>There’s enough</span><em>content already.</em></h1>
+        <p className="folio-hero__intro">I work in cultural insight and brand strategy. I use what I learn about people and place to decide what a brand should say, make or leave alone.</p>
+        <div className="folio-hero__links"><a href="#work" className="folio-hero__primary">Start with the work<ArrowDown size={19}/></a><a href="#services">What I do<ArrowUpRight size={17}/></a></div>
       </div>
+      <figure className="folio-hero__artifact">
+        <a className="folio-hero__paper" href="/assets/consumed-2024.pdf#page=41" target="_blank" rel="noopener noreferrer" aria-label="Open the original page about friendships in Consumed">
+          <span className="folio-hero__photo"><img src="/assets/consumed-relationships.webp" alt="A real hand holding a small yellow leaf, from a page of Consumed" width="1600" height="1056" fetchPriority="high"/></span>
+          <span className="folio-hero__corner">A detail from Consumed <ArrowUpRight size={17}/></span>
+        </a>
+        <figcaption><span>Consumed / Kommune × Stumble, 2024</span><span>On the ways we keep in touch</span></figcaption>
+      </figure>
     </div>
     <div className="career-strip"><a className="intro-affiliation" href="https://www.district.in/" target="_blank" rel="noopener noreferrer"><span className="meta">Currently at</span><span className="district-wordmark">District</span><ArrowUpRight size={18}/></a><p><span>Previously</span>Led Culture Consultancy at Kommune and Stumble</p><a href="/assets/varun-resume.pdf" download>Download résumé<ArrowDown size={17}/></a></div>
   </section>;
