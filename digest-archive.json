@@ -1,6 +1,138 @@
 {
   "editions": [
     {
+      "updatedAt": "2026-10-05",
+      "edition": "006",
+      "headline": "Archives, scorecards and the forms that keep memory moving.",
+      "items": [
+        {
+          "id": "kolkata-cheenapara-heritage",
+          "category": "READ / INDIA & URBAN MEMORY",
+          "title": "A gallery of memories: How Kolkata’s citizens are preserving the city’s Chinese heritage",
+          "source": "Scroll · Sayari Debnath",
+          "dateLabel": "26 Sep 2026 · Reported feature · Free read",
+          "url": "https://scroll.in/article/1095855/a-gallery-of-memories-how-kolkatas-citizens-are-preserving-the-citys-chinese-heritage",
+          "summary": "Inside Kolkata’s new Cheenapara Heritage Gallery, a 1960s restaurant menu, a Chinese-language newspaper and tooth-setter’s tools preserve the city’s Chinese history. Sayari Debnath also traces the community’s contraction after 1962 and the institutions it still maintains.",
+          "angle": "The most revealing objects are ordinary records of work, food and association. Together they show preservation as more than saving buildings: it means keeping community spaces active, documenting who used them and refusing a city’s habit of treating residents as outsiders."
+        },
+        {
+          "id": "pittsburgh-parking-championship",
+          "category": "READ / PUBLIC LIFE",
+          "title": "The Pittsburgh Parallel Parking Championship Edition",
+          "source": "Why is this interesting? · Mark Slavonia",
+          "dateLabel": "1 Oct 2026 · Substack essay · Free read",
+          "url": "https://whyisthisinteresting.substack.com/p/the-pittsburgh-parallel-parking-championship",
+          "summary": "A family argument over the best parallel parker became a six-year-old Pittsburgh street championship. Mark Slavonia reports on its one-run format, volunteer stations and wonderfully blunt scoring system: parking time multiplied by distance from the curb.",
+          "angle": "The delight comes from operational care, not spectacle. No preregistration, ten minutes from arrival to scorecard, simple public rules and friendly marshals turn an everyday competence into a ritual people want to perform together."
+        },
+        {
+          "id": "everything-everywhere-ori",
+          "category": "PLAY / INTERNET & MEMORY",
+          "title": "Everything, Everywhere, All At Once",
+          "source": "Jay Zuerndorfer & Ori · Tiny Awards 2026 finalist",
+          "dateLabel": "2026 · Archival pick · Interactive memorial · Free browser experience",
+          "url": "https://ori.dog/",
+          "summary": "Jay Zuerndorfer turns the days after losing Ori into a scroll through call logs, photographs and fragments of routine. The page moves from day zero to day twenty, ending after the layers of early grief have been worked through.",
+          "angle": "A quiet example of interaction serving emotion. The scrolling asks for patience, while dated fragments resist the urge to make grief neat. It shows how a webpage can hold private memory without turning it into disposable content."
+        },
+        {
+          "id": "pomp-circumstance-bic",
+          "category": "GO / BANGALORE & MUSIC",
+          "title": "Pomp and Circumstance",
+          "source": "Bangalore International Centre · V. Sriram",
+          "dateLabel": "11 Oct 2026 · 11am–1pm IST · Free with RSVP, subject to availability",
+          "url": "https://bangaloreinternationalcentre.org/event/pomp-and-circumstance/",
+          "summary": "Historian V. Sriram traces Carnatic musician Muthiah Bhagavatar across performance, scholarship and institution-building. Bhagavatar composed more than 400 songs, introduced around twenty ragas, led Trivandrum Music College and founded a Madurai gurukula in 1920.",
+          "angle": "Go for a portrait of cultural work that refuses a single job title. The programme connects composition, Harikatha, teaching and research, showing how one person’s curiosity can move between private practice, public performance and durable institutions."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Scroll",
+          "url": "https://scroll.in/"
+        },
+        {
+          "name": "Why is this interesting?",
+          "url": "https://whyisthisinteresting.substack.com/"
+        },
+        {
+          "name": "Tiny Awards",
+          "url": "https://tinyawards.net/2026/"
+        },
+        {
+          "name": "Bangalore International Centre",
+          "url": "https://bangaloreinternationalcentre.org/"
+        }
+      ],
+      "cadence": "weekly"
+    },
+    {
+      "updatedAt": "2026-09-28",
+      "edition": "005",
+      "headline": "What we keep alive: seeds, shared spaces and a voice of our own.",
+      "items": [
+        {
+          "id": "koraput-seeds-rituals",
+          "category": "READ / INDIA & LIVING CULTURE",
+          "title": "In photos: How festivals and rituals help Koraput’s Adivasis keep local seed varieties alive",
+          "source": "Scroll · Susanta Sekhar Choudhury, Pritesh Sundar Roy, Abhijit Mohanty & Pulak Ranjan Nayak",
+          "dateLabel": "9 Aug 2026 · Photo essay · Free read",
+          "url": "https://scroll.in/article/1094834/in-photos-how-festivals-and-rituals-help-koraputs-adivasis-keep-local-seed-varieties-alive",
+          "summary": "Four WASSAN practitioners describe how Koraput’s agricultural calendar keeps indigenous crops in use. During Puni Parab, farmers select healthy rice plants for next season’s seed; wedding ceremonies sustain particular varieties. Photographs connect these practices with the people carrying them forward.",
+          "angle": "The useful detail is that a crop can survive because a ceremony needs it. This account makes conservation inseparable from cooking, celebration and women’s knowledge, while acknowledging the market pressures and changing climate that threaten those connections."
+        },
+        {
+          "id": "kleinfeld-celebrations",
+          "category": "READ / PUBLIC LIFE",
+          "title": "Why Celebrations Matter",
+          "source": "Rachel Kleinfeld on Substack",
+          "dateLabel": "25 Aug 2026 · Essay · Free read",
+          "url": "https://rachelkleinfeld.substack.com/p/why-celebrations-matter",
+          "summary": "A fifteen-minute July Fourth parade in Pagosa Springs brings Native American and Hispanic floats alongside schools and businesses. Kleinfeld uses that scene, and her parents’ funeral, to argue that shared occasions can create belonging without settling every disagreement about the past.",
+          "angle": "A counterpoint to celebrating ritual for its own sake: Kleinfeld distinguishes events that reinforce an existing group from those that connect different groups. Read her proposal as a political argument grounded in personal observation, rather than proof that gatherings resolve conflict."
+        },
+        {
+          "id": "nunez-tone-criticism",
+          "category": "READ / WRITING & JUDGMENT",
+          "title": "An Interview with Sigrid Nunez",
+          "source": "The Believer · Morgan English",
+          "dateLabel": "24 Jun 2026 · Archival pick · Interview · Free read",
+          "url": "https://www.thebeliever.net/an-interview-with-sigrid-nunez/",
+          "summary": "Nunez talks to Morgan English about difficult mentors, rejected manuscripts and finding a tone for painful material. One telling classroom observation: the first person to comment on a story can send an entire workshop’s judgment in the same direction.",
+          "angle": "Keep this for its unusually candid account of receiving and giving criticism. Nunez’s examples separate useful feedback from the authority of whoever speaks first; her discussion of humour shows how tone can hold difficult people without reducing them to caricatures."
+        },
+        {
+          "id": "gombe-bic-october",
+          "category": "GO / BANGALORE",
+          "title": "Gombe",
+          "source": "Bangalore International Centre · Hansa Thapliyal & Paromita Vohra",
+          "dateLabel": "4 Oct 2026 · 6:30–8pm IST · Free with RSVP, subject to availability · Under-16s with an adult",
+          "url": "https://bangaloreinternationalcentre.org/event/gombe/",
+          "summary": "Three short films precede a conversation between Hansa Thapliyal and Paromita Vohra at BIC’s Seminar Halls in Domlur. In Kya Hai Ye Samjhauta, cloth, thread and recordings from twelve rural Uttar Pradesh caseworkers explore women’s choices in situations of domestic violence.",
+          "angle": "An intriguing change of medium after the reading: discarded materials, dolls and shadow puppetry carry questions about empathy and agency. The programme spans documentary and playful animation, including the 2026 film Duniya Kee Raunak. RSVP through the official listing."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Scroll",
+          "url": "https://scroll.in/"
+        },
+        {
+          "name": "Rachel Kleinfeld",
+          "url": "https://rachelkleinfeld.substack.com/"
+        },
+        {
+          "name": "The Believer",
+          "url": "https://www.thebeliever.net/"
+        },
+        {
+          "name": "Bangalore International Centre",
+          "url": "https://bangaloreinternationalcentre.org/"
+        }
+      ],
+      "cadence": "weekly"
+    },
+    {
       "updatedAt": "2026-09-23",
       "edition": "004",
       "headline": "Familiar films. Contested taste. The rituals that keep people coming back.",

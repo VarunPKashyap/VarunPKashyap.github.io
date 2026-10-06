@@ -20,7 +20,7 @@ export function BangaloreBreak() {
         <div className="food-eyebrow"><span className="meta">Off the clock</span><span className="food-hometown"><span lang="kn">ಬೆಂಗಳೂರು</span><span className="meta">Bangalore</span></span></div>
         <h2 id="bangalore-title">Dosa first. <span>Filter coffee after.</span></h2>
       </header>
-      <div className="food-body">
+      <div className="food-body" data-reveal>
         <figure className="benne-photo">
           <div className="benne-photo-frame"><img src="/assets/benne-dosa-cutout.png" alt="Golden folded dosa with butter and two chutneys at Benne" width="1254" height="1254" loading="lazy" /></div>
           <figcaption><span>Benne, Mumbai</span><span>Photo via <a href="https://www.vogue.in/content/new-restaurants-in-india-mumbai-pune-delhi-ncr-amritsar-bengaluru-goa-hyderabad-thiruvananthapuram-june-2024" target="_blank" rel="noopener noreferrer">Vogue India</a></span></figcaption>

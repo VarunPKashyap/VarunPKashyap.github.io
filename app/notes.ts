@@ -11,7 +11,7 @@ export const notes = [
     id: "friction", number: "02", label: "One more purchase", category: "Consumption", title: "At checkout, I hesitate.",
     teaser: "If I hesitate at checkout, is the price unclear, or have I changed my mind?",
     paragraphs: ["A checkout that takes fewer steps can be excellent design. The next question is which decision we have made easier. In Consumed, the discussion of convenience sits alongside impulsive buying, bundled deliveries and opportunities to pause. There is a tension here worth staying with.", "A moment of hesitation can be useful information. Perhaps the price is unclear. Perhaps the person has remembered they already own something similar. Those call for different responses. I’d want a product team to be able to explain which hesitation it is removing, rather than treating every pause as a defect. There’s a meaningful difference between helping someone finish what they came to do and making it harder to notice that they’ve changed their mind."],
-    question: "What does this convenience help someone do—and what does it make easier to overlook?",
+    question: "What does this convenience help someone do? What does it make easier to overlook?",
     evidence: "Consumed discusses convenience, impulse and more considered forms of consumption on printed pp. 20, 23 and 25. The strategic question is a further interpretation of those tensions.",
     sources: [{ title: "Consumed · Convenience and consumption · pp. 20–25", url: "/assets/consumed-2024.pdf#page=22" }]
   },

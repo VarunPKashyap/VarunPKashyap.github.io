@@ -15,7 +15,7 @@ export const projects = [
   },
   {
     id: "grass", number: "02", title: "Touching Grass", subtitle: "How India will go out in 2026", organisation: "District", year: "2026", format: "Cultural report", role: "Writer · Cultural insights", image: "/assets/touching-grass.webp",
-    summary: "A Wednesday run club, dinner alone, coffee at 8am. Four shifts in what makes an evening—or a morning—worth leaving home for.",
+    summary: "A Wednesday run club, dinner alone, coffee at 8am. Four shifts in what makes an evening, or a morning, worth leaving home for.",
     question: "What are people really seeking when they make a plan?",
     context: "A night out is too narrow a frame for the ways people use a city. The report groups cultural examples into four shifts: Plot-First Culture, Ambient Belonging, Dual Prime Times and Revolt Against the Rot. Each asks a different question about what makes an experience worth leaving home for.",
     contribution: "I wrote the report for District, shaping its editorial frame and bringing together examples of how identity, company, time and physical experience affect going out.",

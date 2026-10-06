@@ -2,7 +2,7 @@
 
 Portfolio at https://varunpkashyap.github.io, built from the latest portfolio source.
 The site includes the design, animation, interactive tools, project downloads,
-weekly digest and all four archived editions.
+weekly digest and all six archived editions.
 
 ## Publishing
 
@@ -29,9 +29,10 @@ Confirm the GitHub Pages deployment succeeds before reporting a live update.
 
 ## Weekly digest
 
-Edition 004 was published 23 September 2026. Read `EDITORIAL.md` before curating.
+Edition 006 was published 5 October 2026. Read `EDITORIAL.md` before curating.
 Preserve archive entries in `public/digest-archive.json`, update `public/digest.json`
 and verified thumbnail metadata/assets, validate, rebuild and publish.
 The existing Monday curation task selects articles; Pages only publishes files.
 
 Local game records are browser-origin specific and start fresh at the new URL.
+

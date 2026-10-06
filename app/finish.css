@@ -305,15 +305,6 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 .publication-grass .publication-action,.publication-consumed .publication-action{margin-top:18px}
 .service-card{grid-template-columns:minmax(220px,.82fr) minmax(210px,1.2fr) minmax(220px,1.27fr)}
 .service-card h3{font:400 clamp(23px,2.15vw,30px)/1.38 var(--pixel);letter-spacing:-.055em;overflow-wrap:break-word}
-.about-spread{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(210px,.65fr);gap:clamp(25px,4vw,60px);align-items:end;padding-top:clamp(24px,3vw,42px);border-top:1px solid var(--line);margin:clamp(48px,6vw,88px) 0 0;max-width:100%}
-.about-spread>a{display:block;overflow:hidden;background:var(--deep)}
-.about-spread img{display:block;width:100%;height:auto;transition:transform .5s var(--motion-settle)}
-.about-spread>a:is(:hover,:focus-visible) img{transform:scale(1.02)}
-.about-spread figcaption{display:grid;align-content:end;gap:16px;max-width:30ch;padding-bottom:3px}
-.about-spread figcaption .meta{color:var(--wine)}
-.about-spread figcaption p{font:700 clamp(24px,2.25vw,31px)/1.27 var(--display);letter-spacing:-.015em;margin:0}
-.about-spread figcaption cite{font-style:italic;color:var(--wine)}
-.about-spread figcaption>a{display:inline-flex;align-items:center;gap:12px;justify-self:start;min-height:44px;border-bottom:1px solid var(--wine);font:400 13px/1.5 var(--pixel);color:var(--wine)}
 .reader-quote{border-left:3px solid var(--wine);padding:5px 0 5px 24px;margin:32px 0 0;max-width:52ch}
 .reader-quote p{font:700 clamp(21px,2.2vw,31px)/1.35 var(--display);letter-spacing:-.015em;margin:0}
 .reader-quote cite{display:block;margin-top:14px;font:400 12px/1.5 var(--pixel);font-style:normal;color:var(--muted-copy)}
@@ -338,10 +329,6 @@ h1,h2,h3,h4{overflow-wrap:break-word}
  .publication-group-elsewhere{margin-top:2px}
  .publication-grass .publication-role,.publication-consumed .publication-role{font-size:12px;margin-top:13px}
  .service-card h3{font-size:clamp(21px,6vw,27px);line-height:1.4;overflow-wrap:anywhere}
- .about-spread{display:block;margin-top:48px;padding-top:22px}
- .about-spread figcaption{padding-top:18px;max-width:none;gap:8px}
- .about-spread figcaption p{font-size:25px}
- .about-spread figcaption>a{margin-top:3px}
  .reader-quote{padding-left:16px}
  .reader-quote p{font-size:23px}
 }

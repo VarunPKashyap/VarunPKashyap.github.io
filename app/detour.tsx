@@ -18,11 +18,13 @@ export function Detour(){
  const [tab,setTab]=useState('digest');
  const [view,setView]=useState('latest');
  const heading=useRef<HTMLHeadingElement>(null);
+ const focusEdition=useRef(false);
  useEffect(()=>{
   const sync=()=>{
    const hash=location.hash;
    if(hash==='#game'){setTab('game');return;}
    if(hash==='#detour'||hash.startsWith('#digest')){
+    focusEdition.current=hash.startsWith('#digest');
     setTab('digest');
     setView(hash==='#digest-archive'?'archive':hash.startsWith('#digest-edition-')?hash.slice('#digest-edition-'.length):'latest');
    }
@@ -31,11 +33,13 @@ export function Detour(){
   return()=>{window.removeEventListener('hashchange',sync);window.removeEventListener('popstate',sync)};
  },[]);
  useEffect(()=>{
-  if(!location.hash.startsWith('#digest'))return;
+  if(!focusEdition.current||!location.hash.startsWith('#digest'))return;
+  focusEdition.current=false;
   heading.current?.focus({preventScroll:true});
   document.getElementById('digest')?.scrollIntoView({block:'start'});
  },[view]);
  const chooseTab=(value:string)=>{
+  focusEdition.current=false;
   setTab(value);if(value==='digest')setView('latest');
   window.history.pushState(null,'',value==='game'?'#game':'#digest');
  };

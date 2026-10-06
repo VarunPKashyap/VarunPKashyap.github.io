@@ -1,49 +1,150 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { projects } from "./content";
 
-const spreads = [
-  { image: "/assets/consumed-methodology.webp", page: 45, label: "How we looked", note: "Interviews, surveys, discussions and workshops." },
-  { image: "/assets/consumed-sectors.webp", page: 46, label: "The range", note: "17 creative sectors explored." },
-  { image: "/assets/consumed-acknowledgements.jpg", page: 49, label: "The people", note: "Some of the collaborators behind the pages." },
+type OpenProject = (index: number, trigger: HTMLButtonElement) => void;
+type Frame = { image: string; label: string; alt: string; page?: number };
+
+const consumedFrames: Frame[] = [
+  { image: "/assets/consumed-cover.jpg", label: "Cover", alt: "The original Consumed report cover", page: 1 },
+  { image: "/assets/consumed-methodology.webp", label: "Method", alt: "Consumed methodology spread describing interviews, surveys, discussions and workshops", page: 45 },
+  { image: "/assets/consumed-sectors.webp", label: "17 sectors", alt: "Original Consumed spread showing the 17 creative sectors explored", page: 46 },
 ];
 
-export function WorkSection({ onOpen }: { onOpen: (index: number, trigger: HTMLButtonElement) => void }) {
-  const [spreadIndex, setSpreadIndex] = useState(0);
-  const warmed = useRef(false);
-  const spread = spreads[spreadIndex];
-  const turn = (direction: number) => setSpreadIndex(current => (current + direction + spreads.length) % spreads.length);
-  const warmSpreads = () => {
-    if (warmed.current) return;
-    warmed.current = true;
-    spreads.slice(1).forEach(item => { const image = new Image(); image.src = item.image; });
-  };
+const grassFrames: Frame[] = [
+  { image: "/assets/work/touching-grass-concert.webp", label: "The crowd", alt: "Concert photography from the original Touching Grass report", page: 36 },
+  { image: "/assets/work/touching-grass-kitchen.webp", label: "The kitchen", alt: "Original Touching Grass spread on Bengaluru’s Ma La Kitchen supper club, with a chef serving guests at the counter", page: 38 },
+  { image: "/assets/work/touching-grass-craft.webp", label: "The making", alt: "Original Touching Grass spread showing shoe customisation at the Gully Labs store in Delhi", page: 60 },
+];
 
-  return <section id="work" className="work-section light-section portfolio-work">
-    <div className="section-top"><span className="meta">Selected work</span><span className="meta">Reports / interviews / conversations</span></div>
-    <div className="portfolio-work__heading" data-reveal>
-      <h2>Questions that<br/><em>became work.</em></h2>
-      <p>Two reports, an interview and a conversation series. Each began by looking closer at what people were actually doing.</p>
+function Arrow({ diagonal = false }: { diagonal?: boolean }) {
+  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={diagonal ? "M5 19 19 5M5 5h14v14" : "M4 12h15m-6-6 6 6-6 6"} stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" /></svg>;
+}
+
+function ProjectHeading({ index, compact = false }: { index: number; compact?: boolean }) {
+  const project = projects[index];
+  return <div className="folio-copy-heading">
+    <p className="folio-kicker"><span>{project.number}</span><span>{project.format}</span></p>
+    <h3 id={`folio-title-${project.id}`}>{project.title}</h3>
+    {!compact && <p className="folio-subtitle">{project.subtitle}</p>}
+  </div>;
+}
+
+function ProjectDetails({ index, onOpen }: { index: number; onOpen: OpenProject }) {
+  const project = projects[index];
+  return <div className="folio-copy-details">
+    <p className="folio-summary">{project.summary}</p>
+    <dl className="folio-role"><dt>My part</dt><dd>{project.role}</dd></dl>
+    <button type="button" className="folio-explore" aria-label={`Explore ${project.title}`} aria-haspopup="dialog" onClick={event => onOpen(index, event.currentTarget)}><span>Explore the project</span><Arrow /></button>
+  </div>;
+}
+
+function ProjectCopy({ index, onOpen, compact = false }: { index: number; onOpen: OpenProject; compact?: boolean }) {
+  return <div className="folio-copy"><ProjectHeading index={index} compact={compact} /><ProjectDetails index={index} onOpen={onOpen} /></div>;
+}
+
+function ProjectGallery({ index, frames, onOpen }: { index: number; frames: Frame[]; onOpen: OpenProject }) {
+  const [selected, setSelected] = useState(0);
+  const [requested, setRequested] = useState(0);
+  const [primed, setPrimed] = useState(false);
+  const [announcement, setAnnouncement] = useState("");
+  const galleryRef = useRef<HTMLElement>(null);
+  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const project = projects[index];
+  const frame = frames[selected];
+
+  useEffect(() => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+    if (!("IntersectionObserver" in window)) { setPrimed(true); return; }
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) { setPrimed(true); observer.disconnect(); }
+    }, { rootMargin: "240px" });
+    observer.observe(gallery);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (requested === selected) return;
+    const image = imageRefs.current[requested];
+    if (!image) return;
+    let active = true;
+    image.decode().then(() => {
+      if (!active) return;
+      setSelected(requested);
+      setAnnouncement(`${frames[requested].label}, image ${requested + 1} of ${frames.length}. ${frames[requested].alt}`);
+    }).catch(() => {
+      if (!active) return;
+      setRequested(selected);
+      setAnnouncement("That image could not load. The previous image is still shown. Try again.");
+    });
+    return () => { active = false; };
+  }, [requested, selected, frames]);
+
+  function chooseFrame(frameIndex: number) {
+    setPrimed(true);
+    setRequested(frameIndex);
+  }
+
+  return <figure ref={galleryRef} className="folio-gallery">
+    <div className="folio-image-stage">
+      <button type="button" className="folio-image" aria-label={`Explore ${project.title}`} aria-haspopup="dialog" onClick={event => onOpen(index, event.currentTarget)}>
+        {frames.map((option, frameIndex) => <img key={option.image} ref={element => { imageRefs.current[frameIndex] = element; }} src={primed || frameIndex === 0 ? option.image : undefined} alt={selected === frameIndex ? option.alt : ""} aria-hidden={selected !== frameIndex} data-visible={selected === frameIndex} width="1600" height="1056" loading={primed ? "eager" : "lazy"} decoding="async" />)}
+        <span className="folio-image-action"><span>Open project</span><Arrow diagonal /></span>
+      </button>
+    </div>
+    <figcaption className="folio-caption">
+      <div className="folio-frame-controls" role="group" aria-label={`Choose a ${project.title} image`}>
+        {frames.map((option, frameIndex) => <button key={option.image} ref={element => { buttonRefs.current[frameIndex] = element; }} type="button" aria-pressed={selected === frameIndex} data-pending={requested === frameIndex && requested !== selected} onClick={() => chooseFrame(frameIndex)} onKeyDown={event => {
+          const destination = event.key === "ArrowRight" ? (frameIndex + 1) % frames.length : event.key === "ArrowLeft" ? (frameIndex + frames.length - 1) % frames.length : event.key === "Home" ? 0 : event.key === "End" ? frames.length - 1 : null;
+          if (destination === null) return;
+          event.preventDefault();
+          buttonRefs.current[destination]?.focus();
+          chooseFrame(destination);
+        }}><span className="folio-frame-dot" aria-hidden="true" />{option.label}</button>)}
+      </div>
+      <span className="folio-page">{frame.page ? <a href={`${project.link}#page=${frame.page}`} target="_blank" rel="noopener noreferrer" aria-label={`Open page ${frame.page} of ${project.title}`}>p. {String(frame.page).padStart(2, "0")} ↗</a> : "From the report"}</span>
+      <span className="folio-announcement" role="status" aria-live="polite" aria-atomic="true">{announcement}</span>
+    </figcaption>
+  </figure>;
+}
+
+export function WorkSection({ onOpen }: { onOpen: OpenProject }) {
+  return <section id="work" className="folio-section" aria-labelledby="folio-title">
+    <header className="folio-intro">
+      <div className="folio-section-line"><span>01 / Selected work</span><span>Research. Writing. Conversation.</span></div>
+      <div className="folio-heading"><h2 id="folio-title">Look closer.</h2><p>Reports, questions and conversations.<br />A few places my curiosity has taken me.</p></div>
+      <nav className="folio-index" aria-label="Selected work index">{projects.map(project => <a key={project.id} href={`#case-${project.id}`}><span>{project.number}</span><span>{project.id === "hannah" ? "Hannah Grey" : project.title}</span><Arrow diagonal /></a>)}</nav>
+    </header>
+
+    <div className="folio-featured">
+      <article id="case-consumed" className="folio-project folio-project--consumed" aria-labelledby="folio-title-consumed">
+        <ProjectHeading index={0} />
+        <ProjectGallery index={0} frames={consumedFrames} onOpen={onOpen} />
+        <ProjectDetails index={0} onOpen={onOpen} />
+        <p className="folio-imprint"><span>{projects[0].organisation}</span><span>{projects[0].year}</span></p>
+      </article>
+      <article id="case-grass" className="folio-project folio-project--grass" aria-labelledby="folio-title-grass">
+        <ProjectHeading index={1} />
+        <ProjectGallery index={1} frames={grassFrames} onOpen={onOpen} />
+        <ProjectDetails index={1} onOpen={onOpen} />
+        <p className="folio-imprint"><span>{projects[1].organisation}</span><span>{projects[1].year}</span></p>
+      </article>
     </div>
 
-    <article className="field-report" aria-labelledby="field-report-title">
-      <div className="field-report__story">
-        <span className="field-report__eyebrow">01 / Featured report / 2024</span>
-        <h3 id="field-report-title">Consumed</h3>
-        <p className="field-report__byline">Co-written with Ria Chopra<br/>for Stumble × Kommune</p>
-        <p className="field-report__question">What can consumption tell us about the lives people are trying to build?</p>
-        <p className="field-report__body">The report draws on more than 100 experts across 17 sectors. We asked what choices reveal about convenience, identity and belonging in India.</p>
-        <div className="field-report__actions"><button type="button" aria-haspopup="dialog" onClick={event => onOpen(0, event.currentTarget)}>Explore the story <ArrowRight size={19}/></button><a href="/assets/consumed-2024.pdf" target="_blank" rel="noopener noreferrer">Open the report <ArrowUpRight size={17}/></a></div>
-      </div>
-      <div className="field-report__viewer" data-reveal>
-        <a className="field-report__spread" key={spread.page} href={`/assets/consumed-2024.pdf#page=${spread.page}`} target="_blank" rel="noopener noreferrer" aria-label={`Open the original ${spread.label.toLowerCase()} spread in Consumed`}><img src={spread.image} width="1600" height="1056" alt={`${spread.label}: an original spread from the Consumed report`} loading={spreadIndex === 0 ? "lazy" : "eager"} onLoad={warmSpreads}/></a>
-        <div className="field-report__controls"><div className="field-report__caption" aria-live="polite"><span>{String(spreadIndex + 1).padStart(2, "0")} / 03 &nbsp; FROM THE REPORT</span><strong>{spread.label}</strong><small>{spread.note}</small></div><div className="field-report__arrows"><button type="button" aria-label="Previous report spread" onClick={() => turn(-1)}><ArrowLeft size={19}/></button><button type="button" aria-label="Next report spread" onClick={() => turn(1)}><ArrowRight size={19}/></button></div></div>
-      </div>
-    </article>
+    <div className="folio-pair">
+      {projects.slice(2).map((project, offset) => <article id={`case-${project.id}`} className={`folio-small folio-small--${project.id}`} key={project.id} aria-labelledby={`folio-title-${project.id}`}>
+        <div className="folio-small-topline"><span>{project.organisation}</span><span>{project.year}</span></div>
+        <button type="button" className="folio-small-image" aria-label={`Explore ${project.title}`} aria-haspopup="dialog" onClick={event => onOpen(offset + 2, event.currentTarget)}>
+          <img src={project.image} alt={`${project.title}, original publication cover`} width={offset === 0 ? 773 : 500} height={offset === 0 ? 1000 : 500} loading="lazy" />
+          <span className="folio-image-action"><span>Open project</span><Arrow diagonal /></span>
+        </button>
+        <ProjectCopy index={offset + 2} onOpen={onOpen} compact />
+      </article>)}
+    </div>
 
-    <div className="portfolio-work__more"><p className="portfolio-work__label">More work <span>02—04</span></p>{projects.slice(1).map((project, offset) => <button key={project.id} type="button" className={`portfolio-work__item portfolio-work__item--${project.id}`} onClick={event => onOpen(offset + 1, event.currentTarget)} aria-haspopup="dialog" aria-label={`Explore ${project.title}`}><span className="portfolio-work__number">{project.number}</span><span className="portfolio-work__thumbnail"><img src={project.image} alt="" loading="lazy"/></span><span className="portfolio-work__description"><span className="portfolio-work__kind">{project.format} / {project.organisation}</span><strong>{project.title}</strong><span>{project.summary}</span></span><ArrowUpRight className="portfolio-work__arrow" size={25}/></button>)}</div>
-    <div className="download-strip"><span className="meta">Take the reports with you (PDF)</span><a href="/assets/consumed-2024.pdf" download>Consumed<ArrowDown size={17}/></a><a href="/assets/touching-grass-2026.pdf" download>Touching Grass<ArrowDown size={17}/></a></div>
+    <div className="folio-downloads"><p>For your reading pile.</p><span>Keep the full reports</span><a href="/assets/consumed-2024.pdf" download>Consumed <span>PDF ↓</span></a><a href="/assets/touching-grass-2026.pdf" download>Touching Grass <span>PDF ↓</span></a></div>
   </section>;
 }

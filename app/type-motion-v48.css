@@ -1,0 +1,172 @@
+/* Editorial lettering: a literary display, quiet pixel indexes, and clear reading type. */
+:root { --display: BluuNext, Georgia, serif; }
+
+.folio-hero__copy h1 span {
+  font: 650 clamp(35px, 3.8vw, 58px)/1.13 var(--sans);
+  letter-spacing: -.06em;
+  white-space: normal;
+}
+.folio-hero__copy h1 em {
+  font: 700 clamp(75px, 7.15vw, 120px)/1.04 var(--display);
+  letter-spacing: -.033em;
+  max-width: 10ch;
+}
+.folio-hero__name { font-size: 14px; }
+.folio-hero__links a,
+.field-report__actions button,
+.field-report__actions a {
+  font: 650 16px/1.35 var(--sans);
+  letter-spacing: -.01em;
+}
+.site-header nav a { font: 600 15px/1.35 var(--sans); letter-spacing: -.015em; }
+.menu-toggle { font-family: var(--sans); }
+
+.portfolio-work__heading h2,
+.articulation-hypothesis h2,
+.services-heading h2,
+.thinking-intro h2,
+.about-grid h2,
+.food-heading h2,
+.contact-big {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -.027em;
+}
+.portfolio-work__heading h2 em,
+.articulation-hypothesis h2 em,
+.services-heading h2 em,
+.thinking-intro h2 em { font-family: var(--display); font-weight: 700; letter-spacing: -.02em; }
+.field-report__story h3 { line-height: 1.15; }
+.field-report__question { line-height: 1.28; }
+.portfolio-work__label { font: 400 18px/1.45 var(--pixel); letter-spacing: -.025em; }
+.portfolio-work__label span { font: 400 13px/1.45 var(--pixel); }
+.portfolio-work__description strong { line-height: 1.25; }
+.service-card h3 { font: 700 clamp(27px, 2.5vw, 37px)/1.25 var(--display); letter-spacing: -.025em; }
+.field-report__eyebrow,
+.field-report__byline,
+.field-report__caption span,
+.portfolio-work__kind { font-size: 13px; line-height: 1.5; }
+
+/* A three-beat drawing of the hypothesis. It remains readable without motion. */
+.decision-trail {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2.3vw, 38px);
+  padding: clamp(25px, 3vw, 44px) 0 0;
+  margin: clamp(46px, 6vw, 86px) 0 0;
+  border-top: 1px solid var(--line);
+}
+.decision-trail li { position: relative; min-width: 0; padding-top: 34px; }
+.decision-trail li::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--wine);
+  background: var(--surface-soft);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+.decision-trail__line {
+  position: absolute;
+  top: 8px;
+  left: 17px;
+  right: calc(-1 * clamp(12px, 2.3vw, 38px));
+  height: 1px;
+  background: var(--wine);
+  transform-origin: left;
+}
+.decision-trail li:last-child .decision-trail__line { right: 0; background: var(--line); }
+.decision-trail__index {
+  display: block;
+  color: var(--wine);
+  font: 400 13px/1.45 var(--pixel);
+}
+.decision-trail strong {
+  display: block;
+  margin-top: 10px;
+  font: 700 clamp(23px, 2.5vw, 36px)/1.2 var(--display);
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+/* The report changes like a physical page, with the caption following the image. */
+@keyframes field-page-change {
+  from { opacity: .5; transform: translateX(18px); clip-path: inset(0 10% 0 0); }
+  to { opacity: 1; transform: translateX(0); clip-path: inset(0); }
+}
+@keyframes field-caption-change {
+  from { opacity: .3; transform: translateY(7px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes trail-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes trail-mark {
+  from { opacity: .25; transform: rotate(45deg) scale(.55); }
+  to { opacity: 1; transform: rotate(45deg) scale(1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .field-report__spread img { animation: field-page-change .52s var(--motion-settle) both; }
+  .field-report__caption { animation: field-caption-change .42s .08s var(--motion-settle) both; }
+  .decision-trail[data-visible] li::before { animation: trail-mark .4s var(--motion-settle) both; }
+  .decision-trail[data-visible] .decision-trail__line { animation: trail-draw .62s var(--motion-settle) both; }
+  .decision-trail[data-visible] li:nth-child(2)::before,
+  .decision-trail[data-visible] li:nth-child(2) .decision-trail__line { animation-delay: .26s; }
+  .decision-trail[data-visible] li:nth-child(3)::before,
+  .decision-trail[data-visible] li:nth-child(3) .decision-trail__line { animation-delay: .52s; }
+}
+@media (max-width: 760px) {
+  .site-header nav a { font-size: 17px; }
+  .folio-hero__copy h1 span { font-size: clamp(31px, 8vw, 44px); line-height: 1.2; }
+  .folio-hero__copy h1 em { font-size: clamp(52px, 12.4vw, 78px); line-height: 1.08; max-width: 9ch; }
+  .folio-hero__links a,
+  .field-report__actions button,
+  .field-report__actions a { font-size: 15px; }
+  .portfolio-work__heading h2,
+  .articulation-hypothesis h2,
+  .services-heading h2,
+  .thinking-intro h2 { font-size: clamp(45px, 10.5vw, 65px); line-height: 1.13; }
+  .portfolio-work__description strong { line-height: 1.24; }
+  .service-card h3 { font-size: clamp(28px, 7.8vw, 36px); line-height: 1.25; }
+  .decision-trail { display: block; padding-top: 26px; margin-top: 46px; }
+  .decision-trail li { min-height: 105px; padding: 0 0 30px 31px; }
+  .decision-trail li::before { left: 2px; top: 5px; }
+  .decision-trail__line {
+    top: 23px;
+    left: 8px;
+    right: auto;
+    width: 1px;
+    height: calc(100% - 20px);
+    transform-origin: top;
+  }
+  .decision-trail li:last-child { min-height: 0; padding-bottom: 0; }
+  .decision-trail li:last-child .decision-trail__line { display: none; }
+  .decision-trail strong { font-size: 28px; margin-top: 6px; }
+  @keyframes trail-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  [data-site-motion="ready"] .folio-hero__copy h1 span,
+  [data-site-motion="ready"] .folio-hero__copy h1 em,
+  [data-site-motion="ready"] .folio-hero__artifact {
+    animation: field-caption-change .62s var(--motion-settle) both;
+  }
+  [data-site-motion="ready"] .folio-hero__copy h1 em { animation-delay: .11s; }
+  [data-site-motion="ready"] .folio-hero__artifact { animation-delay: .22s; }
+}
+@media (max-width: 390px) {
+  .folio-hero__copy h1 em { font-size: clamp(48px, 12vw, 58px); }
+  .portfolio-work__heading h2,
+  .articulation-hypothesis h2,
+  .services-heading h2,
+  .thinking-intro h2 { font-size: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .decision-trail *, .decision-trail li::before,
+  .field-report__spread img, .field-report__caption { animation: none !important; }
+}

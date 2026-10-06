@@ -2,7 +2,7 @@
 import {useCallback,useEffect,useRef,useState,type CSSProperties} from 'react';
 import {ArrowRight,Check,Coffee,MousePointer2,Music2,Pause,Play,RotateCcw,Search,Sparkles,Type,X} from 'lucide-react';
 import {closeGameTab,createRound,nextOpenTab,pauseRound,resumeRound,type PauseReason,type TabRound} from './tab-game-state';
-const titles=['An article about attention','Fonts — final, final','Best dosa near me','The future of everything','Untitled presentation (9)','A reference for a reference','Why am I so distracted?','A very long interview','One more trend report','Weekend plans, allegedly','A thread about that thread','Something I will read later','Is this actually a trend?','Another take on taste','The perfect opening line','How to focus (12 tips)','That one very good ad','A book I meant to buy','Notes on my notes','The Bangalore weather','A tab playing music','Someone’s 2027 predictions','Research for the research','How to close all tabs'];
+const titles=['An article about attention','Fonts, final final','Best dosa near me','The future of everything','Untitled presentation (9)','A reference for a reference','Why am I so distracted?','A very long interview','One more trend report','Weekend plans, allegedly','A thread about that thread','Something I will read later','Is this actually a trend?','Another take on taste','The perfect opening line','How to focus (12 tips)','That one very good ad','A book I meant to buy','Notes on my notes','The Bangalore weather','A tab playing music','Someone’s 2027 predictions','Research for the research','How to close all tabs'];
 const favicons=[Search,Type,Coffee,Sparkles,Type,MousePointer2,Search,Music2];
 const format=(ms:number)=>(ms/1000).toFixed(2);
 function Stopwatch({round}:{round:TabRound}){
@@ -14,6 +14,7 @@ function TabFace({id}:{id:number}){const Icon=favicons[id%favicons.length];retur
 
 export function MiniGame({active=true}:{active?:boolean}){
  const [round,setRound]=useState(()=>createRound());const current=useRef(round);
+ const previousState=useRef({phase:round.phase,active});
  const [runId,setRunId]=useState(0);const [records,setRecords]=useState<Record<string,number>>({});const recordRef=useRef(records);
  const [storageAvailable,setStorageAvailable]=useState(true);const [newBest,setNewBest]=useState(false);const [improvement,setImprovement]=useState<number|null>(null);
  const board=useRef<HTMLDivElement>(null);const overlay=useRef<HTMLDivElement>(null);const resultHeading=useRef<HTMLHeadingElement>(null);const resumeButton=useRef<HTMLButtonElement>(null);const focusFrame=useRef(0);const lastClosed=useRef(-1);
@@ -22,7 +23,13 @@ export function MiniGame({active=true}:{active?:boolean}){
  const pause=useCallback((reason:PauseReason='manual')=>{commit(pauseRound(current.current,performance.now(),reason))},[commit]);
  useEffect(()=>{if(!active){cancelAnimationFrame(focusFrame.current);pause('away')}},[active,pause]);
  useEffect(()=>{const hide=()=>{if(document.hidden)pause('hidden')};document.addEventListener('visibilitychange',hide);return()=>document.removeEventListener('visibilitychange',hide)},[pause]);
- useEffect(()=>{if(!active||!['paused','finished'].includes(round.phase))return;const frame=requestAnimationFrame(()=>{overlay.current?.scrollIntoView({block:'center',behavior:'instant'});if(round.phase==='finished')resultHeading.current?.focus({preventScroll:true});else resumeButton.current?.focus({preventScroll:true})});return()=>cancelAnimationFrame(frame)},[round.phase,active]);
+ useEffect(()=>{
+  const previous=previousState.current;
+  previousState.current={phase:round.phase,active};
+  if(!active||!previous.active||previous.phase===round.phase||document.hidden||!['paused','finished'].includes(round.phase))return;
+  const frame=requestAnimationFrame(()=>{overlay.current?.scrollIntoView({block:'center',behavior:'instant'});if(round.phase==='finished')resultHeading.current?.focus({preventScroll:true});else resumeButton.current?.focus({preventScroll:true})});
+  return()=>cancelAnimationFrame(frame);
+ },[round.phase,active]);
  const focusNext=(after=-1)=>{cancelAnimationFrame(focusFrame.current);focusFrame.current=requestAnimationFrame(()=>{const id=nextOpenTab(current.current,after);const b=board.current?.querySelector<HTMLButtonElement>(`[data-tab-id="${id}"]`);b?.focus({preventScroll:true});b?.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'})})};
  const reset=(total=round.total,armed=false)=>{cancelAnimationFrame(focusFrame.current);lastClosed.current=-1;setRunId(id=>id+1);setNewBest(false);setImprovement(null);commit(createRound(total,armed?'armed':'ready'))};
  const start=()=>{reset(round.total,true);focusNext()};
@@ -48,7 +55,7 @@ export function MiniGame({active=true}:{active?:boolean}){
     {round.phase==='finished'&&<><span className="game-round-label">{round.practice?'Practice round complete':newBest?'A new personal best':'All tabs closed'}</span><h4 ref={resultHeading} tabIndex={-1} aria-label={`${round.practice?'Practice round. ':''}All ${round.total} tabs closed in ${format(round.elapsed)} seconds${newBest?'. A new personal best.':''}`}>Clear head.</h4><strong className="game-result-time">{format(round.elapsed)}<small>s</small></strong><p>{improvement?`${format(improvement)} seconds faster than your best.`:`${round.total} tabs. A little more room to think.`}</p><button className="game-primary" onClick={start}>One more round<RotateCcw size={18}/></button><div className="game-confetti" aria-hidden="true">{Array.from({length:8},(_,i)=><i key={i} style={{'--piece':i} as CSSProperties}/>)}</div></>}
    </div></div>}
    </div>
-   <div className="game-bottom"><span>Enter or Space closes a focused tab. Focus moves to the next one. Esc pauses.</span><span>Your real tabs are safe. {storageAvailable?'Best times stay on this device.':'Best times last for this visit.'}</span></div>
+   <div className="game-bottom"><span>Enter or Space closes a focused tab. Focus moves to the next one. Esc pauses once the clock starts.</span><span>Your real tabs are safe. {storageAvailable?'Best times stay on this device.':'Best times last for this visit.'}</span></div>
   </div>
  </div>;
 }

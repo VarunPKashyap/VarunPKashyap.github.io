@@ -77,5 +77,30 @@
     "sourceUrl": "https://bangaloreinternationalcentre.org/wp-content/uploads/2026/09/Thumbnail_TOBU.jpg",
     "sourcePage": "https://bangaloreinternationalcentre.org/event/the-ocean-between-us/",
     "alt": "Diya Naidu and Nadia Milford facing one another in shallow sea water at sunset"
+  },
+  "kolkata-cheenapara-heritage": {
+    "src": "/assets/reads/kolkata-cheenapara-heritage.webp",
+    "sourceUrl": "https://sc0.blr1.cdn.digitaloceanspaces.com/article/215642-iwpeyepjnk-1789795021.jpg",
+    "sourcePage": "https://scroll.in/article/1095855/a-gallery-of-memories-how-kolkatas-citizens-are-preserving-the-citys-chinese-heritage",
+    "alt": "A visitor photographs the red-and-green entrance of the Cheenapara Heritage Gallery in Kolkata’s Tiretta Bazar",
+    "credit": "Photograph: Agnibha Chowdhury / Scroll",
+    "creditUrl": "https://scroll.in/article/1095855/a-gallery-of-memories-how-kolkatas-citizens-are-preserving-the-citys-chinese-heritage",
+    "modifications": "Resized and converted to WebP"
+  },
+  "everything-everywhere-ori": {
+    "src": "/assets/reads/everything-everywhere-ori.webp",
+    "sourceUrl": "https://ori.dog/day20.png",
+    "sourcePage": "https://ori.dog/",
+    "alt": "Ori’s pet carrier beneath a table holding toys, a water bowl, towels, medicine and memorial cards",
+    "credit": "Jay Zuerndorfer / ori.dog",
+    "creditUrl": "https://ori.dog/",
+    "modifications": "Resized and converted to WebP"
+  },
+  "pomp-circumstance-bic": {
+    "src": "/assets/reads/pomp-and-circumstance.webp",
+    "sourceUrl": "https://bangaloreinternationalcentre.org/wp-content/uploads/2026/10/Header_PnC1-1216x456.png",
+    "sourcePage": "https://bangaloreinternationalcentre.org/event/pomp-and-circumstance/",
+    "alt": "Black-and-white portrait of Harikeshanallur Muthiah Bhagavatar seated beside a tanpura",
+    "modifications": "Resized and converted to WebP"
   }
 }

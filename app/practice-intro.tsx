@@ -4,7 +4,7 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const lenses=[
  {id:'curiosity',name:'Curiosity.',number:'01',kicker:'The starting point',title:'That doesn’t quite explain it.',body:'Someone goes out alone and still wants to be around people. Independence and belonging can occupy the same table. I’m interested in the detail that makes the easy explanation less comfortable.',action:'Read the note on going out alone',note:0},
- {id:'articulation',name:'Articulation.',number:'02',kicker:'Where thinking becomes a decision',title:'“Build a community.” Fine. For whom?',body:'An audience, a customer base and a friendship ask different things of people. Finding the words means choosing what we mean — and giving a team something precise enough to act on.',action:'Read my articulation hypothesis',href:'#articulation'},
+ {id:'articulation',name:'Articulation.',number:'02',kicker:'Where thinking becomes a decision',title:'“Build a community.” Fine. For whom?',body:'An audience, a customer base and a friendship ask different things of people. Finding the words means choosing what we mean, giving a team something precise enough to act on.',action:'Read my articulation hypothesis',href:'#articulation'},
  {id:'culture',name:'Cultural insights.',number:'03',kicker:'Context before conclusions',title:'The purchase is only part of the story.',body:'What was available? Who else was involved? What did the choice allow someone to express? I look at the circumstances around a behaviour to understand what it might mean for a brand.',action:'View selected work',href:'#work'}
 ];
 export function PracticeIntro({onRead}:{onRead:(index:number,trigger:HTMLButtonElement)=>void}){
