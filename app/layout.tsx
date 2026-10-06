@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./atelier.css";
 import "./project-gallery.css";
+import "./working-notes.css";
 import "./game.css";
 export const metadata: Metadata = {
  metadataBase: new URL("https://varunpkashyap.github.io"),

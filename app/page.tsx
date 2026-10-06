@@ -10,6 +10,7 @@ import { WorkSection } from "./work-section";
 import { BangaloreBreak } from "./bangalore-break";
 import { SiteMotion } from "./site-motion";
 import { ArticulationLab } from "./articulation-lab";
+import { WorkingNotes } from "./working-notes";
 const readingTime=(paragraphs:string[])=>Math.max(1,Math.ceil(paragraphs.join(" ").split(/\s+/).length/220));
 function updateReaderProgress(element: HTMLDivElement | null) {
  if (!element) return;
@@ -55,15 +56,14 @@ export default function Home(){
  return <>
  <SiteMotion/>
  <a href="#main" className="skip-link">Skip to content</a>
- <header className="site-header" ref={header}><a href="#top" className="wordmark" aria-label="Varun, back to top"><img src="/assets/varun-script-wordmark.png" alt="" width="2048" height="683"/></a><span className="header-caption">An independent<br/>point of view.</span><button ref={menuTrigger} aria-label={menuOpen?"Close menu":"Open menu"} className="menu-toggle" onClick={()=>setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="navigation">{menuOpen?'Close':'Menu'}{menuOpen?<X size={20}/>:<Plus size={20}/>}</button><nav id="navigation" className={menuOpen?'is-open':''} aria-label="Main navigation"><a href="#work" onClick={()=>navigateTo("#work")}>Work <small>01</small></a><a href="#services" onClick={()=>navigateTo("#services")}>Practice <small>02</small></a><a href="#about" onClick={()=>navigateTo("#about")}>About <small>03</small></a><a href="#thinking" onClick={()=>navigateTo("#thinking")}>Notes <small>04</small></a><a href="#contact" onClick={()=>navigateTo("#contact")}>Let’s talk <ArrowUpRight size={17}/></a></nav></header>
+ <header className="site-header" ref={header}><a href="#top" className="wordmark" aria-label="Varun, back to top"><img src="/assets/varun-script-wordmark.png" alt="" width="2048" height="683"/></a><span className="header-caption">An independent<br/>point of view.</span><button ref={menuTrigger} aria-label={menuOpen?"Close menu":"Open menu"} className="menu-toggle" onClick={()=>setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="navigation">{menuOpen?'Close':'Menu'}{menuOpen?<X size={20}/>:<Plus size={20}/>}</button><nav id="navigation" className={menuOpen?'is-open':''} aria-label="Main navigation"><a href="#work" onClick={()=>navigateTo("#work")}>Work <small>01</small></a><a href="#practice" onClick={()=>navigateTo("#practice")}>Practice <small>02</small></a><a href="#about" onClick={()=>navigateTo("#about")}>About <small>03</small></a><a href="#thinking" onClick={()=>navigateTo("#thinking")}>Notes <small>04</small></a><a href="#contact" onClick={()=>navigateTo("#contact")}>Let’s talk <ArrowUpRight size={17}/></a></nav></header>
  <main id="main">
   <PositioningHero/>
   <WorkSection onOpen={openProject}/>
-  <ArticulationLab/>
-  <ServicesSection/>
+  <div id="practice" className="practice-sequence"><ArticulationLab/><ServicesSection/></div>
   <AboutSection/>
   <section className="personal-section"><BangaloreBreak/></section>
-  <section id="thinking" className="thinking-section"><div className="section-top"><span className="meta">04 / Working notes</span><a className="meta" href="#digest">This week’s reading ↘</a></div><div className="thinking-intro" data-reveal><h2>Loose ends.<br/><em>Worth pulling.</em></h2><div><p>A table for one, a forwarded meme, an expensive gig. These are the details I keep returning to.</p></div></div><div className="thought-list">{notes.map((n,i)=><button key={n.id} onClick={e=>openNote(i,e.currentTarget)} aria-haspopup="dialog" aria-label={`Read ${n.title}`}><span className="meta">{n.number}<small className="note-duration">{readingTime(n.paragraphs)} min</small></span><span className="thought-copy"><span className="note-topic">{n.category}</span><h3>{n.title}</h3><p>{n.teaser}</p><span className="note-read">Read the note</span></span><ArrowUpRight size={26}/></button>)}</div><aside className="notes-postscript" id="perspective"><span className="meta">A small distinction</span><p>Something silly can have an exact purpose. Something beautifully produced can have none.</p></aside></section>
+  <WorkingNotes onOpen={openNote}/>
   <Detour/>
   <footer id="contact" className="contact-section"><div className="section-top"><span className="meta">Tell me what you’re working on.</span></div><h2 className="contact-big"><span>Let’s talk.</span></h2><div className="contact-methods"><a href={linkedin} target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><small>Connect with Varun</small><ArrowUpRight size={24}/></a><a href="mailto:varunpkashyap98@gmail.com"><span>Email</span><small>varunpkashyap98@gmail.com</small><ArrowUpRight size={24}/></a><a href="https://www.instagram.com/vruuun/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><small>@vruuun</small><ArrowUpRight size={24}/></a></div><div className="footer-line"><span>Varun / Cultural insights & brand strategy</span><a href="#top">Back to the top ↑</a><span>Bangalore, India / © {new Date().getFullYear()}</span></div></footer>
  </main>

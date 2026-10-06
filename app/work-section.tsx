@@ -4,18 +4,18 @@ import { useEffect, useRef, useState } from "react";
 import { projects } from "./content";
 
 type OpenProject = (index: number, trigger: HTMLButtonElement) => void;
-type Frame = { image: string; label: string; alt: string; page?: number };
+type Frame = { image: string; label: string; alt: string; width: number; height: number; page?: number };
 
 const consumedFrames: Frame[] = [
-  { image: "/assets/consumed-cover.jpg", label: "Cover", alt: "The original Consumed report cover", page: 1 },
-  { image: "/assets/consumed-methodology.webp", label: "Method", alt: "Consumed methodology spread describing interviews, surveys, discussions and workshops", page: 45 },
-  { image: "/assets/consumed-sectors.webp", label: "17 sectors", alt: "Original Consumed spread showing the 17 creative sectors explored", page: 46 },
+  { image: "/assets/consumed-cover.jpg", label: "Cover", alt: "The original Consumed report cover", width: 1000, height: 660, page: 1 },
+  { image: "/assets/consumed-methodology.webp", label: "Method", alt: "Consumed methodology spread describing interviews, surveys, discussions and workshops", width: 1600, height: 1056, page: 45 },
+  { image: "/assets/consumed-sectors.webp", label: "17 sectors", alt: "Original Consumed spread showing the 17 creative sectors explored", width: 1600, height: 1056, page: 46 },
 ];
 
 const grassFrames: Frame[] = [
-  { image: "/assets/work/touching-grass-concert.webp", label: "The crowd", alt: "Concert photography from the original Touching Grass report", page: 36 },
-  { image: "/assets/work/touching-grass-kitchen.webp", label: "The kitchen", alt: "Original Touching Grass spread on Bengaluru’s Ma La Kitchen supper club, with a chef serving guests at the counter", page: 38 },
-  { image: "/assets/work/touching-grass-craft.webp", label: "The making", alt: "Original Touching Grass spread showing shoe customisation at the Gully Labs store in Delhi", page: 60 },
+  { image: "/assets/work/touching-grass-concert.webp", label: "The crowd", alt: "Concert photography from the original Touching Grass report", width: 1500, height: 975, page: 36 },
+  { image: "/assets/work/touching-grass-kitchen.webp", label: "The kitchen", alt: "Original Touching Grass spread on Bengaluru’s Ma La Kitchen supper club, with a chef serving guests at the counter", width: 1500, height: 975, page: 38 },
+  { image: "/assets/work/touching-grass-craft.webp", label: "The making", alt: "Original Touching Grass spread showing shoe customisation at the Gully Labs store in Delhi", width: 1500, height: 975, page: 60 },
 ];
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
@@ -91,7 +91,7 @@ function ProjectGallery({ index, frames, onOpen }: { index: number; frames: Fram
   return <figure ref={galleryRef} className="folio-gallery">
     <div className="folio-image-stage">
       <button type="button" className="folio-image" aria-label={`Explore ${project.title}`} aria-haspopup="dialog" onClick={event => onOpen(index, event.currentTarget)}>
-        {frames.map((option, frameIndex) => <img key={option.image} ref={element => { imageRefs.current[frameIndex] = element; }} src={primed || frameIndex === 0 ? option.image : undefined} alt={selected === frameIndex ? option.alt : ""} aria-hidden={selected !== frameIndex} data-visible={selected === frameIndex} width="1600" height="1056" loading={primed ? "eager" : "lazy"} decoding="async" />)}
+        {frames.map((option, frameIndex) => <img key={option.image} ref={element => { imageRefs.current[frameIndex] = element; }} src={primed || frameIndex === 0 ? option.image : undefined} alt={selected === frameIndex ? option.alt : ""} aria-hidden={selected !== frameIndex} data-visible={selected === frameIndex} width={option.width} height={option.height} loading={primed ? "eager" : "lazy"} decoding="async" />)}
         <span className="folio-image-action"><span>Open project</span><Arrow diagonal /></span>
       </button>
     </div>
@@ -103,7 +103,7 @@ function ProjectGallery({ index, frames, onOpen }: { index: number; frames: Fram
           event.preventDefault();
           buttonRefs.current[destination]?.focus();
           chooseFrame(destination);
-        }}><span className="folio-frame-dot" aria-hidden="true" />{option.label}</button>)}
+        }}><span className="folio-frame-thumb" aria-hidden="true"><img src={primed || frameIndex === 0 ? option.image : undefined} alt="" width={option.width} height={option.height} loading={primed ? "eager" : "lazy"} decoding="async" /></span><span>{option.label}</span></button>)}
       </div>
       <span className="folio-page">{frame.page ? <a href={`${project.link}#page=${frame.page}`} target="_blank" rel="noopener noreferrer" aria-label={`Open page ${frame.page} of ${project.title}`}>p. {String(frame.page).padStart(2, "0")} ↗</a> : "From the report"}</span>
       <span className="folio-announcement" role="status" aria-live="polite" aria-atomic="true">{announcement}</span>
