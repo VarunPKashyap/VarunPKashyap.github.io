@@ -1,154 +1,104 @@
 .culture-object {
-  --culture-object-paper: var(--paper);
-  --culture-object-ink: var(--ink);
-  --culture-object-violet: var(--brass);
-  --culture-object-dark: var(--wine);
-  --culture-object-tilt-x: 0deg;
-  --culture-object-tilt-y: 0deg;
-  --culture-object-turn: 0deg;
   position: relative;
   isolation: isolate;
-  container-type: inline-size;
   width: 100%;
-  max-width: 500px;
+  max-width: 440px;
   min-width: 0;
   margin: 0 auto;
-  color: var(--culture-object-ink);
+  color: var(--ink);
   font-family: var(--pixel);
 }
 .culture-object-stage {
-  position: relative;
-  display: grid;
-  place-items: center;
   width: 100%;
-  aspect-ratio: 1;
   max-width: 400px;
   margin-inline: auto;
-  perspective: 1100px;
+  aspect-ratio: 1;
   user-select: none;
 }
-.culture-object-stage::before {
-  content: "";
-  position: absolute;
-  width: 62%;
-  height: 13%;
-  left: 19%;
-  top: 68%;
-  background: radial-gradient(ellipse, color-mix(in srgb, var(--ink) 14%, transparent), transparent 70%);
-  transform: rotate(-14deg);
-  transition: transform 1.1s var(--ease), opacity 1.1s var(--ease);
-  pointer-events: none;
+.culture-print { display: block; width: 100%; height: 100%; overflow: visible; }
+.culture-print-grid { fill: var(--wine); transition: opacity 280ms ease; }
+.culture-print-tile {
+  fill: var(--ink);
+  transition: transform 620ms cubic-bezier(.22,.8,.2,1);
+  transition-delay: var(--tile-delay, 0ms);
 }
-.culture-object[data-scattered="true"] .culture-object-stage::before { transform: rotate(-14deg) scale(1.2); opacity: .65; }
-.culture-object-tilt,
-.culture-object-assembly,
-.culture-object-puzzle,
-.culture-object-piece { transform-style: preserve-3d; }
-.culture-object-tilt { width: 100%; max-width: 440px; aspect-ratio: 1; }
-.culture-object-assembly { width: 100%; height: 100%; position: relative; }
-.culture-object-orbit { position: absolute; inset: 0; transform: rotate(-8deg); pointer-events: none; }
-.culture-object-orbit svg { display: block; width: 100%; height: 100%; }
-.culture-object-orbit circle { fill: none; stroke: var(--culture-object-ink); stroke-width: .55; opacity: .23; }
-.culture-object-orbit defs path { fill: none; stroke: none; }
-.culture-object-orbit text { fill: var(--culture-object-ink); font: 400 12px var(--pixel); letter-spacing: 4px; }
-.culture-object-puzzle {
-  position: absolute;
-  width: clamp(200px, 58%, 240px);
-  aspect-ratio: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotateX(calc(17deg + var(--culture-object-tilt-x))) rotateY(calc(-22deg + var(--culture-object-tilt-y))) rotateZ(calc(-14deg + var(--culture-object-turn)));
-  transition: transform 900ms cubic-bezier(.22,.7,.1,1);
-}
-.culture-object-piece {
-  position: absolute;
-  inset: 0;
-  transform: translate3d(0, 0, 0);
-  transition: transform 1100ms cubic-bezier(.22,.7,.1,1);
-  transition-delay: var(--piece-delay);
-}
-.culture-object-piece-0 { --piece-delay: 0ms; --piece-scatter: translate3d(-18px,-19px,16px) rotateY(-10deg) rotateZ(-7deg); transform-origin: 25% 25%; }
-.culture-object-piece-1 { --piece-delay: 65ms; --piece-scatter: translate3d(20px,-18px,-5px) rotateY(12deg) rotateZ(8deg); transform-origin: 75% 25%; }
-.culture-object-piece-2 { --piece-delay: 130ms; --piece-scatter: translate3d(-19px,18px,9px) rotateX(-10deg) rotateZ(5deg); transform-origin: 25% 75%; }
-.culture-object-piece-3 { --piece-delay: 195ms; --piece-scatter: translate3d(19px,20px,20px) rotateX(10deg) rotateZ(-6deg); transform-origin: 75% 75%; }
-.culture-object-piece svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.culture-object-piece path { stroke: var(--culture-object-ink); stroke-width: .8; stroke-linejoin: round; }
-.culture-object-edge path { fill: var(--culture-object-dark); }
-.culture-object-face path { fill: var(--culture-object-violet); }
-.culture-object-piece-1 .culture-object-face path { fill: var(--culture-object-paper); }
-.culture-object-piece-2 .culture-object-face path { fill: var(--culture-object-dark); }
-.culture-object-piece-3 .culture-object-face path { fill: color-mix(in srgb, var(--brass) 56%, var(--paper)); }
-.culture-object-face text { fill: var(--culture-object-ink); font: 400 8px var(--pixel); letter-spacing: 1.5px; }
-.culture-object-piece-2 .culture-object-face text { fill: var(--culture-object-paper); }
-.culture-object[data-scattered="true"] .culture-object-piece { transform: var(--piece-scatter); }
-.culture-object[data-entering="true"] .culture-object-piece { animation: culture-object-arrive 1100ms cubic-bezier(.22,.7,.1,1) var(--piece-delay) both; }
-.culture-object[data-paused="true"] .culture-object-piece { animation-play-state: paused; transition: none; }
-.culture-object[data-paused="true"] .culture-object-puzzle,
-.culture-object[data-paused="true"] .culture-object-stage::before { transition: none; }
-@keyframes culture-object-arrive {
-  from { transform: var(--piece-scatter); }
-  to { transform: translate3d(0, 0, 0); }
-}
+.culture-print-violet { fill: var(--wine); }
+.culture-object[data-adjusting="true"] .culture-print-tile,
+.culture-object[data-adjusting="true"] .culture-print-grid { transition: none; }
 .culture-object-bottomline {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  z-index: 2;
   width: 100%;
-  max-width: 380px;
+  max-width: 352px;
   margin: 0 auto;
-  padding-top: 5px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--ink);
 }
-.culture-object button {
-  position: relative;
+.culture-print-caption { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 46px; font-size: 11px; line-height: 1.5; }
+.culture-print-shuffle {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  gap: 9px;
-  min-width: 44px;
+  justify-content: flex-end;
+  gap: 10px;
   min-height: 44px;
+  min-width: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.culture-print-shuffle svg { flex-shrink: 0; }
+.culture-print-shuffle:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+.culture-print-control { display: grid; grid-template-columns: auto minmax(0,1fr) 3ch; align-items: center; gap: 16px; font-size: 10px; line-height: 1.5; color: var(--muted-copy); }
+.culture-print-control output { text-align: right; font-variant-numeric: tabular-nums; }
+.culture-print-control input {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
   margin: 0;
-  padding: 10px;
+  padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: var(--culture-object-ink);
-  font: inherit;
-  font-size: 11px;
-  line-height: 1.3;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transition: background .2s ease, color .2s ease;
+  cursor: ew-resize;
+  accent-color: var(--ink);
 }
-.culture-object button:hover { background: color-mix(in srgb, var(--brass) 19%, transparent); }
-.culture-object button:active { color: var(--culture-object-dark); }
-.culture-object button:disabled { opacity: .45; cursor: default; background: transparent; }
-.culture-object button:focus-visible { outline: 2px solid var(--culture-object-dark); outline-offset: 2px; }
-.culture-object button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.15; stroke-linecap: square; stroke-linejoin: miter; }
-.culture-object .culture-object-arrange { padding-left: 0; white-space: nowrap; }
-.culture-object-arrange svg { width: 14px; height: 14px; }
-.culture-object-tools { display: flex; gap: 2px; flex-shrink: 0; }
-html[data-motion-paused] .culture-object-puzzle,
-html[data-motion-paused] .culture-object-piece,
-html[data-motion-paused] .culture-object-stage::before { transition: none; }
-@media (max-width: 700px) {
-  .culture-object { max-width: 440px; }
-  .culture-object-stage { max-width: 360px; margin-inline: auto; }
-  .culture-object-puzzle { width: clamp(180px, 56%, 200px); }
-  .culture-object-orbit text { font-size: 11px; }
-  .culture-object-bottomline { max-width: 340px; }
+.culture-print-control input::-webkit-slider-runnable-track {
+  height: 2px;
+  background: linear-gradient(to right,var(--wine) 0 var(--focus-position),var(--line) var(--focus-position) 100%);
 }
-@container (max-width: 359px) {
-  .culture-object-puzzle { width: clamp(160px, 63.4%, 200px); }
-  .culture-object-piece-0 { --piece-scatter: translate3d(-8px,-9px,7px) rotateY(-4deg) rotateZ(-3deg); }
-  .culture-object-piece-1 { --piece-scatter: translate3d(10px,-8px,-3px) rotateY(5deg) rotateZ(3deg); }
-  .culture-object-piece-2 { --piece-scatter: translate3d(-9px,8px,5px) rotateX(-4deg) rotateZ(2deg); }
-  .culture-object-piece-3 { --piece-scatter: translate3d(9px,10px,9px) rotateX(4deg) rotateZ(-2deg); }
+.culture-print-control input::-moz-range-track { height: 2px; background: var(--line); }
+.culture-print-control input::-moz-range-progress { height: 2px; background: var(--wine); }
+.culture-print-control input::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 22px;
+  margin-top: -10px;
+  border: 3px solid var(--paper);
+  border-radius: 0;
+  background: var(--ink);
+  box-shadow: 0 0 0 1px var(--ink);
 }
-@media (prefers-reduced-motion: reduce) {
-  .culture-object[data-entering="true"] .culture-object-piece { animation: none !important; }
-  .culture-object-puzzle, .culture-object-piece, .culture-object-stage::before, .culture-object button { transition: none; }
+.culture-print-control input::-moz-range-thumb { width: 10px; height: 16px; border: 3px solid var(--paper); border-radius: 0; background: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.culture-print-control input:focus-visible { outline: 2px solid var(--wine); outline-offset: 2px; }
+.culture-print-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (hover:hover) and (pointer:fine) {
+  .culture-print-shuffle:hover { color: var(--wine); }
+  .culture-print-control input:hover::-webkit-slider-thumb { background: var(--wine); }
+  .culture-print-control input:hover::-moz-range-thumb { background: var(--wine); }
+}
+@media (max-width:760px) {
+  .culture-object-stage { max-width: 340px; }
+  .culture-object-bottomline { max-width: 324px; }
+  .culture-print-tile { transition-duration: 360ms; transition-delay: 0ms; }
+  .culture-print-caption { font-size: 10px; }
+  .culture-print-control { gap: 12px; font-size: 9px; }
+}
+html[data-motion-paused] .culture-print-tile,
+html[data-motion-paused] .culture-print-grid { transition: none !important; }
+@media (prefers-reduced-motion:reduce) {
+  .culture-print-tile, .culture-print-grid { transition: none !important; }
 }

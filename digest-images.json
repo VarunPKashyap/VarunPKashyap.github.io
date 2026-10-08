@@ -102,5 +102,41 @@
     "sourcePage": "https://bangaloreinternationalcentre.org/event/pomp-and-circumstance/",
     "alt": "Black-and-white portrait of Harikeshanallur Muthiah Bhagavatar seated beside a tanpura",
     "modifications": "Resized and converted to WebP"
+  },
+  "ashish-shah-ordinary-india": {
+    "src": "/assets/reads/ashish-shah-ordinary-india.webp",
+    "alt": "Portrait from Ashish Shah’s 2019 shoot for Tatler Hong Kong, showing a model wearing a floral headpiece.",
+    "sourceUrl": "https://assets.vogue.in/photos/6abe2f5721e7a6ca7bebcdb2/16:9/w_1280,c_limit/tatler234.jpeg",
+    "sourcePage": "https://www.vogue.in/content/why-the-world-needs-to-see-and-accept-an-ordinary-india",
+    "credit": "Ashish Shah / Tatler Hong Kong, via Vogue India",
+    "creditUrl": "https://www.vogue.in/content/why-the-world-needs-to-see-and-accept-an-ordinary-india",
+    "modifications": "Resized and converted to WebP"
+  },
+  "jonah-weiner-profile-writing": {
+    "src": "/assets/reads/jonah-weiner-profile-writing.webp",
+    "alt": "Two silhouetted figures in blue light at a James Turrell installation, framed by Blackbird Spyplane branding.",
+    "sourceUrl": "https://substack-post-media.s3.amazonaws.com/public/images/dbf21175-5f50-47d3-bfd7-020530712216_1904x1345.png",
+    "sourcePage": "https://www.blackbirdspyplane.com/archive",
+    "credit": "Blackbird Spyplane",
+    "creditUrl": "https://www.blackbirdspyplane.com/p/i-used-to-get-paid-to-hang-out-with-famous-people",
+    "modifications": "Resized and converted to WebP; no crop"
+  },
+  "aabyari-srinagar": {
+    "src": "/assets/reads/aabyari-srinagar.webp",
+    "alt": "Aabyari’s carved wooden entrance beside an artisan weaving at a loom inside the Srinagar cultural centre.",
+    "sourceUrl": "https://assets.cntraveller.in/photos/6abdf06f007409add33790bc/16:9/w_1280,c_limit/Lead%20image%20(4).png",
+    "sourcePage": "https://www.cntraveller.in/story/in-srinagar-a-century-old-home-is-now-a-cultural-centre-that-celebrates-kashmirs-craft-and-cuisine/",
+    "credit": "Ahana Gurung / Aabyari, via Condé Nast Traveller India",
+    "creditUrl": "https://www.cntraveller.in/story/in-srinagar-a-century-old-home-is-now-a-cultural-centre-that-celebrates-kashmirs-craft-and-cuisine/",
+    "modifications": "Resized and converted to WebP"
+  },
+  "living-botanicals-map": {
+    "src": "/assets/reads/living-botanicals-map.webp",
+    "alt": "Flowering plants growing on wooden supports inside the yellow pavilion at MAP’s Living Botanicals installation.",
+    "sourceUrl": "https://map-india.org/wp-content/uploads/2026/02/TLB-Base-compressed.jpg",
+    "sourcePage": "https://map-india.org/exhibition/living-botanicals/",
+    "credit": "Museum of Art & Photography, Bengaluru",
+    "creditUrl": "https://map-india.org/exhibition/living-botanicals/",
+    "modifications": "Resized and converted to WebP"
   }
 }

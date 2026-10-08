@@ -1,6 +1,72 @@
 {
   "editions": [
     {
+      "updatedAt": "2026-10-08",
+      "edition": "007",
+      "headline": "Ordinary India, long interviews and living collections.",
+      "items": [
+        {
+          "id": "ashish-shah-ordinary-india",
+          "category": "READ / INDIA & THE IMAGE",
+          "title": "Photographer Ashish Shah writes about why the world needs to see and accept an ordinary India",
+          "source": "Vogue India · Ashish Shah, as told to Aliza Fatma",
+          "dateLabel": "2 Oct 2026 · First-person essay · Free read",
+          "url": "https://www.vogue.in/content/why-the-world-needs-to-see-and-accept-an-ordinary-india",
+          "summary": "Ashish Shah describes unlearning photographic conventions built around white skin and picturesque India. For Alexander McQueen’s 2021 campaign, he chose Dehradun rooftops over spectacular locations. His account connects technical choices, trust with subjects and the right to recognise yourself in an image.",
+          "angle": "Representation also sits inside lighting and location. Shah’s rooftops make that tangible: an ordinary setting can challenge an industry’s visual expectations. His account is especially useful for noticing assumptions hidden inside supposedly neutral decisions about how to make something look good."
+        },
+        {
+          "id": "jonah-weiner-profile-writing",
+          "category": "READ / MEDIA & CRAFT",
+          "title": "I used to get paid to hang out with famous people",
+          "source": "Blackbird Spyplane · Jonah Weiner",
+          "dateLabel": "22 Sep 2026 · Substack essay · Free read",
+          "url": "https://www.blackbirdspyplane.com/p/i-used-to-get-paid-to-hang-out-with-famous-people",
+          "summary": "Jonah Weiner revisits two decades of celebrity profiles, from shadowing Jimmy Kimmel for three days to interviewing Drake. His account explains the access, observation and sentence-level craft behind written portraits, alongside the shrinking economics that once sustained them.",
+          "angle": "Weiner asks for three kinds of access: an interview, time hanging around and time watching work happen. That distinction shows what a polished conversation can miss, and why a transcript and a reported portrait offer different kinds of understanding."
+        },
+        {
+          "id": "aabyari-srinagar",
+          "category": "READ / INDIA & CULTURAL SPACES",
+          "title": "In Srinagar, a century-old home is now a cultural centre celebrating Kashmir’s craft and cuisine",
+          "source": "Condé Nast Traveller India · Ahana Gurung",
+          "dateLabel": "6 Oct 2026 · Reported visit · Free read",
+          "url": "https://www.cntraveller.in/story/in-srinagar-a-century-old-home-is-now-a-cultural-centre-that-celebrates-kashmirs-craft-and-cuisine/",
+          "summary": "At Aabyari, a restored Srinagar home, Ahana Gurung follows pashmina weaving, architectural restoration and a wazwan supplied by neighbourhood cooks. Houseboat carpenters helped restore the building; cookies come from Zaina Kadal. The cultural centre opened in April 2026.",
+          "angle": "Pay attention to what the venue commissions from its neighbours. Those relationships give the restoration substance beyond its handsome interiors. The account makes craft visible as paid, continuing work, while leaving room to question how cultural experiences are packaged for visitors."
+        },
+        {
+          "id": "living-botanicals-map",
+          "category": "GO / BANGALORE & ART",
+          "title": "Living Botanicals",
+          "source": "MAP Bengaluru · Bhavana Kumar & Kush Sethi",
+          "dateLabel": "On view until 22 Nov 2026 · Free installation · Closed Mondays",
+          "url": "https://map-india.org/exhibition/living-botanicals/",
+          "summary": "Plants native to the subcontinent occupy MAP’s sculpture courtyard inside a pavilion designed by architect Bhavana Kumar. Gardener Kush Sethi tends the seasonal growth. The installation treats cultivation and changing conditions as part of the work itself.",
+          "angle": "A useful stop after a gallery visit: the object on display will not hold still. Notice how the pavilion gives plants a structure without fixing their final form, and how the work depends on repeated, ordinary acts of care."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Vogue India",
+          "url": "https://www.vogue.in/"
+        },
+        {
+          "name": "Blackbird Spyplane",
+          "url": "https://www.blackbirdspyplane.com/"
+        },
+        {
+          "name": "Condé Nast Traveller India",
+          "url": "https://www.cntraveller.in/"
+        },
+        {
+          "name": "MAP Bengaluru",
+          "url": "https://map-india.org/"
+        }
+      ],
+      "cadence": "weekly"
+    },
+    {
       "updatedAt": "2026-10-05",
       "edition": "006",
       "headline": "Archives, scorecards and the forms that keep memory moving.",
