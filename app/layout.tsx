@@ -3,6 +3,7 @@ import "./atelier.css";
 import "./positioning-hero.css";
 import "./about-section.css";
 import "./project-gallery.css";
+import "./project-evidence.css";
 import "./working-notes.css";
 import "./game.css";
 export const metadata: Metadata = {

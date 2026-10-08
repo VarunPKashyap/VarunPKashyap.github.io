@@ -2,14 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import { projects } from "./content";
+import { ProjectEvidence } from "./project-evidence";
 
 type OpenProject = (index: number, trigger: HTMLButtonElement) => void;
 type Frame = { image: string; label: string; alt: string; width: number; height: number; page?: number };
 
 const consumedFrames: Frame[] = [
   { image: "/assets/consumed-cover.jpg", label: "Cover", alt: "The original Consumed report cover", width: 1000, height: 660, page: 1 },
+  { image: "/assets/work/consumed-formats.webp", label: "Formats", alt: "Original Consumed spread, Flick vs Flip: the platform dilemma, examining short-form discovery and long-form audience relationships", width: 1600, height: 1056, page: 11 },
   { image: "/assets/consumed-methodology.webp", label: "Method", alt: "Consumed methodology spread describing interviews, surveys, discussions and workshops", width: 1600, height: 1056, page: 45 },
-  { image: "/assets/consumed-sectors.webp", label: "17 sectors", alt: "Original Consumed spread showing the 17 creative sectors explored", width: 1600, height: 1056, page: 46 },
 ];
 
 const grassFrames: Frame[] = [
@@ -27,16 +28,21 @@ function ProjectHeading({ index, compact = false }: { index: number; compact?: b
   return <div className="folio-copy-heading">
     <p className="folio-kicker"><span>{project.number}</span><span>{project.format}</span></p>
     <h3 id={`folio-title-${project.id}`}>{project.title}</h3>
+    <p className="folio-role">{project.role}</p>
     {!compact && <p className="folio-subtitle">{project.subtitle}</p>}
   </div>;
 }
 
 function ProjectDetails({ index, onOpen }: { index: number; onOpen: OpenProject }) {
   const project = projects[index];
+  const sourceLabel = project.id === "podcast" ? "Listen on Spotify" : project.id === "hannah" ? "Read interview" : "Read report";
+  const sourceLink = project.id === "hannah" ? `${project.link}#page=27` : project.link;
   return <div className="folio-copy-details">
     <p className="folio-summary">{project.summary}</p>
-    <dl className="folio-role"><dt>My part</dt><dd>{project.role}</dd></dl>
-    <button type="button" className="folio-explore" aria-label={`Explore ${project.title}`} aria-haspopup="dialog" onClick={event => onOpen(index, event.currentTarget)}><span>Explore the project</span><Arrow /></button>
+    <div className="folio-actions">
+      <button type="button" className="folio-explore" aria-label={`Explore ${project.title}`} aria-haspopup="dialog" onClick={event => onOpen(index, event.currentTarget)}><span>Explore the project</span><Arrow /></button>
+      <a className="folio-source" href={sourceLink} target="_blank" rel="noopener noreferrer" aria-label={`${sourceLabel}: ${project.title}`}><span>{sourceLabel}</span><Arrow diagonal /></a>
+    </div>
   </div>;
 }
 
@@ -105,7 +111,7 @@ function ProjectGallery({ index, frames, onOpen }: { index: number; frames: Fram
           chooseFrame(destination);
         }}><span className="folio-frame-thumb" aria-hidden="true"><img src={primed || frameIndex === 0 ? option.image : undefined} alt="" width={option.width} height={option.height} loading={primed ? "eager" : "lazy"} decoding="async" /></span><span>{option.label}</span></button>)}
       </div>
-      <span className="folio-page">{frame.page ? <a href={`${project.link}#page=${frame.page}`} target="_blank" rel="noopener noreferrer" aria-label={`Open page ${frame.page} of ${project.title}`}>p. {String(frame.page).padStart(2, "0")} ↗</a> : "From the report"}</span>
+      <span className="folio-page">{frame.page ? <a href={`${project.link}#page=${frame.page}`} target="_blank" rel="noopener noreferrer" aria-label={`Open PDF page ${frame.page} of ${project.title}`}>PDF p. {frame.page} ↗</a> : "From the report"}</span>
       <span className="folio-announcement" role="status" aria-live="polite" aria-atomic="true">{announcement}</span>
     </figcaption>
   </figure>;
@@ -115,21 +121,23 @@ export function WorkSection({ onOpen }: { onOpen: OpenProject }) {
   return <section id="work" className="folio-section" aria-labelledby="folio-title">
     <header className="folio-intro">
       <div className="folio-section-line"><span>01 / Selected work</span><span>Research. Writing. Conversation.</span></div>
-      <div className="folio-heading"><h2 id="folio-title">Look closer.</h2><p>Reports, questions and conversations.<br />A few places my curiosity has taken me.</p></div>
+      <div className="folio-heading"><h2 id="folio-title">Look closer.</h2><p>Research and writing on how India consumes, connects and goes out.</p></div>
       <nav className="folio-index" aria-label="Selected work index">{projects.map(project => <a key={project.id} href={`#case-${project.id}`}><span>{project.number}</span><span>{project.id === "hannah" ? "Hannah Grey" : project.title}</span><Arrow diagonal /></a>)}</nav>
     </header>
 
     <div className="folio-featured">
       <article id="case-consumed" className="folio-project folio-project--consumed" aria-labelledby="folio-title-consumed">
         <ProjectHeading index={0} />
-        <ProjectGallery index={0} frames={consumedFrames} onOpen={onOpen} />
         <ProjectDetails index={0} onOpen={onOpen} />
+        <ProjectGallery index={0} frames={consumedFrames} onOpen={onOpen} />
+        <ProjectEvidence projectId="consumed" variant="card" />
         <p className="folio-imprint"><span>{projects[0].organisation}</span><span>{projects[0].year}</span></p>
       </article>
       <article id="case-grass" className="folio-project folio-project--grass" aria-labelledby="folio-title-grass">
         <ProjectHeading index={1} />
-        <ProjectGallery index={1} frames={grassFrames} onOpen={onOpen} />
         <ProjectDetails index={1} onOpen={onOpen} />
+        <ProjectGallery index={1} frames={grassFrames} onOpen={onOpen} />
+        <ProjectEvidence projectId="grass" variant="card" />
         <p className="folio-imprint"><span>{projects[1].organisation}</span><span>{projects[1].year}</span></p>
       </article>
     </div>

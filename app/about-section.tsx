@@ -3,7 +3,7 @@ import { ArrowDown, ArrowUpRight, Plus } from "lucide-react";
 export function AboutSection() {
   return <section id="about" className="portrait-section" aria-labelledby="portrait-title">
     <div className="portrait-section-line">
-      <span>03 / The person behind the tabs</span>
+      <span>04 / The person behind the tabs</span>
       <a href="/assets/varun-profile-note.docx" download>Profile note ↓</a>
     </div>
 
@@ -28,8 +28,8 @@ export function AboutSection() {
       </div>
 
       <div className="portrait-bio" data-reveal>
-        <p className="portrait-lead">I studied computer science engineering and later joined the Young India Fellowship at Ashoka. These days, I work on brand strategy at District.</p>
-        <p>Before that, I led culture consultancy at Kommune and Stumble. A purchase, a night out or a forwarded meme can mean different things in different lives. I want that context in the room when a brand decides what to do.</p>
+        <p className="portrait-lead">I work on brand strategy at District. Before that, I led Kommune’s consultancy division and managed Stumble.</p>
+        <p>A purchase, a night out or a forwarded meme can mean different things in different lives. I want that context in the room when a team decides what to make.</p>
         <div className="portrait-experience">
           <span>Brand experience includes</span>
           <p>Coca-Cola / Spotify / Netflix<br/>Diageo / Meta / Bumble</p>
@@ -37,6 +37,7 @@ export function AboutSection() {
         <details className="portrait-history">
           <summary>A little more background <Plus size={18}/></summary>
           <div>
+            <p>I studied computer science engineering and later joined the Young India Fellowship at Ashoka.</p>
             <p>I’ve contributed to Google’s AI and culture advisory panel via Canvas8.</p>
             <p>I’ve moderated culture panels at Brand &amp; Entertainment, Under 25 Summit, CultureCon, All About Music and IIMW. A good conversation needs enough preparation to go somewhere unexpected.</p>
           </div>

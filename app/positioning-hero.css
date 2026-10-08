@@ -75,3 +75,9 @@ html[data-motion-paused] .poster-introduction { animation: none; }
   .poster-signoff { gap: 15px; }
   .poster-work-link { gap: 10px; font-size: 9px; }
 }
+
+.poster-introduction > .poster-credits { display: flex; flex-wrap: wrap; gap: 0 12px; max-width: none; margin-top: 19px; font-size: 12px; line-height: 1.5; letter-spacing: 0; color: var(--muted-copy); }
+.poster-credits a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+.poster-credits > span { display: flex; align-items: center; color: var(--line); }
+.poster-credits a:hover { color: var(--wine); }
+@media(max-width:760px) { .poster-introduction > .poster-credits { gap: 0 9px; margin-top: 8px; font-size: 11px; } }

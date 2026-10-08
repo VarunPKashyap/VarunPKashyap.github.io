@@ -1,21 +1,21 @@
 export const projects = [
   {
     id: "consumed", number: "01", title: "Consumed", subtitle: "A deep dive into consumer culture in India", organisation: "Stumble × Kommune", year: "2024", format: "Co-authored report", role: "Co-author, with Ria Chopra", image: "/assets/consumed-cover.jpg",
-    summary: "More than 100 experts across 17 sectors. One question I kept returning to: when does convenience help us choose, and when does it just speed us up?",
+    summary: "More than 100 expert perspectives across 17 sectors, brought together in five chapters on Indian consumption.",
     question: "What can consumption tell us about the lives people are trying to build?",
     context: "The report starts with a wider question than what people buy: what do their choices say about convenience, identity and belonging? Its five chapters examine digital habits, India and Bharat, convenience and conscience, individual worlds and changing relationships.",
     contribution: "Co-written with Ria Chopra for Stumble and Kommune, Consumed draws on more than 100 experts across 17 sectors. The report brings together interviews, surveys, discussions, workshops and secondary research to map the cultural context of Indian consumption.",
-    reflectionHeading: "The pause before buying",
-    perspective: "Speed can solve a real problem, but it can also shorten the pause in which someone decides whether they want to buy at all. The report holds that tension alongside the ways people seek both wider access and smaller communities of recognition.",
-    implicationHeading: "A choice for the experience",
-    implication: "Which friction helps a person decide? Where does a choice need explanation or room to pause? What kind of recognition does the experience offer?",
+    reflectionHeading: "Discovery and depth do different jobs",
+    perspective: "The Flick vs Flip section examines Dolly Singh’s 90-second Best Worst Dates and Moment of Silence’s path from Instagram reels to a podcast. The examples open up different questions about discovery, storytelling and sustained engagement.",
+    implicationHeading: "A consequence for the brief",
+    implication: "I would give the first encounter and the longer relationship different jobs. Decide what makes someone stop, then what earns their return. A format choice should follow the idea and the audience.",
     qualification: "The report brings together industry perspectives. Those voices should be read alongside the particular people, places and category a brand is trying to understand.",
     related: "Published October 2024 · Co-authored with Ria Chopra",
     link: "/assets/consumed-2024.pdf", linkLabel: "Download Consumed (PDF)"
   },
   {
     id: "grass", number: "02", title: "Touching Grass", subtitle: "How India will go out in 2026", organisation: "District", year: "2026", format: "Cultural report", role: "Writer · Cultural insights", image: "/assets/touching-grass.webp",
-    summary: "A Wednesday run club, dinner alone, coffee at 8am. Four shifts in what makes an evening, or a morning, worth leaving home for.",
+    summary: "Four connected shifts in why, when and with whom people go out. A cultural report on identity, company, time and physical experience.",
     question: "What are people really seeking when they make a plan?",
     context: "A night out is too narrow a frame for the ways people use a city. The report groups cultural examples into four shifts: Plot-First Culture, Ambient Belonging, Dual Prime Times and Revolt Against the Rot. Each asks a different question about what makes an experience worth leaving home for.",
     contribution: "I wrote the report for District, shaping its editorial frame and bringing together examples of how identity, company, time and physical experience affect going out.",
@@ -29,7 +29,7 @@ export const projects = [
   },
   {
     id: "hannah", number: "03", title: "Breaking Western Narratives", subtitle: "In Cultural Vibrations: Shifting Ground", organisation: "Hannah Grey", year: "2025", format: "Published interview", role: "Interview contributor, with Ria Chopra", image: "/assets/hannah-grey-cover.jpg",
-    summary: "Ria and I asked why a Western observation can travel as ‘global’ while an Indian one is filed as ‘local’.",
+    summary: "Our published conversation examines Western framing, different experiences of the internet, and the cultural work of sharing a meme.",
     question: "What changes when the place we look from changes?",
     context: "Cultural language travels easily. Its meaning does not always travel with it. A framework can become less useful when the local conditions behind a behaviour disappear from the explanation.",
     contribution: "Ria Chopra and I were interviewed for “Breaking Western Narratives: Fresh Perspectives on Global Consumer Behavior” in Hannah Grey’s Cultural Vibrations: Shifting Ground 2025.",
@@ -43,7 +43,7 @@ export const projects = [
   },
   {
     id: "podcast", number: "04", title: "Uncultured", subtitle: "By Stumble", organisation: "Stumble", year: "Podcast", format: "Conversation series", role: "Co-host, with Ria Chopra", image: "/assets/uncultured-cover.png",
-    summary: "Ria and I followed tangents on quick commerce, film marketing, AI and the social habits behind the feed.",
+    summary: "Conversations on the labour behind quick deliveries, the marketing around Heeramandi, AI and the norms of online discourse.",
     question: "What becomes clearer when a thought has room to develop?",
     context: "Some cultural questions need conversation: an example that complicates a neat explanation, a disagreement that reveals an assumption, a tangent that turns out to matter.",
     contribution: "I co-hosted Uncultured by Stumble with Ria Chopra. Episodes explored the labour behind quick deliveries, the marketing around Heeramandi, developments in AI, and the norms governing online discourse.",

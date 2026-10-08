@@ -12,15 +12,16 @@ export function PositioningHero() {
     </div>
     <div className="poster-composition">
       <div className="poster-heading">
-        <p className="poster-kicker">A little more meaning.</p>
+        <p className="poster-kicker">Varun / Research, writing &amp; strategy</p>
         <h1 id="poster-title"><span className="poster-line"><span className="poster-word">Fighting</span>{" "}<span className="poster-word poster-accent">content</span></span>{" "}<span className="poster-line"><span className="poster-word">pollution<span className="poster-stop">.</span></span></span></h1>
       </div>
       <div className="poster-introduction">
-        <p>I pay attention to what people do, what it means, and what brands should do with it.</p>
+        <p>I’m Varun. I turn cultural research into brand strategy and editorial work.</p>
         <div className="poster-signoff">
           <img src="/assets/varun-script-wordmark.png" alt="Varun" width="2048" height="683" />
           <a href="#work" className="poster-work-link"><span>Explore the work</span><span className="poster-arrow"><ArrowDown size={21} aria-hidden="true" /></span></a>
         </div>
+        <p className="poster-credits"><a href="#case-consumed">Co-author, Consumed</a><span aria-hidden="true">/</span><a href="#case-grass">Writer, Touching Grass</a></p>
       </div>
       <div className="poster-object"><CultureObject /></div>
     </div>

@@ -229,3 +229,8 @@
   .journal-section a:hover svg,
   .journal-section button:hover svg { transform: none; }
 }
+
+.journal-feature-question { margin: 0 0 25px; max-width: 36ch; padding-left: 18px; border-left: 2px solid var(--wine); font: 400 18px/1.5 var(--sans); letter-spacing: -.015em; }
+.journal-feature-source { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 12px; font-size: 11px; line-height: 1.5; color: var(--muted-copy); }
+.journal-feature-source:hover { color: var(--wine); }
+@media(max-width:760px) { .journal-feature-question { font-size: 17px; margin-bottom: 20px; } }

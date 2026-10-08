@@ -17,7 +17,7 @@ export function WorkingNotes({ onOpen }: WorkingNotesProps) {
   return (
     <section id="thinking" className="journal-section" aria-labelledby="journal-title">
       <div className="journal-topline">
-        <span className="journal-meta">04 / Working notes</span>
+        <span className="journal-meta">02 / Working notes</span>
         <a href="#digest">
           This week’s reading <ArrowUpRight size={15} aria-hidden="true" />
         </a>
@@ -50,6 +50,7 @@ export function WorkingNotes({ onOpen }: WorkingNotesProps) {
         <div className="journal-feature-copy">
           <span className="journal-meta">A note on {featured.category.toLowerCase()}</span>
           <p>{featured.teaser}</p>
+          <blockquote className="journal-feature-question">{featured.question}</blockquote>
           <button
             className="journal-read"
             onClick={(event) => onOpen(featuredIndex, event.currentTarget)}
@@ -58,6 +59,7 @@ export function WorkingNotes({ onOpen }: WorkingNotesProps) {
           >
             Read the note <ArrowRight size={19} aria-hidden="true" />
           </button>
+          <a className="journal-feature-source" href={featured.sources[0].url} target="_blank" rel="noopener noreferrer">From the Hannah Grey conversation <ArrowUpRight size={14} aria-hidden="true"/></a>
         </div>
       </article>
 
