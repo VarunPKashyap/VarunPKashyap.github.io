@@ -24,8 +24,8 @@ export function WorkingNotes({ onOpen }: WorkingNotesProps) {
       </div>
 
       <div className="journal-intro" data-reveal>
-        <h2 id="journal-title">Loose ends.<br /><em>Worth pulling.</em></h2>
-        <p>A table for one, a forwarded meme, an expensive gig. These are the details I keep returning to.</p>
+        <h2 id="journal-title">Working<br /><em>notes.</em></h2>
+        <p>On memes, going out, buying things and naming trends.</p>
       </div>
 
       <article className="journal-feature" data-reveal>
@@ -85,10 +85,6 @@ export function WorkingNotes({ onOpen }: WorkingNotesProps) {
         ))}
       </div>
 
-      <aside className="journal-postscript" id="perspective">
-        <span className="journal-meta">A small distinction</span>
-        <p>Something silly can have an exact purpose. Something beautifully produced can have none.</p>
-      </aside>
     </section>
   );
 }

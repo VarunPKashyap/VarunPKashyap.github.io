@@ -7,9 +7,7 @@ export const projects = [
     contribution: "Co-written with Ria Chopra for Stumble and Kommune, Consumed draws on more than 100 experts across 17 sectors. The report brings together interviews, surveys, discussions, workshops and secondary research to map the cultural context of Indian consumption.",
     reflectionHeading: "Discovery and depth do different jobs",
     perspective: "The Flick vs Flip section examines Dolly Singh’s 90-second Best Worst Dates and Moment of Silence’s path from Instagram reels to a podcast. The examples open up different questions about discovery, storytelling and sustained engagement.",
-    implicationHeading: "A consequence for the brief",
-    implication: "I would give the first encounter and the longer relationship different jobs. Decide what makes someone stop, then what earns their return. A format choice should follow the idea and the audience.",
-    qualification: "The report brings together industry perspectives. Those voices should be read alongside the particular people, places and category a brand is trying to understand.",
+    qualification: "",
     related: "Published October 2024 · Co-authored with Ria Chopra",
     link: "/assets/consumed-2024.pdf", linkLabel: "Download Consumed (PDF)"
   },
@@ -21,9 +19,7 @@ export const projects = [
     contribution: "I wrote the report for District, shaping its editorial frame and bringing together examples of how identity, company, time and physical experience affect going out.",
     reflectionHeading: "Arriving on your own",
     perspective: "The choice is rarely as simple as online or offline, together or alone. A physical experience can live on in something people make or share. A person arriving solo may want connection, or may simply want the freedom to choose.",
-    implicationHeading: "Room for another kind of plan",
-    implication: "Make room for someone to arrive alone without forcing a social script. Offer something to choose, make or keep. Treat mornings and weekdays as real social occasions, while checking whose schedules allow them.",
-    qualification: "The report offers interpretation rather than prediction. Its cultural signals are starting points for further inquiry, not a representative measure of every Indian consumer.",
+    qualification: "Selected cultural examples, not a representative survey.",
     related: "Four connected shifts: Plot-First Culture · Ambient Belonging · Dual Prime Times · Revolt Against the Rot",
     link: "/assets/touching-grass-2026.pdf", linkLabel: "Download Touching Grass (PDF)"
   },
@@ -35,8 +31,6 @@ export const projects = [
     contribution: "Ria Chopra and I were interviewed for “Breaking Western Narratives: Fresh Perspectives on Global Consumer Behavior” in Hannah Grey’s Cultural Vibrations: Shifting Ground 2025.",
     reflectionHeading: "Who gets to be global?",
     perspective: "We questioned why Western observations so readily travel as global insights, while Indian ones remain labelled local. The conversation also explores experienced internet users’ fatigue alongside newer users’ excitement, and how meme-sharing can maintain relationships or provide a language for dissent.",
-    implicationHeading: "Keep the context attached",
-    implication: "The question I carry into strategy is whose experience an explanation begins with. Access history, language and local circumstances can change what the same technology or behaviour means. Cultural fluency requires keeping those conditions visible.",
     qualification: "",
     related: "Cultural Vibrations: Shifting Ground 2025 · Hannah Grey",
     link: "https://static1.squarespace.com/static/61e5c10ebb3de93bd4890f0c/t/67be0786e724152d6136f05d/1740507025325/Cultural%2BVibrations_%2BShifting%2BGround%2B2025.pdf", linkLabel: "Read Cultural Vibrations (PDF)"
@@ -44,13 +38,11 @@ export const projects = [
   {
     id: "podcast", number: "04", title: "Uncultured", subtitle: "By Stumble", organisation: "Stumble", year: "Podcast", format: "Conversation series", role: "Co-host, with Ria Chopra", image: "/assets/uncultured-cover.png",
     summary: "Conversations on the labour behind quick deliveries, the marketing around Heeramandi, AI and the norms of online discourse.",
-    question: "What becomes clearer when a thought has room to develop?",
-    context: "Some cultural questions need conversation: an example that complicates a neat explanation, a disagreement that reveals an assumption, a tangent that turns out to matter.",
+    question: "",
+    context: "",
     contribution: "I co-hosted Uncultured by Stumble with Ria Chopra. Episodes explored the labour behind quick deliveries, the marketing around Heeramandi, developments in AI, and the norms governing online discourse.",
-    reflectionHeading: "The useful tangent",
-    perspective: "Conversation tests a point of view: it can sharpen an idea, expose an assumption or change the question.",
-    implicationHeading: "",
-    implication: "",
+    reflectionHeading: "",
+    perspective: "",
     qualification: "",
     related: "Co-hosted with Ria Chopra · Available on Spotify",
     link: "https://open.spotify.com/show/6wis5D4UVsxyDQO8RO4I23", linkLabel: "Listen on Spotify"

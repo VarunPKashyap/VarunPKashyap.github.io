@@ -29,7 +29,6 @@ export function AboutSection() {
 
       <div className="portrait-bio" data-reveal>
         <p className="portrait-lead">I work on brand strategy at District. Before that, I led Kommune’s consultancy division and managed Stumble.</p>
-        <p>A purchase, a night out or a forwarded meme can mean different things in different lives. I want that context in the room when a team decides what to make.</p>
         <div className="portrait-experience">
           <span>Brand experience includes</span>
           <p>Coca-Cola / Spotify / Netflix<br/>Diageo / Meta / Bumble</p>
