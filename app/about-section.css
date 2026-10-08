@@ -1,5 +1,5 @@
 .portrait-section {
-  padding: 86px var(--page-inset) 92px;
+  padding: var(--chapter-space) var(--page-inset) 0;
   background: var(--paper);
   color: var(--ink);
 }
@@ -22,11 +22,11 @@
 }
 .portrait-spread {
   display: grid;
-  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
-  column-gap: clamp(48px, 7vw, 112px);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  column-gap: var(--editorial-gap);
   row-gap: 34px;
   align-items: start;
-  margin-top: 41px;
+  margin-top: 32px;
 }
 .portrait-heading { grid-column: 2; grid-row: 1; min-width: 0; }
 .portrait-heading h2 {
@@ -127,14 +127,14 @@
   .portrait-interests > a:hover svg { transform: translateY(3px); }
 }
 @media (max-width: 1000px) and (min-width: 761px) {
-  .portrait-spread { column-gap: 40px; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+  .portrait-spread { column-gap: var(--editorial-gap); grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
   .portrait-heading h2 { font-size: 50px; }
   .portrait-bio > .portrait-lead { font-size: 21px; }
   .portrait-bio > p { font-size: 17px; }
   .portrait-figure figcaption { font-size: 9px; gap: 8px; }
 }
 @media (max-width: 760px) {
-  .portrait-section { padding: 52px var(--page-inset) 56px; }
+  .portrait-section { padding: var(--chapter-space) var(--page-inset) 0; }
   .portrait-section-line { font-size: 9px; gap: 18px; }
   .portrait-section-line > span { max-width: 23ch; }
   .portrait-spread { display: flex; flex-direction: column; gap: 30px; margin-top: 24px; }

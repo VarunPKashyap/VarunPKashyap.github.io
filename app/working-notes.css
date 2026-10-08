@@ -1,8 +1,7 @@
 /* A lead story, followed by a compact index. The notes keep their original order and IDs. */
 .journal-section {
-  padding: 80px var(--page-inset);
+  padding: var(--chapter-space) var(--page-inset) 0;
   background: var(--paper);
-  border-top: 1px solid var(--line);
 }
 .journal-meta {
   font: 400 10px/1.65 var(--pixel);
@@ -13,8 +12,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px 28px;
-  margin-bottom: 38px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+  margin-bottom: 32px;
 }
+.journal-topline > .journal-meta { font-size: 11px; }
 .journal-topline > a {
   display: inline-flex;
   align-items: center;
@@ -25,16 +27,16 @@
 .journal-topline > a svg { transition: transform .25s var(--ease); }
 .journal-intro {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   align-items: end;
-  gap: 35px 8vw;
+  gap: 32px var(--editorial-gap);
   margin-bottom: 46px;
 }
 .journal-intro h2 {
   font: 520 clamp(44px, 5.2vw, 76px)/1.04 var(--sans);
   letter-spacing: -.045em;
 }
-.journal-intro h2 em { color: var(--wine); }
+.journal-intro h2 em { color: var(--ink); }
 .journal-intro > p {
   max-width: 32ch;
   font-size: 21px;
@@ -43,8 +45,8 @@
 }
 .journal-feature {
   display: grid;
-  grid-template-columns: 1.38fr 1fr;
-  gap: 5vw;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--editorial-gap);
   align-items: stretch;
   margin-bottom: 36px;
 }
@@ -199,9 +201,9 @@
   .journal-read:hover svg { transform: translateX(4px); }
 }
 @media (max-width: 760px) {
-  .journal-section { padding: 55px var(--page-inset); }
-  .journal-topline { align-items: flex-start; flex-wrap: wrap; gap: 5px 20px; margin-bottom: 25px; }
-  .journal-topline > .journal-meta { min-height: 44px; display: flex; align-items: center; }
+  .journal-section { padding: var(--chapter-space) var(--page-inset) 0; }
+  .journal-topline { align-items: flex-start; flex-wrap: wrap; gap: 5px 20px; padding-top: 16px; margin-bottom: 24px; }
+  .journal-topline > .journal-meta { font-size: 10px; min-height: 44px; display: flex; align-items: center; }
   .journal-topline > a { font-size: 9px; gap: 8px; }
   .journal-intro { grid-template-columns: 1fr; gap: 22px; margin-bottom: 30px; }
   .journal-intro h2 { font-size: clamp(40px, 10.4vw, 59px); line-height: 1.05; }
