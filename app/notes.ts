@@ -5,7 +5,7 @@ export const notes = [
     paragraphs: ["“Table for one” tells a host how many places to set. It says less about how much company a person might want. Someone could be there for privacy, open to a conversation, or waiting to see how the evening feels. The number on the booking is a poor substitute for understanding that difference.", "At Papa’s, a 12-seat restaurant in Mumbai, Touching Grass describes reading material guests can colour and doodle in. I like the small permission that offers: someone arriving alone can get absorbed in a page, look up, say something, or keep drawing. The page doesn’t demand a particular kind of evening.", "I would be wary of turning that into an instruction to make everyone social. A good experience should be able to accommodate curiosity, shyness and the wish to be left alone. Sometimes those are three stages of the same evening. The design question is how to make contact possible without making participation the price of being there."],
     question: "How could an experience feel complete for one person while making connection possible without making it compulsory?",
     evidence: "Touching Grass describes Papa’s reading material on printed pp. 62–63 and discusses solo participation in Solo-Sure. This interpretation does not establish a measured effect on loneliness.",
-    sources: [{ title: "Touching Grass · Papa’s · pp. 62–63", url: "/assets/touching-grass-2026.pdf#page=31" }, { title: "Touching Grass · Solo-Sure · pp. 74–79", url: "/assets/touching-grass-2026.pdf#page=37" }]
+    sources: [{ title: "Touching Grass · Papa’s · pp. 62–63 · PDF extract, 177 KB", url: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/touching-grass-papas-pp62-63.pdf" }, { title: "Touching Grass · Solo-Sure · pp. 74–79 · PDF extract, 330 KB", url: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/touching-grass-solo-sure-pp74-79.pdf" }]
   },
   {
     id: "friction", number: "02", label: "One more purchase", category: "Consumption", title: "At checkout, I hesitate.",
@@ -13,7 +13,7 @@ export const notes = [
     paragraphs: ["A checkout that takes fewer steps can be excellent design. The next question is which decision we have made easier. In Consumed, the discussion of convenience sits alongside impulsive buying, bundled deliveries and opportunities to pause.", "A moment of hesitation can be useful information. Perhaps the price is unclear. Perhaps the person has remembered they already own something similar. Those call for different responses. I’d want a product team to be able to explain which hesitation it is removing, rather than treating every pause as a defect. There’s a meaningful difference between helping someone finish what they came to do and making it harder to notice that they’ve changed their mind."],
     question: "What does this convenience help someone do? What does it make easier to overlook?",
     evidence: "Consumed discusses convenience, impulse and more considered forms of consumption on printed pp. 20, 23 and 25. The strategic question is a further interpretation of those tensions.",
-    sources: [{ title: "Consumed · Convenience and consumption · pp. 20–25", url: "/assets/consumed-2024.pdf#page=22" }]
+    sources: [{ title: "Consumed · Convenience and consumption · pp. 20–25 · PDF extract, 757 KB", url: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/consumed-convenience-pp20-25.pdf" }]
   },
   {
     id: "meme", number: "03", label: "A forwarded meme", category: "Media", title: "This reminded me of you.",
@@ -37,7 +37,7 @@ export const notes = [
     paragraphs: ["I like reading taste for what it reveals about a person’s world. I also want to know what their world makes available. The gig someone misses may have been too expensive, too far away or impossible to fit around work. Someone can care deeply about a scene without appearing in its attendance data.", "That complicates the flattering stories brands tell about their audiences: curious, discerning, culturally fluent. Those descriptions can quietly turn access into a personality trait. Before deciding that people need a more compelling invitation, I’d ask what it currently takes to accept one, and whose circumstances the experience assumes."],
     question: "Are we reading a lack of interest, or a difficulty taking part?",
     evidence: "This is a further question prompted by Touching Grass’s discussion of identity and experience. The US National Endowment for the Arts’ attendance research provides a broader analytical precedent on cost, time and access; it is not evidence of current Indian prevalence.",
-    sources: [{ title: "Touching Grass · Identity and experience · pp. 8–11", url: "/assets/touching-grass-2026.pdf#page=4" }, { title: "NEA · When Going Gets Tough · Attendance barriers", url: "https://www.arts.gov/sites/default/files/when-going-gets-tough-revised2.pdf" }]
+    sources: [{ title: "Touching Grass · Identity and experience · pp. 8–11 · PDF extract, 142 KB", url: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/touching-grass-identity-pp8-11.pdf" }, { title: "NEA · When Going Gets Tough · Attendance barriers", url: "https://www.arts.gov/sites/default/files/when-going-gets-tough-revised2.pdf" }]
   },
   {
     id: "names", number: "06", label: "A trend name", category: "Cultural strategy", title: "A neat name on a slide.",
@@ -45,6 +45,6 @@ export const notes = [
     paragraphs: ["I enjoy finding language for something people recognise but haven’t quite articulated. There’s a risk in getting too pleased with the name, though. Once a behaviour becomes a neat slide, it becomes easier to circulate and harder to see in all its awkward detail.", "Who does the description fit? Where does it stop fitting? What would make me revise it? I want those questions to survive the presentation. The closing pages of Touching Grass acknowledge the compression involved in naming culture. For me, that is part of the discipline: following an observation far enough to make a decision more considered, while staying honest about the distance between an interesting example and a change that is widely shared."],
     question: "What would we need to see before making this observation the basis of a decision?",
     evidence: "Touching Grass’s closing reflection discusses the limits of labels, selective observation and cultural overproduction. This is a new statement of a question already present in the report.",
-    sources: [{ title: "Touching Grass · Closing reflection · pp. 130–131", url: "/assets/touching-grass-2026.pdf#page=65" }]
+    sources: [{ title: "Touching Grass · Closing reflection · pp. 130–131 · PDF extract, 39 KB", url: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/touching-grass-closing-pp130-131.pdf" }]
   }
 ];

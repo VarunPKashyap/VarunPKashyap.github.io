@@ -55,7 +55,7 @@ export function SignalDesk() {
         className="signal-panel" style={{ "--signal-direction": motionDirection } as CSSProperties}>
         <div className="signal-source">
           <div className="signal-pages"><div className="signal-underlay" aria-hidden="true"/>
-            <a key={signal.id} className="signal-page" href={`/assets/touching-grass-2026.pdf#page=${signal.page}`}
+            <a key={signal.id} className="signal-page" href={`https://varun.kaverichandna.chatgpt.site/assets/touching-grass-2026.pdf#page=${signal.page}`}
               target="_blank" rel="noopener noreferrer" aria-label={`Open source spread, pages ${signal.printed}`}>
               <img src={signal.image} alt={signal.alt} width="1100" height="715" loading="lazy"/>
               <span>Open the source <ArrowUpRight size={17}/></span>

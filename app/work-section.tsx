@@ -5,18 +5,18 @@ import { projects } from "./content";
 import { ProjectEvidence } from "./project-evidence";
 
 type OpenProject = (index: number, trigger: HTMLButtonElement) => void;
-type Frame = { image: string; label: string; alt: string; width: number; height: number; page?: number };
+type Frame = { image: string; label: string; alt: string; width: number; height: number; excerpt?: { href: string; label: string } };
 
 const consumedFrames: Frame[] = [
-  { image: "/assets/consumed-cover.jpg", label: "Cover", alt: "The original Consumed report cover", width: 1000, height: 660, page: 1 },
-  { image: "/assets/work/consumed-formats.webp", label: "Formats", alt: "Original Consumed spread, Flick vs Flip: the platform dilemma, examining short-form discovery and long-form audience relationships", width: 1600, height: 1056, page: 11 },
-  { image: "/assets/consumed-methodology.webp", label: "Method", alt: "Consumed methodology spread describing interviews, surveys, discussions and workshops", width: 1600, height: 1056, page: 45 },
+  { image: "/assets/work/consumed-formats.webp", label: "Formats", alt: "Original Consumed spread, Flick vs Flip: the platform dilemma, examining short-form discovery and long-form audience relationships", width: 1600, height: 1056, excerpt: { href: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/consumed-formats-p9.pdf", label: "Read spread · 95 KB" } },
+  { image: "/assets/consumed-cover.jpg", label: "Cover", alt: "The original Consumed report cover", width: 1000, height: 660 },
+  { image: "/assets/consumed-methodology.webp", label: "Method", alt: "Consumed methodology spread describing interviews, surveys, discussions and workshops", width: 1600, height: 1056 },
 ];
 
 const grassFrames: Frame[] = [
-  { image: "/assets/work/touching-grass-concert.webp", label: "The crowd", alt: "Concert photography from the original Touching Grass report", width: 1500, height: 975, page: 36 },
-  { image: "/assets/work/touching-grass-kitchen.webp", label: "The kitchen", alt: "Original Touching Grass spread on Bengaluru’s Ma La Kitchen supper club, with a chef serving guests at the counter", width: 1500, height: 975, page: 38 },
-  { image: "/assets/work/touching-grass-craft.webp", label: "The making", alt: "Original Touching Grass spread showing shoe customisation at the Gully Labs store in Delhi", width: 1500, height: 975, page: 60 },
+  { image: "/assets/work/touching-grass-concert.webp", label: "The crowd", alt: "Concert photography from the original Touching Grass report", width: 1500, height: 975 },
+  { image: "/assets/work/touching-grass-kitchen.webp", label: "The kitchen", alt: "Original Touching Grass spread on Bengaluru’s Ma La Kitchen supper club, with a chef serving guests at the counter", width: 1500, height: 975, excerpt: { href: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/touching-grass-ma-la-kitchen-pp76-77.pdf", label: "Read spread · 218 KB" } },
+  { image: "/assets/work/touching-grass-craft.webp", label: "The making", alt: "Original Touching Grass spread showing shoe customisation at the Gully Labs store in Delhi", width: 1500, height: 975 },
 ];
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) {
@@ -111,7 +111,7 @@ function ProjectGallery({ index, frames, onOpen }: { index: number; frames: Fram
           chooseFrame(destination);
         }}><span className="folio-frame-thumb" aria-hidden="true"><img src={primed || frameIndex === 0 ? option.image : undefined} alt="" width={option.width} height={option.height} loading={primed ? "eager" : "lazy"} decoding="async" /></span><span>{option.label}</span></button>)}
       </div>
-      <span className="folio-page">{frame.page ? <a href={`${project.link}#page=${frame.page}`} target="_blank" rel="noopener noreferrer" aria-label={`Open PDF page ${frame.page} of ${project.title}`}>PDF p. {frame.page} ↗</a> : "From the report"}</span>
+      <span className="folio-page"><a href={frame.excerpt?.href ?? project.link} target="_blank" rel="noopener noreferrer" aria-label={frame.excerpt ? `Read ${frame.label.toLowerCase()} spread from ${project.title}` : `Open full ${project.title} report`}>{frame.excerpt?.label ?? "Full report"} ↗</a></span>
       <span className="folio-announcement" role="status" aria-live="polite" aria-atomic="true">{announcement}</span>
     </figcaption>
   </figure>;
@@ -120,24 +120,23 @@ function ProjectGallery({ index, frames, onOpen }: { index: number; frames: Fram
 export function WorkSection({ onOpen }: { onOpen: OpenProject }) {
   return <section id="work" className="folio-section" aria-labelledby="folio-title">
     <header className="folio-intro">
-      <div className="folio-section-line"><span>01 / Selected work</span><span>Research. Writing. Conversation.</span></div>
-      <div className="folio-heading"><h2 id="folio-title">Look closer.</h2><p>Research and writing on how India consumes, connects and goes out.</p></div>
-      <nav className="folio-index" aria-label="Selected work index">{projects.map(project => <a key={project.id} href={`#case-${project.id}`}><span>{project.number}</span><span>{project.id === "hannah" ? "Hannah Grey" : project.title}</span><Arrow diagonal /></a>)}</nav>
+      <h2 id="folio-title">01 / Selected work</h2>
+      <p>Research and writing on how India consumes, connects and goes out.</p>
     </header>
 
     <div className="folio-featured">
       <article id="case-consumed" className="folio-project folio-project--consumed" aria-labelledby="folio-title-consumed">
         <ProjectHeading index={0} />
-        <ProjectDetails index={0} onOpen={onOpen} />
         <ProjectGallery index={0} frames={consumedFrames} onOpen={onOpen} />
         <ProjectEvidence projectId="consumed" variant="card" />
+        <ProjectDetails index={0} onOpen={onOpen} />
         <p className="folio-imprint"><span>{projects[0].organisation}</span><span>{projects[0].year}</span></p>
       </article>
       <article id="case-grass" className="folio-project folio-project--grass" aria-labelledby="folio-title-grass">
         <ProjectHeading index={1} />
-        <ProjectDetails index={1} onOpen={onOpen} />
         <ProjectGallery index={1} frames={grassFrames} onOpen={onOpen} />
         <ProjectEvidence projectId="grass" variant="card" />
+        <ProjectDetails index={1} onOpen={onOpen} />
         <p className="folio-imprint"><span>{projects[1].organisation}</span><span>{projects[1].year}</span></p>
       </article>
     </div>
@@ -153,6 +152,6 @@ export function WorkSection({ onOpen }: { onOpen: OpenProject }) {
       </article>)}
     </div>
 
-    <div className="folio-downloads"><p>For your reading pile.</p><span>Keep the full reports</span><a href="/assets/consumed-2024.pdf" download>Consumed <span>PDF ↓</span></a><a href="/assets/touching-grass-2026.pdf" download>Touching Grass <span>PDF ↓</span></a></div>
+    <div className="folio-downloads"><p>For your reading pile.</p><span>Keep the full reports</span><a href="https://varun.kaverichandna.chatgpt.site/assets/consumed-2024.pdf" target="_blank" rel="noopener noreferrer">Consumed <span>PDF · 5.1 MB ↓</span></a><a href="https://varun.kaverichandna.chatgpt.site/assets/touching-grass-2026.pdf" target="_blank" rel="noopener noreferrer">Touching Grass <span>PDF · 4.1 MB ↓</span></a></div>
   </section>;
 }

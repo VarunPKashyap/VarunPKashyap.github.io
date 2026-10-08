@@ -13,20 +13,6 @@ export function AboutSection() {
         <p>Suspicious of how easily<br/>those words get used.</p>
       </header>
 
-      <div className="portrait-margin" data-reveal>
-        <figure className="portrait-figure">
-          <div className="portrait-window">
-            <img src="/assets/varun-reference.jpeg" alt="Varun holding a microphone" width="1280" height="720" loading="lazy" decoding="async"/>
-          </div>
-          <figcaption><span>Varun</span><span>Bangalore, India</span></figcaption>
-        </figure>
-        <div className="portrait-interests">
-          <span>Some recurring interests</span>
-          <p>Formula One.<br/>A Lego build-off.<br/>One more dosa.</p>
-          <a href="#bangalore">More on the last one <ArrowDown size={16}/></a>
-        </div>
-      </div>
-
       <div className="portrait-bio" data-reveal>
         <p className="portrait-lead">I work on brand strategy at District. Before that, I led Kommune’s consultancy division and managed Stumble.</p>
         <div className="portrait-experience">
@@ -42,6 +28,20 @@ export function AboutSection() {
           </div>
         </details>
         <a className="portrait-link" href="https://in.linkedin.com/in/varunpkashyap" target="_blank" rel="noopener noreferrer">The longer version on LinkedIn <ArrowUpRight size={18}/></a>
+      </div>
+
+      <div className="portrait-margin" data-reveal>
+        <figure className="portrait-figure">
+          <div className="portrait-window">
+            <img src="/assets/varun-reference.jpeg" alt="Varun holding a microphone" width="1280" height="720" loading="lazy" decoding="async"/>
+          </div>
+          <figcaption><span>Varun</span><span>Bangalore, India</span></figcaption>
+        </figure>
+        <div className="portrait-interests">
+          <span>Some recurring interests</span>
+          <p>Formula One.<br/>A Lego build-off.<br/>One more dosa.</p>
+          <a href="#bangalore">More on the last one <ArrowDown size={16}/></a>
+        </div>
       </div>
     </div>
   </section>;

@@ -5,8 +5,9 @@ const evidence = {
     image: "/assets/work/consumed-formats.webp",
     alt: "Original Consumed spread, Flick vs Flip: the platform dilemma, examining short-form discovery and long-form audience relationships.",
     width: 1600, height: 1056,
-    source: "/assets/consumed-2024.pdf#page=11",
+    source: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/consumed-formats-p9.pdf",
     sourceLabel: "Consumed · printed p. 9",
+    fileSize: "95 KB",
     credit: "Co-authored with Ria Chopra · Stumble × Kommune",
   },
   grass: {
@@ -15,8 +16,9 @@ const evidence = {
     image: "/assets/work/touching-grass-kitchen.webp",
     alt: "Original Touching Grass spread on Ma La Kitchen in Bengaluru, showing the chef serving guests at the counter.",
     width: 1500, height: 975,
-    source: "/assets/touching-grass-2026.pdf#page=38",
+    source: "https://varun.kaverichandna.chatgpt.site/assets/excerpts/touching-grass-ma-la-kitchen-pp76-77.pdf",
     sourceLabel: "Touching Grass · printed pp. 76–77",
+    fileSize: "218 KB",
     credit: "Written for District · An example documented in the report",
   },
 };
@@ -25,11 +27,11 @@ export function ProjectEvidence({ projectId, variant = "card" }: { projectId: st
   const item = evidence[projectId as keyof typeof evidence];
   if (!item) return null;
   if (variant === "reader") return <section id="reader-evidence" tabIndex={-1} className="reader-original" aria-label="An original spread from the report">
-    <div className="reader-original-heading"><h2>Inside the report</h2><a href={item.source} target="_blank" rel="noopener noreferrer">Open this spread <span aria-hidden="true">↗</span></a></div>
+    <div className="reader-original-heading"><h2>Inside the report</h2><a href={item.source} target="_blank" rel="noopener noreferrer">Open spread · {item.fileSize} <span aria-hidden="true">↗</span></a></div>
     <figure><img src={item.image} alt={item.alt} width={item.width} height={item.height} loading="lazy" decoding="async"/><figcaption><span>{item.sourceLabel}</span><span>{item.credit}</span></figcaption></figure>
   </section>;
   return <section className="project-evidence" aria-label="A closer look at the work">
     <div className="project-evidence-label"><span className="meta">Inside the report</span><h4>{item.title}</h4></div>
-    <div className="project-evidence-observation"><p>{item.observation}</p><a href={item.source} target="_blank" rel="noopener noreferrer">{item.sourceLabel} <span aria-hidden="true">↗</span></a></div>
+    <div className="project-evidence-observation"><p>{item.observation}</p><a href={item.source} target="_blank" rel="noopener noreferrer">{item.sourceLabel} · {item.fileSize} <span aria-hidden="true">↗</span></a></div>
   </section>;
 }

@@ -1,11 +1,11 @@
-/* One composition: the headline makes a space for the object. */
+/* The statement is followed by the work and a small example of the thinking. */
 .poster { padding: 26px var(--page-inset) 0; }
 .poster-index { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; }
 .poster-index > p { color: var(--muted-copy); }
 .poster-mobile-break { display: none; }
 .poster-index .bangalore-clock { display: flex; gap: 14px; min-height: 44px; font: 10px/1.65 var(--pixel); }
 .poster-index .bangalore-clock span:last-child { color: var(--muted-copy); }
-.poster-composition { display: grid; grid-template-columns: 58% minmax(0,1fr); gap: 28px 4%; padding-top: 38px; padding-bottom: 36px; }
+.poster-composition { display: grid; grid-template-columns: 58% minmax(0,1fr); gap: 42px 4%; padding-top: 38px; padding-bottom: 36px; }
 .poster-heading { grid-column: 1/-1; min-width: 0; }
 .poster-kicker { font: 11px/1.5 var(--pixel); color: var(--wine); margin-bottom: 17px; }
 .poster-heading h1 { font: 400 clamp(60px,9.2vw,154px)/1.13 var(--pixel); letter-spacing: -.065em; }
@@ -19,8 +19,8 @@
 .poster-work-link { display: inline-flex; align-items: center; gap: 20px; min-height: 48px; font: 11px/1.5 var(--pixel); }
 .poster-arrow { display: grid; place-items: center; width: 48px; height: 48px; flex-shrink: 0; border: 1px solid var(--ink); border-radius: 50%; transition: background .35s var(--ease), color .35s var(--ease); }
 .poster-arrow svg { transition: transform .35s var(--ease); }
-.poster-object { grid-column: 2; grid-row: 2; min-width: 0; align-self: start; margin-top: calc(-1 * clamp(90px,10.6vw,166px)); }
-.poster-object .culture-object { margin-inline: auto; }
+.poster-object { grid-column: 2; grid-row: 2; min-width: 0; align-self: start; }
+.poster-object .culture-object { margin-left: auto; }
 .poster-bottom { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 35px; border-top: 1px solid var(--ink); padding: 17px 0; color: var(--muted-copy); font-size: 12px; }
 .poster-bottom strong { color: var(--ink); font-weight: 650; margin-left: 5px; }
 .poster-bottom a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; margin-left: auto; }
@@ -41,7 +41,7 @@
 html[data-motion-paused] .poster-word,
 html[data-motion-paused] .poster-introduction { animation: none; }
 @media (max-width:1000px) {
-  .poster-composition { padding-top: 30px; gap: 22px 4%; }
+  .poster-composition { padding-top: 30px; gap: 34px 4%; }
   .poster-signoff { gap: 28px; }
   .poster-work-link { gap: 13px; font-size: 10px; }
   .poster-arrow { width: 44px; height: 44px; }
@@ -63,7 +63,7 @@ html[data-motion-paused] .poster-introduction { animation: none; }
   .poster-signoff { gap: 20px; justify-content: space-between; margin-top: 19px; }
   .poster-work-link { font-size: 10px; gap: 12px; }
   .poster-arrow { width: 44px; height: 44px; }
-  .poster-object { width: 100%; max-width: 390px; margin: 15px auto 0; }
+  .poster-object { width: 100%; max-width: 400px; margin: 32px auto 16px; }
   .poster-bottom { font-size: 11px; padding: 12px 0; gap: 2px 20px; }
   .poster-bottom > span:nth-child(2) { order: 3; width: 100%; }
 }

@@ -11,7 +11,7 @@ const readingTime = (paragraphs: string[]) =>
   Math.max(1, Math.ceil(paragraphs.join(" ").split(/\s+/).length / 220));
 
 export function WorkingNotes({ onOpen }: WorkingNotesProps) {
-  const featuredIndex = notes.findIndex((note) => note.id === "meme");
+  const featuredIndex = notes.findIndex((note) => note.id === "global");
   const featured = notes[featuredIndex];
 
   return (

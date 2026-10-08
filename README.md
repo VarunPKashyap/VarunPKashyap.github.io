@@ -36,3 +36,8 @@ The existing Monday curation task selects articles; Pages only publishes files.
 
 Local game records are browser-origin specific and start fresh at the new URL.
 
+
+
+## Report files
+
+The page links to the optimised Consumed and Touching Grass reports and page extracts on the public canonical Site at https://varun.kaverichandna.chatgpt.site. These files are included in the matching Sites deployment. The older PDFs in this repository remain available for existing direct links. Keep these first-party PDF URLs when synchronising future page updates.

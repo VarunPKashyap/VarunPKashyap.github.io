@@ -9,7 +9,7 @@ export const projects = [
     perspective: "The Flick vs Flip section examines Dolly Singh’s 90-second Best Worst Dates and Moment of Silence’s path from Instagram reels to a podcast. The examples open up different questions about discovery, storytelling and sustained engagement.",
     qualification: "",
     related: "Published October 2024 · Co-authored with Ria Chopra",
-    link: "/assets/consumed-2024.pdf", linkLabel: "Download Consumed (PDF)"
+    link: "https://varun.kaverichandna.chatgpt.site/assets/consumed-2024.pdf", linkLabel: "Read Consumed (PDF, 5.1 MB)"
   },
   {
     id: "grass", number: "02", title: "Touching Grass", subtitle: "How India will go out in 2026", organisation: "District", year: "2026", format: "Cultural report", role: "Writer · Cultural insights", image: "/assets/touching-grass.webp",
@@ -21,7 +21,7 @@ export const projects = [
     perspective: "The choice is rarely as simple as online or offline, together or alone. A physical experience can live on in something people make or share. A person arriving solo may want connection, or may simply want the freedom to choose.",
     qualification: "Selected cultural examples, not a representative survey.",
     related: "Four connected shifts: Plot-First Culture · Ambient Belonging · Dual Prime Times · Revolt Against the Rot",
-    link: "/assets/touching-grass-2026.pdf", linkLabel: "Download Touching Grass (PDF)"
+    link: "https://varun.kaverichandna.chatgpt.site/assets/touching-grass-2026.pdf", linkLabel: "Read Touching Grass (PDF, 4.1 MB)"
   },
   {
     id: "hannah", number: "03", title: "Breaking Western Narratives", subtitle: "In Cultural Vibrations: Shifting Ground", organisation: "Hannah Grey", year: "2025", format: "Published interview", role: "Interview contributor", image: "/assets/hannah-grey-cover.jpg",
