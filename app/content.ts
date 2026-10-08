@@ -24,11 +24,11 @@ export const projects = [
     link: "/assets/touching-grass-2026.pdf", linkLabel: "Download Touching Grass (PDF)"
   },
   {
-    id: "hannah", number: "03", title: "Breaking Western Narratives", subtitle: "In Cultural Vibrations: Shifting Ground", organisation: "Hannah Grey", year: "2025", format: "Published interview", role: "Interview contributor, with Ria Chopra", image: "/assets/hannah-grey-cover.jpg",
-    summary: "Our published conversation examines Western framing, different experiences of the internet, and the cultural work of sharing a meme.",
+    id: "hannah", number: "03", title: "Breaking Western Narratives", subtitle: "In Cultural Vibrations: Shifting Ground", organisation: "Hannah Grey", year: "2025", format: "Published interview", role: "Interview contributor", image: "/assets/hannah-grey-cover.jpg",
+    summary: "A conversation with Matt Klein, Head of Global Foresight at Reddit, about Western framing, internet culture and the meaning of sharing a meme.",
     question: "What changes when the place we look from changes?",
     context: "Cultural language travels easily. Its meaning does not always travel with it. A framework can become less useful when the local conditions behind a behaviour disappear from the explanation.",
-    contribution: "Ria Chopra and I were interviewed for “Breaking Western Narratives: Fresh Perspectives on Global Consumer Behavior” in Hannah Grey’s Cultural Vibrations: Shifting Ground 2025.",
+    contribution: "I spoke with Matt Klein, Head of Global Foresight at Reddit, for “Breaking Western Narratives: Fresh Perspectives on Global Consumer Behavior” in Hannah Grey’s Cultural Vibrations: Shifting Ground 2025.",
     reflectionHeading: "Who gets to be global?",
     perspective: "We questioned why Western observations so readily travel as global insights, while Indian ones remain labelled local. The conversation also explores experienced internet users’ fatigue alongside newer users’ excitement, and how meme-sharing can maintain relationships or provide a language for dissent.",
     qualification: "",
@@ -36,15 +36,15 @@ export const projects = [
     link: "https://static1.squarespace.com/static/61e5c10ebb3de93bd4890f0c/t/67be0786e724152d6136f05d/1740507025325/Cultural%2BVibrations_%2BShifting%2BGround%2B2025.pdf", linkLabel: "Read Cultural Vibrations (PDF)"
   },
   {
-    id: "podcast", number: "04", title: "Uncultured", subtitle: "By Stumble", organisation: "Stumble", year: "Podcast", format: "Conversation series", role: "Co-host, with Ria Chopra", image: "/assets/uncultured-cover.png",
+    id: "podcast", number: "04", title: "Uncultured", subtitle: "By Stumble", organisation: "Stumble", year: "Podcast", format: "Conversation series", role: "Co-host", image: "/assets/uncultured-cover.png",
     summary: "Conversations on the labour behind quick deliveries, the marketing around Heeramandi, AI and the norms of online discourse.",
     question: "",
     context: "",
-    contribution: "I co-hosted Uncultured by Stumble with Ria Chopra. Episodes explored the labour behind quick deliveries, the marketing around Heeramandi, developments in AI, and the norms governing online discourse.",
+    contribution: "I co-hosted Uncultured by Stumble. Episodes explored the labour behind quick deliveries, the marketing around Heeramandi, developments in AI, and the norms governing online discourse.",
     reflectionHeading: "",
     perspective: "",
     qualification: "",
-    related: "Co-hosted with Ria Chopra · Available on Spotify",
+    related: "Conversation series · Available on Spotify",
     link: "https://open.spotify.com/show/6wis5D4UVsxyDQO8RO4I23", linkLabel: "Listen on Spotify"
   }
 ];
